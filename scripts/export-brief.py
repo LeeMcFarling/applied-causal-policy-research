@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Export a this project policy brief to PDF.
+Export a Futures Project policy brief to PDF.
 
 Usage:
     python3 scripts/export-brief.py path/to/brief.md

@@ -1,6 +1,6 @@
-# this project - Maturity Tracking Automation
+# Futures Project - Maturity Tracking Automation
 
-This system automates policy domain tracking and gap analysis for the this project.
+This system automates policy domain tracking and gap analysis for the Futures Project.
 
 ## Overview
 
@@ -315,7 +315,7 @@ research-library/
 
 After each Phase 3 review is complete, the review undergoes a grading pass using a **separate LLM from a different provider or model family** than the one that produced the review. This step exists to answer the question that will arise during expert review: *"How do you know the AI-assisted research integration isn't just confirming the author's priors?"*
 
-The this project was written and drafted according to a specific worldview. An AI assistant working within that framing — trained on the project's own materials and guided by the author's framing throughout — can develop systematic blind spots that mirror the author's priors. This is not a failure of the AI; it is a structural feature of any tool used within a closed epistemic loop. The grading step introduces an independent reviewer into that loop — not to eliminate interpretive assumptions (no model is free of them) but to surface the cases where two independent reviewers, operating from different priors, arrive at the same concern.
+The Futures Project was written and drafted according to a specific worldview. An AI assistant working within that framing — trained on the project's own materials and guided by the author's framing throughout — can develop systematic blind spots that mirror the author's priors. This is not a failure of the AI; it is a structural feature of any tool used within a closed epistemic loop. The grading step introduces an independent reviewer into that loop — not to eliminate interpretive assumptions (no model is free of them) but to surface the cases where two independent reviewers, operating from different priors, arrive at the same concern.
 
 ### What to submit to the grading LLM
 
@@ -387,7 +387,7 @@ The purpose of this pass is not to determine which policy position is "correct."
 - the research review accurately represents the source material;
 - the edited policy brief faithfully implements the review's recommendations;
 - important contrary findings have been omitted or minimized; and
-- points of disagreement between the source and the this project are represented fairly rather than rationalized.
+- points of disagreement between the source and the Futures Project are represented fairly rather than rationalized.
 
 Disagreement between model families is treated as a useful signal for human review rather than an error requiring automatic resolution. Where multiple independent reviewers identify the same concern, confidence that the issue warrants manual examination increases. Where reviewers disagree, the disagreement itself becomes part of the project's documented research record.
 

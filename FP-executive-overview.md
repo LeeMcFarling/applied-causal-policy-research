@@ -37,22 +37,24 @@ Every policy brief carries YAML frontmatter that makes it processable at scale:
 
 ```yaml
 ---
-title: "Codetermination Act"
+title: "Regional Wage Modernization Pilot"
 domain: Labor_and_Economic_Security
-phase: 4
+subdomain: Wage_Modernization
+phase: 1
 layer: 4
-version: 0.7
+version: 0.1
 audiences:
   - working-class
-  - conservative-crossover
-  - economic-populist
+  - rural-america
+  - veterans
 dependencies:
+  - doda-regional-wage-heatmap
   - public-capital-authority
-  - department-of-data-and-accountability
 description: >
-  Establishes worker representation on corporate boards with AI workforce
-  transition requirements: 90-day notice and mandatory impact assessment
-  before automation or restructuring.
+  Establishes a controlled, evidence-gated pathway for raising regional wage
+  floors — calibrated by commuting zone, phased in through a multi-year onramp,
+  and scaled only after DoDA-certified evaluation against matched comparison
+  regions.
 ---
 ```
 

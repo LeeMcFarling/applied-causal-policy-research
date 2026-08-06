@@ -1,0 +1,126 @@
+% Futures Project — Policy Brief Template
+% Requires: xelatex, fontspec (basic TeX Live)
+% For full version: sudo tlmgr install titlesec mdframed footmisc booktabs caption setspace fancyhdr enumitem microtype
+\documentclass[12pt, letterpaper]{article}
+
+%% ── Packages (basic TeX Live safe) ──────────────────────────────────────────
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\usepackage[margin=1.25in, top=1.1in, bottom=1.1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{amsmath}
+
+%% ── Optional packages (install with: sudo tlmgr install <name>) ─────────────
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\IfFileExists{setspace.sty}{\usepackage{setspace}\setstretch{1.18}}{}
+\IfFileExists{fancyhdr.sty}{
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhf{}
+  \fancyhead[L]{\small\color{fp-meta}\textsf{$if(domain)$Futures Project — $domain$$else$Futures Project$endif$}}
+  \fancyhead[R]{\small\color{fp-meta}\textsf{$if(status)$$status$$endif$$if(phase)$ · Phase $phase$$endif$}}
+  \fancyfoot[C]{\small\color{fp-meta}\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\headrule}{\color{fp-rule}\hrule width\headwidth height\headrulewidth}
+  \fancypagestyle{firstpage}{\fancyhf{}\fancyfoot[C]{\small\color{fp-meta}\thepage}\renewcommand{\headrulewidth}{0pt}}
+}{\pagestyle{plain}}
+\IfFileExists{titlesec.sty}{
+  \usepackage{titlesec}
+  \titleformat{\section}{\large\bfseries\color{fp-navy}}{}{0em}{}[\vspace{-4pt}\color{fp-rule}\rule{\linewidth}{0.5pt}\vspace{2pt}]
+  \titleformat{\subsection}{\normalsize\bfseries\color{fp-navy}}{}{0em}{}
+  \titleformat{\subsubsection}{\normalsize\bfseries}{}{0em}{}
+  \titlespacing*{\section}{0pt}{18pt}{6pt}
+  \titlespacing*{\subsection}{0pt}{12pt}{3pt}
+}{}
+\IfFileExists{footmisc.sty}{\usepackage[hang,flushmargin,multiple]{footmisc}}{}
+\IfFileExists{booktabs.sty}{\usepackage{booktabs}}{}
+\IfFileExists{enumitem.sty}{\usepackage{enumitem}\setlist[itemize]{leftmargin=1.5em,itemsep=2pt,topsep=4pt}\setlist[enumerate]{leftmargin=1.5em,itemsep=2pt,topsep=4pt}}{}
+\IfFileExists{caption.sty}{\usepackage{caption}\captionsetup{font=small,labelfont=bf,labelsep=period}}{}
+\IfFileExists{mdframed.sty}{\usepackage{mdframed}}{}
+
+%% ── Fonts ────────────────────────────────────────────────────────────────────
+\setmainfont{Georgia}[Ligatures=TeX]
+\setsansfont[Scale=0.92]{Helvetica Neue}[Ligatures=TeX]
+\setmonofont[Scale=0.85]{Courier New}
+
+%% ── Colors ───────────────────────────────────────────────────────────────────
+\definecolor{fp-navy}{RGB}{15, 52, 96}
+\definecolor{fp-rule}{RGB}{200, 200, 200}
+\definecolor{fp-meta}{RGB}{100, 100, 100}
+
+%% ── Base spacing ─────────────────────────────────────────────────────────────
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0pt}
+\setlength{\footnotesep}{8pt}
+
+%% ── Footnote rule (Chicago style) ────────────────────────────────────────────
+\renewcommand{\footnoterule}{%
+  \kern-3pt
+  \hrule width 2in height 0.4pt
+  \kern2.6pt
+}
+
+%% ── Tables ───────────────────────────────────────────────────────────────────
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{8pt}
+
+%% ── Figures ──────────────────────────────────────────────────────────────────
+\setkeys{Gin}{width=\linewidth, keepaspectratio}
+
+%% ── Code blocks ──────────────────────────────────────────────────────────────
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+%% ─────────────────────────────────────────────────────────────────────────────
+\begin{document}
+
+%% ── Cover block ──────────────────────────────────────────────────────────────
+\IfFileExists{fancyhdr.sty}{\thispagestyle{firstpage}}{\thispagestyle{empty}}
+
+\vspace*{0.2in}
+{\color{fp-navy}\rule{\linewidth}{2pt}}
+\vspace{8pt}
+
+{\fontsize{22}{26}\selectfont\bfseries\color{fp-navy}
+$if(title)$$title$$else$Untitled Brief$endif$}
+
+\vspace{10pt}
+{\color{fp-rule}\rule{\linewidth}{0.5pt}}
+\vspace{6pt}
+
+\begin{minipage}[t]{0.6\linewidth}
+$if(domain)${\small\textsf{\color{fp-meta}Domain: \textbf{$domain$}}}\\[2pt]$endif$
+$if(author)${\small\textsf{\color{fp-meta}Author: $author$}}\\[2pt]$endif$
+\end{minipage}
+\begin{minipage}[t]{0.38\linewidth}
+\raggedleft
+$if(version)${\small\textsf{\color{fp-meta}Version: $version$}}\\[2pt]$endif$
+$if(date)${\small\textsf{\color{fp-meta}$date$}}\\[2pt]$endif$
+$if(phase)${\small\textsf{\color{fp-meta}Phase $phase$}}\\[2pt]$endif$
+\end{minipage}
+
+$if(description)$
+\vspace{14pt}
+\noindent\colorbox{fp-navy!6}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxsep}
+    \vspace{8pt}
+    \small $description$
+    \vspace{8pt}
+  \end{minipage}%
+}
+$endif$
+
+\vspace{16pt}
+{\color{fp-rule}\rule{\linewidth}{0.5pt}}
+\vspace{14pt}
+
+%% ── Body ─────────────────────────────────────────────────────────────────────
+$body$
+
+\end{document}

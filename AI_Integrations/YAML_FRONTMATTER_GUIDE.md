@@ -20,7 +20,7 @@ status: Draft
 phase: 2
 layer: 4
 version: 0.1
-author: this project
+author: Futures Project
 last_updated: 2026-01-01
 tags:
   - subject-tag
@@ -268,7 +268,7 @@ phase: 2
 layer: 4
 version: 0.3
 status: Draft
-author: this project
+author: Futures Project
 last_updated: 2026-03-01
 audiences:
   - working-class
