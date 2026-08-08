@@ -47,8 +47,6 @@ description: >
 
 ### Engineering Principles for the Continuous Optimization of Public Administration
 
-*A Futures Project Research Proposal*
-
 ## Abstract
 
 Both the United States and much of the developed world are increasingly confronting a common challenge. Many public policies fail not because of insufficient expertise, inadequate funding, or a lack of democratic legitimacy, but because governments have become progressively less capable of implementing their own objectives. The symptoms are widespread. Major infrastructure projects, housing developments, manufacturing facilities, energy systems, and other public investments routinely require years or even decades to complete despite the existence of technical expertise, financial resources, and, in many cases, continuing democratic support. Scholars have described this phenomenon through concepts including declining state capacity, vetocracy, and kludgeocracy, with more recent commentary even coining "everything bagel" governance. While each body of work focuses on a different source of dysfunction, they converge on the same underlying diagnosis: governments have accumulated layers of institutional complexity that increasingly exceed their own capacity to understand, maintain, and continuously improve the administrative systems they have created. As a consequence, political debate is often reduced to a false choice between preserving increasingly opaque and gargantuan administrative systems or pursuing broad deregulation without a systematic understanding of which institutional mechanisms continue to advance legitimate public purposes, and which have become sources of unnecessary friction.
