@@ -33,16 +33,6 @@ description: >
   regulatory systems through which democratic governments implement public policy.
 ---
 
-<!--
-  Note on this file: converted from the original PDF (GovOps-RMC-tech-layer.pdf).
-  Frontmatter follows AI_Integrations/YAML_FRONTMATTER_GUIDE.md field order/schema so it
-  exports cleanly through scripts/export-brief.py + scripts/templates/fp-policy-brief.tex,
-  same as the other sample brief. Figures reference ./assets/ — see assets/README.md for
-  the expected filenames; until those are added, each figure renders as a broken image
-  link with its caption below it. `phase`, `version`, and `audiences` above are
-  placeholders — adjust to whatever this brief's real status is before publishing.
--->
-
 # From DevOps to GovOps
 
 ### Engineering Principles for the Continuous Optimization of Public Administration
