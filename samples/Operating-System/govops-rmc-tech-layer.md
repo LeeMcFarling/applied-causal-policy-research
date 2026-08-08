@@ -12,9 +12,7 @@ phase: 2
 layer: 2
 version: 0.1
 author: Futures Project
-dependencies:
-  - execution-corps-spec
-  - regulatory-modernization-packet-spec
+last_updated: 2026-08-05
 tags:
   - regulatory-modernization
   - govops
@@ -26,7 +24,9 @@ audiences:
   - small-business
   - fiscal-hawk
   - conservative-crossover
-last_updated: 2026-08-05
+dependencies:
+  - execution-corps-spec
+  - regulatory-modernization-packet-spec
 description: >
   Applies software-engineering lifecycle disciplines — version control, dependency
   mapping, operational observability, and controlled experimentation — to the
@@ -35,10 +35,12 @@ description: >
 
 <!--
   Note on this file: converted from the original PDF (GovOps-RMC-tech-layer.pdf).
-  Figure captions are preserved as text; the source figures (charts, workflow diagrams,
-  the jurisdiction feature-matrix visualization) were not re-extracted as images. See
-  figure notes inline. `phase`, `version`, and `audiences` above are placeholders —
-  adjust to whatever this brief's real status is before publishing.
+  Frontmatter follows AI_Integrations/YAML_FRONTMATTER_GUIDE.md field order/schema so it
+  exports cleanly through scripts/export-brief.py + scripts/templates/fp-policy-brief.tex,
+  same as the other sample brief. Figures reference ./assets/ — see assets/README.md for
+  the expected filenames; until those are added, each figure renders as a broken image
+  link with its caption below it. `phase`, `version`, and `audiences` above are
+  placeholders — adjust to whatever this brief's real status is before publishing.
 -->
 
 # From DevOps to GovOps
@@ -93,7 +95,9 @@ The legal schema preserves statutes, regulations, administrative rules, executiv
 
 Each regulatory object is stored as a version-controlled Markdown document with YAML front matter. The document body contains the enacted legal text. The YAML front matter provides machine-readable metadata describing the object and its relationships to other legal authorities and workflow objects. This representation remains directly legible to lawmakers, agencies, researchers, and AI-assisted development systems while remaining compatible with existing software engineering tools for version control, comparison, and dependency analysis. The metadata never supersedes the legal text; it merely describes it.
 
-> **Figure 1.** Repository organization showing jurisdiction and policy-domain directories resolving to individual regulatory objects. Each object contains structured YAML metadata that links the legal authority to one or more workflow objects through persistent identifiers.
+![Figure 1: Repository organization showing jurisdiction and policy-domain directories resolving to individual regulatory objects.](./assets/figure-1-repository-organization.png)
+
+*Each object contains structured YAML metadata that links the legal authority to one or more workflow objects through persistent identifiers.*
 
 ```yaml
 ---
@@ -133,7 +137,9 @@ The foreign-key relationship between legal and workflow objects enables a fundam
 
 A single regulatory provision illustrates the mechanism at the level of an individual statute before it is shown across an entire jurisdiction. California's Density Bonus Law, for example, links to a workflow object whose procedural stages remain fully traceable to the statutory text that authorizes each one, including the specific provision that allows one stage to run concurrently with another.
 
-> **Figure 3.** Clause-to-step resolution. Each color-coded statutory clause routes to the workflow stage it triggers, with per-step duration and total start-to-finish time shown. A concurrency clause allows one stage's time not to be additive to the total.
+![Figure 3: Clause-to-step resolution — each color-coded statutory clause routes to the workflow stage it triggers.](./assets/figure-3-clause-to-step-resolution.png)
+
+*Per-step duration and total start-to-finish time are shown; a concurrency clause allows one stage's time not to be additive to the total.*
 
 Two jurisdictions may provide nearly identical public protections while implementing those protections through substantially different administrative architectures. California and Colorado, for example, may require the same sequence of statutory reviews and preserve identical substantive protections, yet Colorado completes those same steps more efficiently through differences in agency coordination, staffing, administrative practice, statutory timelines, or institutional capacity. Connecticut preserves the same underlying review structure but authorizes portions of the workflow to proceed concurrently, allowing independent reviews to occur in parallel rather than strictly sequentially. Texas represents a fundamentally different implementation strategy. Rather than accelerating the existing workflow, it omits intermediate review stages entirely, moving directly from Application Review to Final Decision because those procedural requirements do not exist within its regulatory framework.
 
@@ -141,7 +147,9 @@ Traditional legal comparison rarely makes these distinctions visible. Similar re
 
 Workflow intelligence makes those implementation strategies directly observable.
 
-> **Figure 4.** Four jurisdictions implementing comparable regulatory objectives through different administrative architectures. California represents the sequential baseline. Colorado preserves the identical sequence of regulatory steps while completing each stage more efficiently. Connecticut preserves the same substantive review process but authorizes concurrent execution of independent stages. Texas follows a fundamentally different strategy by omitting intermediate review stages entirely.
+![Figure 4: Four jurisdictions implementing comparable regulatory objectives through different administrative architectures.](./assets/figure-4-cross-jurisdictional-workflows.png)
+
+*California represents the sequential baseline. Colorado preserves the identical sequence of regulatory steps while completing each stage more efficiently. Connecticut preserves the same substantive review process but authorizes concurrent execution of independent stages. Texas follows a fundamentally different strategy by omitting intermediate review stages entirely.*
 
 In every row, Step 1 represents Application Review, Step 2 Completeness Review, Step 3 Environmental Review, and Step 4 Final Decision. California, Colorado, and Connecticut all retain the same four substantive review stages. Colorado reduces overall implementation time through more efficient execution of each stage, while Connecticut reduces implementation time through concurrency rather than faster execution. Texas contains only two workflow stages, Application Review followed directly by Final Decision, because the intermediate review stages do not exist within that jurisdiction's workflow object.
 
@@ -151,7 +159,9 @@ Regulatory comparison therefore shifts from ideological classification toward op
 
 Once represented computationally, regulatory systems can also be evaluated using optimization techniques commonly employed in data science and quantitative finance. Modern portfolio theory identifies combinations of financial assets that maximize expected return for a given level of risk by constructing an efficient frontier. GovOps adapts the same optimization principle to regulatory systems. Rather than comparing investment portfolios, the analysis compares regulatory bundles. Rather than optimizing expected return against financial risk, it evaluates implementation performance against an aggregate Protective Outcomes Index.
 
-> **Figure 5.** Each point represents a jurisdiction's regulatory strategy for a given policy domain, plotted by its median permitting timeline against an aggregate Protective Outcomes Index derived from the substantive protections represented within the workflow schema. The frontier is not a fitted statistical trend line — it is computed through linear optimization, identifying, for every observed level of public protection, the implementation strategy already demonstrated to achieve that level of protection with the shortest implementation timeline.
+![Figure 5: Jurisdictions plotted by median permitting timeline against an aggregate Protective Outcomes Index, with the efficient frontier overlaid.](./assets/figure-5-efficient-frontier.png)
+
+*Each point represents a jurisdiction's regulatory strategy for a given policy domain. The frontier is not a fitted statistical trend line — it is computed through linear optimization, identifying, for every observed level of public protection, the implementation strategy already demonstrated to achieve that level of protection with the shortest implementation timeline.*
 
 California and Colorado illustrate the distinction between regulatory content and implementation efficiency. Both occupy approximately the same position on the Protective Outcomes Index because they preserve essentially the same substantive review requirements. Colorado, however, completes those reviews more efficiently, placing it closer to the efficient frontier. California therefore represents a dominated implementation, not because its protections are excessive, but because another jurisdiction already demonstrates that equivalent public protections can be achieved with lower implementation cost.
 
@@ -171,7 +181,9 @@ The value of the dual-schema architecture increases substantially once workflow 
 
 Each workflow object therefore becomes both an executable representation of administrative process and an instrumentation layer through which government can continuously observe system performance. Every workflow transition, agency handoff, document submission, review completion, inspection, approval, denial, appeal, and statutory deadline can be recorded as a timestamped event linked directly to both the governing workflow object and the legal authorities that authorize it. Administrative activity becomes observable at the level of individual workflow steps while remaining traceable to the statutory framework responsible for producing those operations.
 
-> **Figure 6.** A workflow object connected through standardized APIs to the operational systems responsible for executing each stage of a permitting process. Rather than exchanging information through sequential document transfers, participating agencies publish structured workflow events to the shared GovOps platform. Each event corresponds to a specific transition within the workflow and is recorded as a timestamped observation along the project timeline, allowing legal authority, operational execution, and implementation outcomes to remain continuously synchronized.
+![Figure 6: A workflow object connected through standardized APIs to the operational systems responsible for executing each stage of a permitting process.](./assets/figure-6-workflow-observability.png)
+
+*Rather than exchanging information through sequential document transfers, participating agencies publish structured workflow events to the shared GovOps platform. Each event corresponds to a specific transition within the workflow and is recorded as a timestamped observation along the project timeline, allowing legal authority, operational execution, and implementation outcomes to remain continuously synchronized.*
 
 Once operational events are continuously observed, governments can distinguish active review time from queue time, identify recurring administrative bottlenecks, measure agency utilization, quantify documentation requests, evaluate inspection workloads, observe appeal rates, identify dependency failures, measure statutory compliance, and determine precisely which workflow stages contribute most to implementation delay. Performance measurement therefore shifts from evaluating completed projects to observing administrative systems as they operate.
 
@@ -195,7 +207,9 @@ The second is a **workflow diff**, showing how those textual changes alter admin
 
 The third is an **operational impact view**, describing both the projected and, following implementation, the observed consequences of the proposed amendment. Before deployment, expected impacts are estimated using historical workflow telemetry, analogous jurisdictions, simulation, and evidence generated through prior Regulatory Modernization Sandboxes. Following implementation, those projections are replaced with observed measurements of permitting duration, agency workload, project cost, litigation frequency, environmental outcomes, compliance performance, and other operational metrics. Policymakers therefore review proposed regulatory changes much as engineers review modifications to a production system, evaluating both the textual amendment and its expected operational consequences before deployment rather than judging legislative intent alone.
 
-> **Figure 7.** A proposed amendment modifying two definitional thresholds (allowable floor-area ratio and transit-priority-area radius), expanding the number of projects eligible for a streamlined review pathway. Although the legal amendment changes only two definitions, the workflow diff reveals its downstream operational consequences: expanding the transit-priority area increases the number of projects entering the environmental-review stage, requiring a broader verification sub-check and increasing expected workload. Historical workflow telemetry and comparable jurisdictions indicate that similar eligibility expansions produce higher review volumes, longer queue times, or additional staffing requirements unless workflow capacity is adjusted accordingly.
+![Figure 7: A proposed amendment (top) and the workflow it resolves to (bottom), showing the legal diff against its downstream workflow diff.](./assets/figure-7-amendment-diff.png)
+
+*The amendment modifies two definitional thresholds (allowable floor-area ratio and transit-priority-area radius), expanding the number of projects eligible for a streamlined review pathway. Although the legal amendment changes only two definitions, the workflow diff reveals its downstream operational consequences: expanding the transit-priority area increases the number of projects entering the environmental-review stage, requiring a broader verification sub-check and increasing expected workload. Historical workflow telemetry and comparable jurisdictions indicate that similar eligibility expansions produce higher review volumes, longer queue times, or additional staffing requirements unless workflow capacity is adjusted accordingly.*
 
 Because legal objects and workflow objects exist within a connected, queryable graph, the consequences of a proposed amendment can be evaluated before implementation. Policymakers can determine which agencies, permitting systems, databases, downstream regulations, workflow dependencies, and RMPs are affected by a proposed change — its operational blast radius — prior to deployment. Changes therefore become analyzable as modifications to an interconnected system rather than isolated edits to individual statutes.
 
@@ -250,11 +264,15 @@ Colorado provides a simplified illustration of the matching process. Candidate j
 
 Because the complete matching model may contain dozens of correlated variables, the resulting jurisdiction space cannot be visualized directly. For public explanation, the standardized feature matrix can therefore be projected into two dimensions using principal component analysis. This projection provides an intuitive representation of relative similarity without replacing the underlying statistical procedure. Treatment assignment, nearest-neighbor distances, balance diagnostics, and robustness checks remain calculated within the complete standardized feature space rather than the two-dimensional visualization.
 
-> **Figure 8b.** Two-dimensional principal-component projection of the standardized jurisdiction feature space. Nearby points represent jurisdictions with similar observable characteristics across the variables included in the matching model. The projection is used only for visualization; treatment-control matching is performed in the full standardized feature space, with Mahalanobis distance and other methods used as robustness checks.
+![Figure 8b: Two-dimensional principal-component projection of the standardized jurisdiction feature space.](./assets/figure-8b-jurisdiction-pca-projection.png)
+
+*Nearby points represent jurisdictions with similar observable characteristics across the variables included in the matching model. The projection is used only for visualization; treatment-control matching is performed in the full standardized feature space, with Mahalanobis distance and other methods used as robustness checks.*
 
 Once candidate matches satisfy pre-registered balance criteria, treatment status is assigned within each matched set. The resulting design preserves intuitive geographic units for implementation while grounding causal comparison in measured similarity rather than geographic proximity, political convenience, or subjective judgment.
 
-> **Figure 9.** Illustrative geographic assignment of treatment and matched-control jurisdictions within Colorado. Treatment status is applied only after candidate pairs satisfy pre-treatment balance requirements. The connecting lines represent statistical matches rather than administrative boundaries or geographic proximity.
+![Figure 9: Illustrative geographic assignment of treatment and matched-control jurisdictions within Colorado.](./assets/figure-9-treatment-control-map.png)
+
+*Treatment status is applied only after candidate pairs satisfy pre-treatment balance requirements. The connecting lines represent statistical matches rather than administrative boundaries or geographic proximity.*
 
 Balance diagnostics are published before treatment begins. If treatment and control jurisdictions fail to demonstrate acceptable pre-treatment similarity on the characteristics relevant to the intervention, the match is rejected or revised before any regulatory change is implemented.
 
@@ -270,11 +288,15 @@ Applied to permitting, the evaluation considers permitting duration by workflow 
 
 Individual RMPs may be evaluated independently or as coordinated bundles depending upon the scope of the intervention, allowing governments to isolate the contribution of individual implementation mechanisms while also testing integrated administrative reforms.
 
-> **Figure 10.** Illustrative difference-in-differences design for one matched jurisdiction pair. The intervention begins at T₀. The treatment jurisdiction (Longmont) experiences a sustained reduction in median permitting duration relative to its matched control (Loveland).
+![Figure 10: Illustrative difference-in-differences design for one matched jurisdiction pair.](./assets/figure-10-difference-in-differences.png)
+
+*The intervention begins at T₀. The treatment jurisdiction (Longmont) experiences a sustained reduction in median permitting duration relative to its matched control (Loveland).*
 
 Regulatory outcomes can also be evaluated using regression discontinuity at jurisdictional boundaries. Builders, developers, and relocating firms frequently respond to regulatory boundaries in much the same way consumers respond to tax boundaries. Comparing otherwise similar projects immediately on either side of a jurisdictional boundary provides an additional estimate of the local causal effect attributable to the sandbox intervention.
 
-> **Figure 11.** Illustrative regression discontinuity design at a jurisdictional boundary, using housing development permitting duration as the outcome. The discontinuity at the boundary represents the estimated local effect of the RMC sandbox on regulatory throughput.
+![Figure 11: Illustrative regression discontinuity design at a jurisdictional boundary, using housing development permitting duration as the outcome.](./assets/figure-11-regression-discontinuity.png)
+
+*The discontinuity at the boundary represents the estimated local effect of the RMC sandbox on regulatory throughput.*
 
 ### 7.3 Independent Review and the Dual-Key Evidence Problem
 
