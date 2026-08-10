@@ -1,10 +1,10 @@
-# The Futures Project
+# Policy Research Project  - Computational Governance
 
 **What if you could ingest research from every major think tank and research organization in the country, stress-test it against a complete policy platform, and use that synthesis to build the reform architecture that the next administration actually needs?**
 
 That is the central question this repository is designed to answer.
 
-The Futures Project is a machine-readable policy repository encompassing four integrated layers of governance reform — foundational theory, institutional redesign, technological infrastructure, and domain policy — built to work coherently together as a single system. Every document is structured for both human reading and computational analysis: YAML-indexed, phase-gated, cross-referenced by dependency, tagged by audience, and validated against independent research.
+This is a machine-readable policy repository encompassing four integrated layers of governance reform — foundational theory, institutional redesign, technological infrastructure, and domain policy — built to work coherently together as a single system. Every document is structured for both human reading and computational analysis: YAML-indexed, phase-gated, cross-referenced by dependency, tagged by audience, and validated against independent research.
 
 ---
 
@@ -25,15 +25,17 @@ That administration also inherits a specific set of structural constraints, many
 
 And four decades of previous governance has produced a hollowed industrial base, suppressed wages, and a working population with every rational reason to distrust the people asking for their vote. A platform that doesn't take that seriously will not survive contact with the electorate it needs to deliver a governing majority. The window for delivering this change is probably one presidential term.
 
-**The Futures Project aims to be this platform.** Not a collection of policy papers, but a complete and integrated reform architecture — designed to deliver changes voters feel in the first year while sequencing the structural reforms that compound over two, four, and eight years. Every reform in every domain is phase-gated, stress-tested against existing research, and built into a sequence that reflects how these systems actually depend on each other.
+Any platform that seeks to solve these problems must work to solve each layer simultaneously. It cannot merely be a collection of policy papers, but rather a complete and integrated reform architecture — designed to deliver changes voters feel in the first year while sequencing the structural reforms that compound over two, four, and eight years.Additionally, each reform across every domain must be phase-gated, stress-tested against existing research, and built into a system that reflects the gaps and dependencies that reflect how these reforms function in real life. 
+
+This project seeks to elucidate that backend structure so that any future administration has the legibility to see how it's labor domain effects its healthcare reforms -- how it's national security reforms effect its industrial policy -- and how each of those reforms compare to current research. 
 
 ---
 
 ## How This Repository Works
 
-### Machine-Readable Structure
+The first key to unlocking this functionality lies in the structure of the reform proposals themselves. Each proposal has a machine readable structure with YAML frontmatter that allows each specific policy to be connected to each other via traditional foreign-key links, tagged with audiences, implementation strategies, dependencies, gaps, versioning, phasing, and more. 
 
-Every policy brief carries YAML frontmatter that makes it processable at scale:
+An example of this machine readable structure is below: 
 
 ```yaml
 ---
@@ -58,7 +60,7 @@ description: >
 ---
 ```
 
-Fields enable automatic dependency mapping, phase validation, audience targeting, maturity assessment, and cross-domain gap analysis across all ~313 briefs in the repository.
+As stated earlier, these fields enable automatic dependency mapping, phase validation, audience targeting, maturity assessment, and cross-domain gap analysis across all briefs in the repository.
 
 ### The 9-Phase Development Model
 
@@ -70,11 +72,12 @@ Every brief is assigned a development phase with explicit gate conditions:
 | 1 | Structured Exploration | Options surveyed, analogues reviewed |
 | 2 | Architecture & Decision Rules | Mechanism specified, internally consistent |
 | 3 | Research Integration | Literature reviewed, divergences documented |
-| 4 | Phasing & Implementation Design | Execution sequence, cost estimates, legislative vehicle |
-| 5 | Publication-Ready Draft | Citations complete, prose clean |
-| 6 | Expert Review | External feedback gathered |
-| 7 | Revision & Incorporation | Feedback incorporated or rebutted |
-| 8 | Public Messaging | Framing, rebuttal prep, earned media |
+| 4 | Pilot & Day One Designation | Tagged with implementation constraints re: EO, congressional mandate, etc. | 
+| 5 | Phasing & Implementation Design | Execution sequence, cost estimates, legislative vehicle |
+| 6 | Publication-Ready Draft | Citations complete, prose clean |
+| 7 | Expert Review | External feedback gathered |
+| 8 | Revision & Incorporation | Feedback incorporated or rebutted |
+| 9 | Public Messaging | Framing, rebuttal prep, earned media |
 
 A brief cannot exceed the phase of its hard dependencies. Phase 3 is now active: ingested research from RAND, Brookings, Niskanen, Urban Institute, and others is processed through a structured review pipeline that produces adversarial receipts — documenting what the research confirms, where it's silent, where it diverges, and what remains unresolved.
 
@@ -82,7 +85,7 @@ A brief cannot exceed the phase of its hard dependencies. Phase 3 is now active:
 
 The repository builds in three independent stress-test layers:
 
-1. **Red-team testing**: LLM-driven adversarial review from both right-leaning and left-leaning perspectives, identifying the strongest objections to each mechanism
+1. **Red-team testing**: LLM-driven simulation of adversarial review from both right-leaning and left-leaning perspectives, identifying the strongest objections to each mechanism
 2. **Research pre-validation**: Structured comparison against peer-reviewed literature and institutional research (RAND, Brookings, Niskanen, Urban Institute, Grattan, CSBA) — documented in `research-library/reviews/`
 3. **Expert review**: Phase 6 external feedback from domain practitioners before any brief reaches publication
 
@@ -110,7 +113,7 @@ The same logic applies institutionally: stable societies provide citizens with d
 
 ### Layer 2 — The Operating System (`guiding-principles/Operating-System/`)
 
-The United States government is simultaneously too large, too small, too expensive, too complex, and too ineffective at producing outcomes.[^7] Agencies have accumulated procedural complexity as a defense against decades of past abuses, bringing their operational throughput to a crawl. Programs persist because they were authorized, not because they work. Jurisdiction is fragmented across federal, state, and local levels without proper interfacing. Accountability is indirect, delayed, and filtered through a partisan media environment. The result: a government highly capable of sabotaging its own activity and nearly incapable of producing anything quickly or at scale.[^8]
+The United States government is constantly and simultaneously accused of being too large, too small, too expensive, too complex, and too ineffective at producing outcomes. Agencies have accumulated procedural complexity as a defense against decades of past abuses, bringing their operational throughput to a crawl. Programs persist because they were authorized, not because they work. Jurisdiction is fragmented across federal, state, and local levels without proper interfacing. Accountability is indirect, delayed, and filtered through a partisan media environment. The result: a government highly capable of sabotaging its own activity and nearly incapable of producing anything quickly or at scale.[^8]
 
 This platform treats that as a systems engineering problem. The Operating System layer creates new institutional machinery to translate democratic mandates into measurable outcomes — not by replacing Congress, but by giving it tools that actually work.
 
@@ -166,9 +169,9 @@ Futures-Project/
 ├── TECHNICAL_OVERVIEW.md              ← Human-facing architecture reference
 │
 ├── guiding-principles/
-│   ├── Foundations/                   ← L1: Theory stack
-│   ├── Operating-System/              ← L2: Execution instruments (formerly Institutional-Modernization)
-│   ├── Infrastructure/                ← L3: Technical backbone (formerly Technology_and_Data)
+│   ├── Foundations/                  ← L1: Theory stack
+│   ├── Operating-System/             ← L2: Execution instruments 
+│   ├── Infrastructure/               ← L3: Technical backbone
 │   └── Policy_Domains/               ← L4: 18 policy domains
 │       ├── Healthcare/
 │       ├── Labor_and_Economic_Security/
@@ -230,7 +233,7 @@ brew install --cask mactex-no-gui  # for PDF export
 
 ## Current Status
 
-**~313 briefs | ~560,000 words | 18 domains | 4 layers**
+**18 domains | 4 layers**
 
 Most domains are at Phase 2 (Architecture & Decision Rules) — mechanisms are specified and internally consistent. Healthcare and Labor are the furthest ahead at Phase 5 (Phasing & Implementation Design). Phase 3 research integration is now active; the Community Stabilization brief is the first to reach Phase 4 (Pilot Target & Day One Designation) with a fully specified 5-city executive pilot.
 

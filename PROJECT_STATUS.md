@@ -1,4 +1,4 @@
-# Futures Project — Policy Repository Status Report (Public Version)
+# Policy Repository Status Report (Public Version)
 
 **Generated:** 2026-08-02
 **Total Domains:** 18 active (4-layer architecture)
@@ -113,7 +113,7 @@ Every domain maintains a three-tier gap analysis (Critical / Structural / Enhanc
 
 | Gap | Tier | Status |
 |-----|------|--------|
-| Regional wage-floor mechanism (evidence-gated, commuting-zone calibrated) | 1 — Critical | ✅ Closed — see `samples/Policy_Domains/labor-and-economic-security/regional-wage-modernization-pilot.md` |
+| Regional wage-floor mechanism (evidence-gated, commuting-zone calibrated) | 1 — Critical | Closed — see `samples/Policy_Domains/labor-and-economic-security/regional-wage-modernization-pilot.md` |
 | Interaction with the broader income-support stack | 2 — Structural | Open — target Phase 2 |
 | Worker-facing, plain-language summary of the pilot design | 3 — Enhancement | Open — target Phase 3 |
 

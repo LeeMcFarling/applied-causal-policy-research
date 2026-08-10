@@ -42,11 +42,11 @@ Fix the structural failures that divorced American workers from the productivity
 
 | Subdomain | Phase | File Count | Word Count (est.) | Key Gaps | Dependencies | Next Action | Target Date |
 |-----------|-------|------------|-------------------|----------|--------------|-------------|-------------|
-| Domain_Overview | 4 | 1 | ~3,500 | — | SSI, DoDA heatmap | Prose complete ✅ | — |
+| Domain_Overview | 4 | 1 | ~3,500 | — | SSI, DoDA heatmap | Prose complete | — |
 | Wage_Modernization | 2 | 1 | ~4,000 | YAML modernization needed; sidebar_position missing; v0.1 | doda-regional-wage-heatmap, public-capital-authority | Fix YAML to domain standard | TBD |
-| Income_Support | 4 | 1 | ~3,000 | — | doda-regional-wage-heatmap, healthcare-reform-sec-architecture | Prose complete ✅ | — |
-| Income_Smoothing | 4 | 1 | ~2,500 | — | irs-modernization-automated-income-attestation, upi-privacy-preserving-payment-rail | Prose complete ✅ | — |
-| Wealth_Building | 4 | 1 | ~2,000 | — | universal-superannuation-system, worker-classification-parity | Prose complete ✅ | — |
+| Income_Support | 4 | 1 | ~3,000 | — | doda-regional-wage-heatmap, healthcare-reform-sec-architecture | Prose complete  | — |
+| Income_Smoothing | 4 | 1 | ~2,500 | — | irs-modernization-automated-income-attestation, upi-privacy-preserving-payment-rail | Prose complete | — |
+| Wealth_Building | 4 | 1 | ~2,000 | — | universal-superannuation-system, worker-classification-parity | Prose complete | — |
 
 ---
 
@@ -83,12 +83,12 @@ Fix the structural failures that divorced American workers from the productivity
 ## Gap Analysis [SAMPLE OUTPUT]
 
 ### Tier 1: Critical Gaps (Missing Foundation)
-- [x] **Benefits cliff elimination** — Benefits Gradient Modernization Act: 60-cent floor, regional calibration, Medicaid bridge ✅
-- [x] **Worker classification** — Dependent contractor arbitrage closed; payroll contribution parity ✅
-- [x] **Income smoothing** — Real-time EITC/CTC delivery: replaces annual lump-sum with continuous stabilization ✅
+- [x] **Benefits cliff elimination** — Benefits Gradient Modernization Act: 60-cent floor, regional calibration, Medicaid bridge 
+- [x] **Worker classification** — Dependent contractor arbitrage closed; payroll contribution parity 
+- [x] **Income smoothing** — Real-time EITC/CTC delivery: replaces annual lump-sum with continuous stabilization 
 
 ### Tier 2: Structural Gaps (Incomplete Coverage) 
-- [x] **Workforce stabilization pilots** — workforce-stabilization-pilot.md: transitional housing/workforce integration for people who've fallen out of the labor market; cross-domain with Social/Homelessness stack ✅
+- [x] **Workforce stabilization pilots** — workforce-stabilization-pilot.md: transitional housing/workforce integration for people who've fallen out of the labor market; cross-domain with Social/Homelessness stack 
 - [ ] **NLRA / union policy relationship** — How does these policies interact with existing collective bargaining rights? 
 
 ### Tier 3: Enhancement Gaps (Nice-to-Have)
@@ -101,8 +101,8 @@ Fix the structural failures that divorced American workers from the productivity
 ### Requirements for Phase 5 (External Validation) — Active Next Step
 - [x] Full instrument stack documented and sequenced (overview v0.3 complete)
 - [x] Employer-facing communication drafted (employer letter v0.3)
-- [x] Workforce stabilization brief developed (workforce-stabilization-pilot.md v0.2) ✅
-- [x] Enforcement architecture defined (labor-stack-enforcement-framework-v0.2.md) ✅
+- [x] Workforce stabilization brief developed (workforce-stabilization-pilot.md v0.2) 
+- [x] Enforcement architecture defined (labor-stack-enforcement-framework-v0.2.md) 
 
 ---
 
