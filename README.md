@@ -52,7 +52,7 @@ Draft PDF narratives: [Architecture](./walkthroughs/01-machine-readable-policy-a
 
 **Start here:**
 
-- [Project executive overview](./project-executive-overview.md) — the four-layer architecture and development model
+- [Architecture reference](./ARCHITECTURE.md) — the four-layer model and development system
 - [Project status](./PROJECT_STATUS.md) — sample maturity matrices, gap analysis, and cross-domain status
 - [YAML front-matter guide](./AI_Integrations/YAML_FRONTMATTER_GUIDE.md) — the machine-readable schema
 - [Housing domain overview](./samples/Policy_Domains/Housing_and_Public_Infrastructure/overview-housing-and-urban-architecture.md) — a worked example of policies assembled into a domain

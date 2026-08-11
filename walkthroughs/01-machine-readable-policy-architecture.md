@@ -126,7 +126,7 @@ The reusable idea is not this platform's answers. It is the ability to make a la
 
 ## Underlying evidence
 
-- [Project executive overview](../project-executive-overview.md)
+- [Architecture reference](../ARCHITECTURE.md)
 - [Project status and sample gap analysis](../PROJECT_STATUS.md)
 - [YAML front-matter guide](../AI_Integrations/YAML_FRONTMATTER_GUIDE.md)
 - [Housing maturity tracker](../samples/Policy_Domains/Housing_and_Public_Infrastructure/_MATURITY_TRACKER.md)
