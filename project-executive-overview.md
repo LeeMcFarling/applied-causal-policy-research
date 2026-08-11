@@ -197,7 +197,7 @@ applied-causal-policy-research/
 └── AI_Integrations/
     ├── YAML_FRONTMATTER_GUIDE.md     ← Authoritative field reference (phases, layers, audiences)
     ├── AUTOMATION_README.md          ← Script usage, Phase 3 workflow, PDF export
-    └── PRIMARY_CONTROL_DOC.md        ← AI session context and workflow instructions
+    └── policy-platform-primary-control-document.md   ← AI session context and workflow instructions
 ```
 
 ---

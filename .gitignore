@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+._*
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.mypy_cache/
+
+# Editors
+.vscode/
+.idea/
+
+# PDF export output
+exports/
+
+# Env / secrets
+.env
+.env.*
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
