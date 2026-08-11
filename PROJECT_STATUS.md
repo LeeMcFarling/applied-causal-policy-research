@@ -1,10 +1,10 @@
-# Policy Repository Status Report (Public Version)
+# Policy Repository Status Report [Sample Metric Overview generated from 'Maturity Scan' script]
 
 **Generated:** 2026-08-02
-**Complete Private Platform:** 18 policy domains within a 4-layer architecture
+**Complete Private Platform:** 16 policy domains within a 4-layer architecture
 **Rows in the Sample Matrix Below:** 19 tracked areas — 16 policy domains and 3 cross-cutting layers
-**Total Policy Files:** ~313
-**Estimated Total Words:** ~560,000
+**Total Policy Files:** ~113
+**Estimated Total Words:** ~200,000
 **Phase Model:** 10-phase (0–9) — see YAML_FRONTMATTER_GUIDE.md for gate conditions
 
 ---
@@ -18,7 +18,7 @@ The demonstrated architecture is organized in four layers. L1–L3 are cross-cut
 | **L1 Foundations** | `guiding-principles/Foundations/` | Psychological and civilizational theory — threat salience, prestige architecture, meaning in society |
 | **L2 Operating-System** | `guiding-principles/Operating-System/` | Institutional execution instruments — Execution Corps, DoDA, congressional OS interface, civic pipeline |
 | **L3 Infrastructure** | `guiding-principles/Infrastructure/` | Technical backbone — SSI identity, UPI payments, cybersecurity, AI governance, information integrity |
-| **L4 Policy Domains** | `guiding-principles/Policy_Domains/` | 18 policy domains with full brief stacks |
+| **L4 Policy Domains** | `guiding-principles/Policy_Domains/` | 16 policy domains with full brief stacks |
 
 ---
 
@@ -43,9 +43,9 @@ The demonstrated architecture is organized in four layers. L1–L3 are cross-cut
 
 ---
 
-## Executive Summary
+## Executive Summary [SAMPLE OVERVIEW]
 
-The complete private platform has grown to **~313 files across 18 policy domains**, totaling approximately 560,000 words. The illustrative matrix below reproduces 16 of those policy-domain rows and also includes the three cross-cutting layers—Operating System, Infrastructure, and Foundations—for a total of 19 displayed rows. Most represented areas are at Phase 2 (Architecture & Decision Rules): mechanisms are specified and internally consistent but have not yet been fully stress-tested against outside research. Labor and Healthcare are furthest along, at Phase 4–5 (implementation-design stage).
+The complete private platform has grown to **~113 files across 16 policy domains**, totaling approximately 200,000 words. The illustrative matrix below reproduces 16 of those policy-domain rows and also includes the three cross-cutting layers—Operating System, Infrastructure, and Foundations—for a total of 19 displayed rows. Most represented areas are at Phase 2 (Architecture & Decision Rules): mechanisms are specified and internally consistent but have not yet been fully stress-tested against outside research. Labor and Healthcare are furthest along, at Phase 4–5 and Phase 4 respectively (implementation-design stage).
 
 ---
 
@@ -53,11 +53,12 @@ The complete private platform has grown to **~313 files across 18 policy domains
 
 | Phase | Domains |
 |-------|---------|
-| **Phase 5–6** | Labor_and_Economic_Security |
-| **Phase 5** | Healthcare |
-| **Phase 2** | Agriculture, Budget_and_Fiscal_Policy, Climate_Risk, Democratic_Integrity, Education, Energy, Housing_and_Public_Infrastructure, Manufacturing, National_Security, Operating-System, Social, Sports_and_Cultural_Institutions, Trade_Policy |
+| **Phase 4–5** | Labor_and_Economic_Security |
+| **Phase 4** | Healthcare |
+| **Phase 2** | Agriculture, Budget_and_Fiscal_Policy, Climate_Risk, Democratic_Integrity, Education, Energy, Housing_and_Public_Infrastructure, Manufacturing, National_Security, Operating-System, Social, Trade_Policy |
 | **Phase 1–2** | Immigration, Infrastructure, United-Nations-and-Global-Institutional-Reform |
-| **Phase 1** | Foundations (theory layer — phase model applies differently) |
+| **Phase 1** | Sports_and_Cultural_Institutions |
+| **Phase —** | Foundations (theory layer — phase model applies differently) |
 
 ---
 
@@ -66,28 +67,28 @@ The complete private platform has grown to **~313 files across 18 policy domains
 This is an illustrative status extract, not a complete enumeration of the private platform. It contains 16 policy-domain rows plus three cross-cutting architectural-layer rows.
 
 | Domain | Layer | Phase | Files | Est. Words |
-|--------|-------|-------|-------|------------|
-| Social | L4 | 2 | 24 | ~68,260 |
-| Manufacturing | L4 | 2 | 28 | ~60,995 |
-| Education | L4 | 2 | 18 | ~53,753 |
-| Democratic_Integrity | L4 | 2 | 15 | ~50,280 |
-| National_Security | L4 | 2 | 37 | ~47,000 |
-| Budget_and_Fiscal_Policy | L4 | 2 | 16 | ~47,265 |
-| Labor_and_Economic_Security | L4 | 4–5 | 12 | ~39,868 |
-| Healthcare | L4 | 4 | 32 | ~31,500 |
-| Housing_and_Public_Infrastructure | L4 | 2 | 20 | ~29,046 |
-| Operating-System | L2 | 2 | 14 | ~28,386 |
-| Infrastructure | L3 | 1–2 | 13 | ~27,057 |
-| Immigration | L4 | 1–2 | 14 | ~10,624 |
-| Trade_Policy | L4 | 2 | 8 | ~10,198 |
-| United-Nations | L4 | 1–2 | 7 | ~14,816 |
-| Agriculture | L4 | 2 | 8 | ~10,200 |
-| Energy | L4 | 2 | 7 | ~11,655 |
-| Climate_Risk | L4 | 2 | 4 | ~6,068 |
-| Sports_and_Cultural_Institutions | L4 | 1 | — | — |
-| **Foundations** | L1 | — | 9 | ~50,800 |
+|---|---:|---:|---:|---:|
+| Social | L4 | 2 | 9 | 18,000 |
+| Manufacturing | L4 | 2 | 10 | 15,995 |
+| Education | L4 | 2 | 8 | 13,753 |
+| Democratic_Integrity | L4 | 2 | 5 | 5,280 |
+| National_Security | L4 | 2 | 7 | 12,384 |
+| Budget_and_Fiscal_Policy | L4 | 2 | 6 | 8,265 |
+| Labor_and_Economic_Security | L4 | 4–5 | 5 | 9,700 |
+| Healthcare | L4 | 4 | 9 | 12,703 |
+| Housing_and_Public_Infrastructure | L4 | 2 | 5 | 13,500 |
+| Operating-System | L2 | 2 | 4 | 6,200 |
+| Infrastructure | L3 | 1–2 | 3 | 7,700 |
+| Immigration | L4 | 1–2 | 4 | 8,237 |
+| Trade_Policy | L4 | 2 | 6 | 10,247 |
+| United-Nations | L4 | 1–2 | 4 | 6,750 |
+| Agriculture | L4 | 2 | 8 | 13,347 |
+| Energy | L4 | 2 | 7 | 12,846 |
+| Climate_Risk | L4 | 2 | 4 | 8,659 |
+| Sports_and_Cultural_Institutions | L4 | 1 | — | 1,483 |
+| **Foundations** | L1 | — | 9 | 13,763 |
 
-**Total: ~313 policy files, ~560,000 words**
+**Total: ~113 policy files, ~200,000 words** [Example]
 
 ---
 
@@ -112,7 +113,7 @@ Each review also passes through a second, independent LLM-graded fidelity and ba
 
 ## Gap Analysis Methodology — Worked Example [SAMPLE OUTPUT]
 
-Every domain maintains a three-tier gap analysis (Critical / Structural / Enhancement) used to sequence what gets built next. Rather than reproduce all 18 domains' internal gap lists here, one worked example — Labor_and_Economic_Security, which also has a full public sample brief in `samples/` — illustrates how the tiering works:
+Every domain maintains a three-tier gap analysis (Critical / Structural / Enhancement) used to sequence what gets built next. Rather than reproduce all 16 domains' internal gap lists here, one worked example — Labor_and_Economic_Security, which also has a full public sample brief in `samples/` — illustrates how the tiering works:
 
 | Gap | Tier | Status |
 |-----|------|--------|
