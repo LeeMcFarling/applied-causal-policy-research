@@ -1,4 +1,4 @@
-% Futures Project — Policy Brief Template
+% Policy Brief Template
 % Requires: xelatex, fontspec (basic TeX Live)
 % For full version: sudo tlmgr install titlesec mdframed footmisc booktabs caption setspace fancyhdr enumitem microtype
 \documentclass[12pt, letterpaper]{article}
@@ -10,10 +10,22 @@
 \usepackage[margin=1.25in, top=1.1in, bottom=1.1in]{geometry}
 \usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
+\newcommand*\pandocbounded[1]{%
+  \begingroup
+  \setbox0=\hbox{#1}%
+  \ifdim\wd0>\linewidth
+    \resizebox{\linewidth}{!}{\box0}%
+  \else
+    \box0
+  \fi
+  \endgroup
+}
 \usepackage{longtable}
 \usepackage{array}
 \usepackage{xcolor}
 \usepackage{amsmath}
+\usepackage{calc}
+\providecommand{\real}[1]{#1}
 
 %% ── Optional packages (install with: sudo tlmgr install <name>) ─────────────
 \IfFileExists{microtype.sty}{\usepackage{microtype}}{}
@@ -22,17 +34,17 @@
   \usepackage{fancyhdr}
   \pagestyle{fancy}
   \fancyhf{}
-  \fancyhead[L]{\small\color{fp-meta}\textsf{$if(domain)$Futures Project — $domain$$else$Futures Project$endif$}}
-  \fancyhead[R]{\small\color{fp-meta}\textsf{$if(status)$$status$$endif$$if(phase)$ · Phase $phase$$endif$}}
-  \fancyfoot[C]{\small\color{fp-meta}\thepage}
+  \fancyhead[L]{\small\color{policy-meta}\textsf{$if(domain)$$domain$$else$Policy Brief$endif$}}
+  \fancyhead[R]{\small\color{policy-meta}\textsf{$if(status)$$status$$endif$$if(phase)$ · Phase $phase$$endif$}}
+  \fancyfoot[C]{\small\color{policy-meta}\thepage}
   \renewcommand{\headrulewidth}{0.4pt}
-  \renewcommand{\headrule}{\color{fp-rule}\hrule width\headwidth height\headrulewidth}
-  \fancypagestyle{firstpage}{\fancyhf{}\fancyfoot[C]{\small\color{fp-meta}\thepage}\renewcommand{\headrulewidth}{0pt}}
+  \renewcommand{\headrule}{\color{policy-rule}\hrule width\headwidth height\headrulewidth}
+  \fancypagestyle{firstpage}{\fancyhf{}\fancyfoot[C]{\small\color{policy-meta}\thepage}\renewcommand{\headrulewidth}{0pt}}
 }{\pagestyle{plain}}
 \IfFileExists{titlesec.sty}{
   \usepackage{titlesec}
-  \titleformat{\section}{\large\bfseries\color{fp-navy}}{}{0em}{}[\vspace{-4pt}\color{fp-rule}\rule{\linewidth}{0.5pt}\vspace{2pt}]
-  \titleformat{\subsection}{\normalsize\bfseries\color{fp-navy}}{}{0em}{}
+  \titleformat{\section}{\large\bfseries\color{policy-navy}}{}{0em}{}[\vspace{-4pt}\color{policy-rule}\rule{\linewidth}{0.5pt}\vspace{2pt}]
+  \titleformat{\subsection}{\normalsize\bfseries\color{policy-navy}}{}{0em}{}
   \titleformat{\subsubsection}{\normalsize\bfseries}{}{0em}{}
   \titlespacing*{\section}{0pt}{18pt}{6pt}
   \titlespacing*{\subsection}{0pt}{12pt}{3pt}
@@ -49,9 +61,9 @@
 \setmonofont[Scale=0.85]{Courier New}
 
 %% ── Colors ───────────────────────────────────────────────────────────────────
-\definecolor{fp-navy}{RGB}{15, 52, 96}
-\definecolor{fp-rule}{RGB}{200, 200, 200}
-\definecolor{fp-meta}{RGB}{100, 100, 100}
+\definecolor{policy-navy}{RGB}{15, 52, 96}
+\definecolor{policy-rule}{RGB}{200, 200, 200}
+\definecolor{policy-meta}{RGB}{100, 100, 100}
 
 %% ── Base spacing ─────────────────────────────────────────────────────────────
 \setlength{\parskip}{6pt}
@@ -84,30 +96,30 @@ $endif$
 \IfFileExists{fancyhdr.sty}{\thispagestyle{firstpage}}{\thispagestyle{empty}}
 
 \vspace*{0.2in}
-{\color{fp-navy}\rule{\linewidth}{2pt}}
+{\color{policy-navy}\rule{\linewidth}{2pt}}
 \vspace{8pt}
 
-{\fontsize{22}{26}\selectfont\bfseries\color{fp-navy}
+{\fontsize{22}{26}\selectfont\bfseries\color{policy-navy}
 $if(title)$$title$$else$Untitled Brief$endif$}
 
 \vspace{10pt}
-{\color{fp-rule}\rule{\linewidth}{0.5pt}}
+{\color{policy-rule}\rule{\linewidth}{0.5pt}}
 \vspace{6pt}
 
 \begin{minipage}[t]{0.6\linewidth}
-$if(domain)${\small\textsf{\color{fp-meta}Domain: \textbf{$domain$}}}\\[2pt]$endif$
-$if(author)${\small\textsf{\color{fp-meta}Author: $author$}}\\[2pt]$endif$
+$if(domain)${\small\textsf{\color{policy-meta}Domain: \textbf{$domain$}}}\\[2pt]$endif$
+$if(author)${\small\textsf{\color{policy-meta}Author: $author$}}\\[2pt]$endif$
 \end{minipage}
 \begin{minipage}[t]{0.38\linewidth}
 \raggedleft
-$if(version)${\small\textsf{\color{fp-meta}Version: $version$}}\\[2pt]$endif$
-$if(date)${\small\textsf{\color{fp-meta}$date$}}\\[2pt]$endif$
-$if(phase)${\small\textsf{\color{fp-meta}Phase $phase$}}\\[2pt]$endif$
+$if(version)${\small\textsf{\color{policy-meta}Version: $version$}}\\[2pt]$endif$
+$if(date)${\small\textsf{\color{policy-meta}$date$}}\\[2pt]$endif$
+$if(phase)${\small\textsf{\color{policy-meta}Phase $phase$}}\\[2pt]$endif$
 \end{minipage}
 
 $if(description)$
 \vspace{14pt}
-\noindent\colorbox{fp-navy!6}{%
+\noindent\colorbox{policy-navy!6}{%
   \begin{minipage}{\dimexpr\linewidth-2\fboxsep}
     \vspace{8pt}
     \small $description$
@@ -117,7 +129,7 @@ $if(description)$
 $endif$
 
 \vspace{16pt}
-{\color{fp-rule}\rule{\linewidth}{0.5pt}}
+{\color{policy-rule}\rule{\linewidth}{0.5pt}}
 \vspace{14pt}
 
 %% ── Body ─────────────────────────────────────────────────────────────────────

@@ -16,7 +16,6 @@ audiences:
   - veterans
   - working-class
 version: 0.1
-author: Futures Project
 dependencies:
   - doda-regional-wage-heatmap
   - irs-modernization-automated-income-attestation
@@ -35,6 +34,8 @@ tags:
   - public-capital-authority
 last_updated: 2026-04-27
 ---
+
+> **Illustrative sample:** This draft demonstrates how experimental design and causal evaluation can be written directly into a policy pilot. It is an example for adaptation and critique, not a recommended wage policy. A responsible team would determine the policy objective, intervention, safeguards, thresholds, and final design.
 
 # Regional Wage Modernization Pilot
 

@@ -117,7 +117,7 @@ Phase 6+ requires Chicago-style citations via markdown footnotes (`[^1]`).
 - [ ] Review document produced in `research-library/reviews/`
 - [ ] Aligned findings documented
 - [ ] Gaps in literature documented
-- [ ] Divergences documented with FP rationale
+- [ ] Divergences documented with platform rationale
 - [ ] Open questions flagged
 
 ### Phase 4 — Pilot Target & Day One Designation

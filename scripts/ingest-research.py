@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Ingest a research document (PDF or existing text) into the FP research library.
+Ingest a research document (PDF or existing text) into the platform research library.
 
 Usage:
     python3 scripts/ingest-research.py path/to/report.pdf
@@ -14,7 +14,7 @@ Workflow:
   5. Adds entry to research-library/index.md
 
 After ingestion, run a Phase 3 review pass:
-    - Provide Claude with the source .md + relevant FP brief(s)
+    - Provide Claude with the source .md + relevant platform brief(s)
     - Ask for the four-section review (aligned, gaps, divergences, open questions)
     - Save output to research-library/reviews/<topic>-research-review.md
     - Add inline citations to the brief using footnote syntax
@@ -129,7 +129,7 @@ def update_index(key: str, institution: str, chicago: str, topics: list,
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Ingest a research document into the FP research library"
+        description="Ingest a research document into the platform research library"
     )
     parser.add_argument("input", help="Path to PDF or text file")
     parser.add_argument("--key", help="Citation key slug (auto-generated if omitted)")
@@ -198,7 +198,7 @@ Next steps:
        research-library/sources/{out_path.name}
   2. Add relevant brief slugs to the 'briefs:' field in its frontmatter
   3. Run a Phase 3 review pass:
-       - Provide Claude with this source + the relevant FP brief(s)
+       - Provide Claude with this source + the relevant platform brief(s)
        - Ask for the four-section review (aligned findings, gaps, divergences, open questions)
        - Save the review to:
            research-library/reviews/<topic>-research-review.md

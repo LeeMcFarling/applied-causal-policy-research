@@ -1,6 +1,6 @@
 ---
-id: futures-project-structural-layering
-title: Structural Layering Overview — Futures Project
+id: policy-platform-structural-layering
+title: Structural Layering Overview
 sidebar_label: Structural Layering
 sidebar_position: 0
 slug: /foundations/structural-layering
@@ -11,7 +11,6 @@ status: Active
 phase: 2
 layer: 1
 version: 0.3
-author: Futures Project
 last_updated: 2026-08-02
 tags:
   - governance-architecture
@@ -24,7 +23,7 @@ tags:
 
 ## Purpose
 
-This document formalizes the structural layering of the Futures Project and explains the relationship between its four repository layers and the three *operational legitimacy tiers* that govern how each layer is justified publicly.
+This document formalizes the structural layering of the policy platform and explains the relationship between its four repository layers and the three *operational legitimacy tiers* that govern how each layer is justified publicly.
 
 Understanding both structures prevents a common failure mode: treating the platform's theoretical foundations as a prerequisite for its practical reforms. They are not. A reform can be justified independently on observable failures and comparative evidence. The theory makes the platform more coherent and more durable — but it does not make any individual reform legitimate or illegitimate.
 
@@ -113,7 +112,7 @@ This design prevents the platform from developing a single theoretical point of 
 
 ## Public Interpretation
 
-For most observers, the Futures Project should function as:
+For most observers, the policy platform should function as:
 
 **A pragmatic framework for designing a modern democratic society in which people can realistically live stable, meaningful, and dignified lives.**
 
@@ -123,7 +122,7 @@ The deeper theoretical synthesis (Tier C) exists to improve internal coherence, 
 
 ## Summary
 
-The Futures Project is a practical governance architecture for restoring institutional capacity, democratic legitimacy, and societal stability in the contemporary United States.
+The policy platform is a practical governance architecture for restoring institutional capacity, democratic legitimacy, and societal stability in the contemporary United States.
 
 It is organized into four repository layers (L1 Foundations → L2 Operating System → L3 Infrastructure → L4 Policy Domains) and three justificatory tiers (execution → normative → theoretical). The layers define what is where in the repository. The tiers define what level of argument is needed to defend what.
 

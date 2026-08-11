@@ -1,14 +1,14 @@
-# Futures Project — Primary Control Document
+# Primary Control Document
 
 **Version:** 1.1  
 **Last Updated:** 2026-08-02  
-**Audience:** AI assistants and automated tooling working within the Futures Project repository
+**Audience:** AI assistants and automated tooling working within the policy platform repository
 
 ---
 
 ## Purpose
 
-This document is the authoritative coordination and control layer for the entire Futures Project. It defines first-principles orientation, system design rules, phase discipline, and dependency constraints that govern all policy domains and subdomains.
+This document is the authoritative coordination and control layer for the entire policy platform. It defines first-principles orientation, system design rules, phase discipline, and dependency constraints that govern all policy domains and subdomains.
 
 This document does **not** propose policy, design programs, or prescribe messaging. Its role is to constrain, align, and sequence work so that ambition does not exceed execution capacity.
 
@@ -16,7 +16,7 @@ This document does **not** propose policy, design programs, or prescribe messagi
 
 ## First-Principles Orientation
 
-The Futures Project is an institution-building effort operating under conditions of political, fiscal, and informational uncertainty. Policy is treated as system design rather than moral arbitration or ideological signaling.
+The policy platform is an institution-building effort operating under conditions of political, fiscal, and informational uncertainty. Policy is treated as system design rather than moral arbitration or ideological signaling.
 
 **Core principles:**
 - Institutional durability over rhetorical completeness

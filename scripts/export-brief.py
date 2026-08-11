@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Export a Futures Project policy brief to PDF.
+Export a policy brief to PDF.
 
 Usage:
     python3 scripts/export-brief.py path/to/brief.md
@@ -25,7 +25,7 @@ from pathlib import Path
 CHROME = (
     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 )
-TEMPLATE = Path(__file__).parent / "templates" / "fp-policy-brief.tex"
+TEMPLATE = Path(__file__).parent / "templates" / "policy-brief.tex"
 REPO_ROOT = Path(__file__).parent.parent
 
 # Docusaurus YAML fields that pandoc should ignore (strip from temp file)
@@ -203,7 +203,6 @@ def export(src: Path, output: Path, open_after: bool = False):
             f"--template={TEMPLATE}",
             "--resource-path=" + str(tmp_dir / "figures") + ":" + str(src.parent),
             "-V", "graphics=true",
-            "--highlight-style=tango",
             "-o", str(output),
         ]
 
@@ -221,7 +220,7 @@ def export(src: Path, output: Path, open_after: bool = False):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Export an FP policy brief to PDF"
+        description="Export a policy brief to PDF"
     )
     parser.add_argument("input", help="Path to .md brief")
     parser.add_argument("-o", "--output", help="Output PDF path")

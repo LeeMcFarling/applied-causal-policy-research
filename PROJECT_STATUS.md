@@ -1,7 +1,8 @@
 # Policy Repository Status Report (Public Version)
 
 **Generated:** 2026-08-02
-**Total Domains:** 18 active (4-layer architecture)
+**Complete Private Platform:** 18 policy domains within a 4-layer architecture
+**Rows in the Sample Matrix Below:** 19 tracked areas — 16 policy domains and 3 cross-cutting layers
 **Total Policy Files:** ~313
 **Estimated Total Words:** ~560,000
 **Phase Model:** 10-phase (0–9) — see YAML_FRONTMATTER_GUIDE.md for gate conditions
@@ -10,7 +11,7 @@
 
 ## Architecture Overview
 
-The platform is organized in four layers. L1–L3 are cross-cutting infrastructure; L4 is policy domains.
+The demonstrated architecture is organized in four layers. L1–L3 are cross-cutting infrastructure; L4 is policy domains. The status material below illustrates how a team can track a larger body of work; it does not prescribe the policies that a future team should adopt.
 
 | Layer | Directory | Role |
 |-------|-----------|------|
@@ -44,7 +45,7 @@ The platform is organized in four layers. L1–L3 are cross-cutting infrastructu
 
 ## Executive Summary
 
-The repository has grown to **~313 files across 18 active domains**, ~560,000 words. Most domains are at Phase 2 (Architecture & Decision Rules) — mechanisms are specified and internally consistent but not yet stress-tested against outside research. Labor and Healthcare are furthest along, at Phase 4–5 (implementation-design stage).
+The complete private platform has grown to **~313 files across 18 policy domains**, totaling approximately 560,000 words. The illustrative matrix below reproduces 16 of those policy-domain rows and also includes the three cross-cutting layers—Operating System, Infrastructure, and Foundations—for a total of 19 displayed rows. Most represented areas are at Phase 2 (Architecture & Decision Rules): mechanisms are specified and internally consistent but have not yet been fully stress-tested against outside research. Labor and Healthcare are furthest along, at Phase 4–5 (implementation-design stage).
 
 ---
 
@@ -61,6 +62,8 @@ The repository has grown to **~313 files across 18 active domains**, ~560,000 wo
 ---
 
 ## Domain Summary Matrix [SAMPLE OUTPUT]
+
+This is an illustrative status extract, not a complete enumeration of the private platform. It contains 16 policy-domain rows plus three cross-cutting architectural-layer rows.
 
 | Domain | Layer | Phase | Files | Est. Words |
 |--------|-------|-------|-------|------------|

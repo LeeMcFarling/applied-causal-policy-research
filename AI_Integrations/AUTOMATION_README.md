@@ -1,6 +1,6 @@
-# Futures Project - Maturity Tracking Automation
+# Policy Maturity Tracking Automation
 
-This system automates policy domain tracking and gap analysis for the Futures Project.
+This system automates policy domain tracking and gap analysis for the policy platform.
 
 ## Overview
 
@@ -249,7 +249,7 @@ No other changes needed — the template auto-detects and enables the packages.
 
 ## Phase 3: Research Integration
 
-Phase 3 is the process of reviewing existing literature against FP briefs. The output is two things:
+Phase 3 is the process of reviewing existing literature against platform briefs. The output is two things:
 1. **Inline citations** in briefs for specific empirical claims (Chicago footnotes, page-level)
 2. **Review documents** in `research-library/reviews/` that serve as adversarial receipts — showing exactly how the platform engages the independent research
 
@@ -276,11 +276,11 @@ python3 scripts/ingest-research.py research-library/incoming/report.pdf --key ra
 
 ### Run a Phase 3 review pass
 
-After ingesting, give Claude the source file and the relevant FP brief(s) and ask for a review using the standard template:
+After ingesting, give Claude the source file and the relevant platform brief(s) and ask for a review using the standard template:
 
 > "Review `research-library/sources/rand-superannuation-2023.md` against the superannuation brief. Use the review template at `research-library/reviews/_REVIEW_TEMPLATE.md`. Save the output to `research-library/reviews/superannuation-research-review.md`."
 
-**Important scoping principle:** Not every source will be a 1:1 match to a single FP brief, and no source is expected to validate everything FP proposes. Before writing the Aligned Findings, Gaps, and Divergences sections, complete the `## Source Scope` section first. This defines what the source is and isn't attempting — and the rest of the review is evaluated relative to that, not relative to the totality of what FP needs.
+**Important scoping principle:** Not every source will be a 1:1 match to a single platform brief, and no source is expected to validate everything platform proposes. Before writing the Aligned Findings, Gaps, and Divergences sections, complete the `## Source Scope` section first. This defines what the source is and isn't attempting — and the rest of the review is evaluated relative to that, not relative to the totality of what the platform needs.
 
 A source being silent on third spaces, coordination models, homelessness mitigation, federal implementation design, or long-term social outcomes is expected and normal if those topics are outside its scope. List out-of-scope topics in Source Scope and exclude them from Gaps. Only topics within the source's stated scope that remain unaddressed belong in Gaps.
 
@@ -315,14 +315,14 @@ research-library/
 
 After each Phase 3 review is complete, the review undergoes a grading pass using a **separate LLM from a different provider or model family** than the one that produced the review. This step exists to answer the question that will arise during expert review: *"How do you know the AI-assisted research integration isn't just confirming the author's priors?"*
 
-The Futures Project was written and drafted according to a specific worldview. An AI assistant working within that framing — trained on the project's own materials and guided by the author's framing throughout — can develop systematic blind spots that mirror the author's priors. This is not a failure of the AI; it is a structural feature of any tool used within a closed epistemic loop. The grading step introduces an independent reviewer into that loop — not to eliminate interpretive assumptions (no model is free of them) but to surface the cases where two independent reviewers, operating from different priors, arrive at the same concern.
+The policy platform was written and drafted according to a specific worldview. An AI assistant working within that framing — trained on the project's own materials and guided by the author's framing throughout — can develop systematic blind spots that mirror the author's priors. This is not a failure of the AI; it is a structural feature of any tool used within a closed epistemic loop. The grading step introduces an independent reviewer into that loop — not to eliminate interpretive assumptions (no model is free of them) but to surface the cases where two independent reviewers, operating from different priors, arrive at the same concern.
 
 ### What to submit to the grading LLM
 
 Provide the grading LLM with all three of the following in a single prompt:
 1. **The original source** — full extracted text from the ingested PDF (from `research-library/sources/<key>.md`)
 2. **The research review document** — the four-section review from `research-library/reviews/`
-3. **The edited brief** — the post-review version of the relevant FP brief(s)
+3. **The edited brief** — the post-review version of the relevant platform brief(s)
 
 ### Grading prompt
 
@@ -337,7 +337,7 @@ Specifically, identify:
 
 2. SELECTIVE EMPHASIS — Are there findings in the source that the review omitted or minimized that would challenge the policy brief's position? List them.
 
-3. FRAMING NEUTRALITY — In the "Divergences" section, the review describes tensions between the source and the platform position. Does the "FP position" framing appear to genuinely engage with the tension, or to rationalize a pre-determined conclusion? Flag cases where the rationalization appears weak relative to the source evidence.
+3. FRAMING NEUTRALITY — In the "Divergences" section, the review describes tensions between the source and the platform position. Does the "platform position" framing appear to genuinely engage with the tension, or to rationalize a pre-determined conclusion? Flag cases where the rationalization appears weak relative to the source evidence.
 
 4. BRIEF ACCURACY — Do the edits made to the policy brief accurately implement what the research review recommends? Flag any cases where the brief appears to have adopted a finding selectively or partially.
 
@@ -387,7 +387,7 @@ The purpose of this pass is not to determine which policy position is "correct."
 - the research review accurately represents the source material;
 - the edited policy brief faithfully implements the review's recommendations;
 - important contrary findings have been omitted or minimized; and
-- points of disagreement between the source and the Futures Project are represented fairly rather than rationalized.
+- points of disagreement between the source and the policy platform are represented fairly rather than rationalized.
 
 Disagreement between model families is treated as a useful signal for human review rather than an error requiring automatic resolution. Where multiple independent reviewers identify the same concern, confidence that the issue warrants manual examination increases. Where reviewers disagree, the disagreement itself becomes part of the project's documented research record.
 

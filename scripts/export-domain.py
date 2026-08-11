@@ -62,7 +62,7 @@ def export_brief(md: Path, output_dir: Path):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Batch export FP domain briefs to PDF"
+        description="Batch export platform domain briefs to PDF"
     )
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("domain", nargs="?", help="Domain folder name")

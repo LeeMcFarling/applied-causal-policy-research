@@ -6,6 +6,8 @@ That is the central question this repository is designed to answer.
 
 This is a machine-readable policy repository encompassing four integrated layers of governance reform — foundational theory, institutional redesign, technological infrastructure, and domain policy — built to work coherently together as a single system. Every document is structured for both human reading and computational analysis: YAML-indexed, phase-gated, cross-referenced by dependency, tagged by audience, and validated against independent research.
 
+> **Demonstration scope:** The included briefs are excerpts selected to demonstrate the repository's methods. They are not a ready-made agenda or a substitute for a future team's judgment. The architecture is intended to help teams develop, test, connect, and revise their own policies; those teams retain responsibility for the substance and final decisions.
+
 ---
 
 ## The Problem This Is Trying to Solve
@@ -163,7 +165,7 @@ The substantive content: ~313 briefs across 18 domains. Every reform is designed
 ## Repository Structure
 
 ```
-Futures-Project/
+applied-causal-policy-research/
 ├── README.md                          ← This file
 ├── PROJECT_STATUS.md                  ← Full domain matrix, gap analysis, recent activity
 ├── TECHNICAL_OVERVIEW.md              ← Human-facing architecture reference
@@ -190,7 +192,7 @@ Futures-Project/
 │   ├── ingest-research.py            ← PDF → research-library/sources/ (pdfplumber)
 │   ├── maturity_scan.py              ← Scan repo, update maturity trackers
 │   └── templates/
-│       └── fp-policy-brief.tex       ← LaTeX template (Georgia/Helvetica, navy cover)
+│       └── policy-brief.tex       ← LaTeX template (Georgia/Helvetica, navy cover)
 │
 └── AI_Integrations/
     ├── YAML_FRONTMATTER_GUIDE.md     ← Authoritative field reference (phases, layers, audiences)
