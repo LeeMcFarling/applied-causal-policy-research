@@ -69,13 +69,17 @@ That permits questions such as:
 - Can independent stages run concurrently without changing substantive standards?
 - Which delays are legally required, and which arise from staffing or coordination?
 
-![Figure 1](./)
+![Figure 1](/samples/Operating-System/figures/figure-3-clause-to-step-resolution.png)
+>**Figure 1:** This illustrates the connection between legal text, and the operational sequence it creates via the dual-schema arechitecture. Details for *how* this connection is accomplished are detailed in the [GovOps technical brief](../samples/Operating-System/govops-rmc-tech-layer.md).
 
 ## Cross-jurisdictional comparison
 
 Jurisdictions often pursue similar public purposes through different administrative designs. One may perform reviews sequentially; another may run independent reviews concurrently; a third may omit a review stage; a fourth may preserve the stage but staff or coordinate it differently.
 
 The dual schema makes those differences comparable at the level of function rather than vocabulary. Instead of asking only which jurisdiction has fewer rules, analysts can ask which implementation produces the desired protective outcomes with less avoidable time, cost, or failure.
+
+![Figure 2](/samples/Operating-System/figures/figure-4-cross-jurisdictional-workflows.png)
+>**Figure 2:** The dual schema architecture makes differences in legal text legible at the functional level.
 
 ## The efficient frontier
 
@@ -89,7 +93,8 @@ This reframes regulatory modernization:
 
 The Protective Outcomes Index would itself require transparent construction, domain expertise, sensitivity analysis, and democratic scrutiny. The demonstration provides the comparison architecture, not a universal definition of protection.
 
-> **Suggested figure:** Reuse Figure 5 from the GovOps brief, with a short annotation explaining dominated implementations and the efficient frontier.
+![Figure 3](//samples/Operating-System/figures/figure-5-efficient-frontier.png)
+> **Figure 3:** Here we see an efficient frontier modeling of the time-to-completion on the x-axis and the relative protective outcomes modeled on the y-axis. While the efficient frontier concept is borrowed from the finance industry, here it is applied to find the maximally efficient combination of regulatory legal text to balance protective outcomes and permitting throughput. 
 
 ## Operational observability
 
@@ -97,13 +102,14 @@ When workflow objects connect to agency systems, each transition can generate a 
 
 Observability changes the unit of accountability. Instead of evaluating an agency only by its final output, a team can examine the system that produced the output:
 
-- queue time at each stage;
-- handoff failures;
-- variance across offices or jurisdictions;
-- repeat submissions;
-- appeal and reversal rates;
-- staffing constraints; and
-- the relationship between process changes and substantive outcomes.
+- queue time at each stage
+- handoff failures
+- variance across offices or jurisdictions
+- repeat submissions
+- appeal and reversal rates
+- staffing constraints
+- the relationship between process changes and substantive outcomes
+
 
 ## Controlled experimentation
 
