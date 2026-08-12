@@ -8,7 +8,7 @@ status: Rough Draft
 
 ## The idea in one sentence
 
-Can a policy be written as a bounded, evidence-gated intervention whose (third-party facilitated) comparison strategy, measurements, decision thresholds an stopping conditions are present before implementation begins? 
+Can a policy be written as a bounded, evidence-gated intervention whose (third-party facilitated) comparison strategy, measurements, decision thresholds, and stopping conditions are present before implementation begins? 
 
 > **What this is:** A demonstration of causal evaluation embedded in a policy proposal.
 >
@@ -16,7 +16,7 @@ Can a policy be written as a bounded, evidence-gated intervention whose (third-p
 
 ## The problem
 
-Evaluation is often appended to policy after the important choices have already been made. Programs launch nationally, often with no designated evaluation criteria. Data systems arrive late, and evaluation is often incomplete and filtered through hyper-partisan media environments that are more adept at furthering a narrative irrespective of how successful a policy is at acheiving its intended goals. To further complicate matters, success criteria for specific policies often remain vague and often non-falsifiable -- and evaluators are asked whether the policy “worked” without valid statistical analysis, counterfactuals, experimental design, or measurement. 
+Evaluation is often appended to policy after the important choices have already been made. Programs launch nationally, often with no designated evaluation criteria. Data systems arrive late, and evaluation is often incomplete and filtered through hyper-partisan media environments that are more adept at furthering a narrative irrespective of how successful a policy is at achieving its intended goals. To further complicate matters, success criteria for specific policies often remain vague and often non-falsifiable -- and evaluators are asked whether the policy “worked” without valid statistical analysis, counterfactuals, experimental design, or measurement. 
 
 That makes several questions difficult or impossible to answer:
 
@@ -37,7 +37,7 @@ The [Regional Wage Modernization Pilot](../samples/Policy_Domains/labor-and-econ
 
 The proposal does not begin with a high-stakes federally universal intervention. Instead, it defines a limited pilot, a staged onramp, regional calibration, and institutional support intended to make the treatment observable and reversible. The evaluation criteria that determines whether the policy worked or not should be pre-specified using a validated methodology. The objective of this design is to make each policy a falsifiable intervention based on validated experimental methods with independent evaluation logic. 
 
-As a special note: Despite the current political zeitgeist, any policy (with positive intent) that achieves its objectives benefits the nation, regardless of its partisan origin. Structuring policy intervensions in this manner (with independent evaluation built-in) allows parties to compete with each other on merit instead of on narrative; it reduces the negative ramifications of failure; and it allows the country to use federalism to its advantage, instead of to its detriment. 
+As a special note: Despite the current political zeitgeist, any policy (with positive intent) that achieves its objectives benefits the nation, regardless of its partisan origin. Structuring policy interventions in this manner (with independent evaluation built-in) allows parties to compete with each other on merit instead of on narrative; it reduces the negative ramifications of failure; and it allows the country to use federalism to its advantage, instead of to its detriment. 
 
 ### 2. Specify the unit of analysis
 
@@ -87,12 +87,12 @@ A complete gate should specify:
 - who certifies the result
 - what action follows each result
 
-From there, the scale up, or sunset conditions of a policy is written before the policy is implemented. This means that scale up or sunset is automatic based on the evidence provided. Lawmakers still retain control to manually intervene, but they must actively vote against a scale up (in the case of a positive result) or sunset (in the case of a negative result) in a legible fashion. 
+From there, the scale-up and sunset conditions for a policy are written before the policy is implemented, so that scaling or sunsetting happens automatically once the evidence comes in. Lawmakers still retain the power to intervene manually, but they must actively vote against a scale-up (in the case of a positive result) or a sunset (in the case of a negative result), on the record. 
 
 
 ### 7. Separate evaluation from authorization
 
-Even the most carefully designed policy interventions can fail because the evaluators are incentivised to pass or fail them based on their own stake in the outcome. Here, the design and implementation of a policy is explicitly firewalled from its evaluation. This is not only because recorded conflicts of interest arise when government grades its own homework, but because independent assessment is the only way the evidence itself stays credible.
+Even the most carefully designed policy interventions can fail because the evaluators are incentivized to pass or fail them based on their own stake in the outcome. Here, the design and implementation of a policy is explicitly firewalled from its evaluation. This is not only because recorded conflicts of interest arise when government grades its own homework, but because independent assessment is the only way the evidence itself stays credible.
 
 In this example, independent researchers and review panels assess the design and the evidence. A dual-key architecture design is implemented to ensure that local Universities and Independent agencies both approve a result, so that evidence toward the contrary is generated when either is compromised. That being said, they do not make the final democratic decision. Evidence establishes whether a proposal cleared its predefined test; elected or otherwise authorized institutions decide whether it becomes permanent policy.
 
@@ -115,7 +115,7 @@ The wage pilot shows that causal inference can shape policy language before enac
 
 The wage-floor pilot does not prove that the proposed wage intervention will succeed. Furthermore, this process does not guarantee policy success -- any design written on paper may still confront spillovers, political selection, noncompliance, insufficient sample size, measurement error, or weak external validity. Nor should every public decision be reduced to a single estimated treatment effect. Distribution, rights, democratic commitments, and implementation feasibility remain substantive considerations.
 
-This framework meerly suggests a method for writing policy to overcome common failures, independently evaluating that policy, and then scaling or sunsetting that policy based on the demonstrated results. 
+This framework merely suggests a method for writing policy to overcome common failures, independently evaluating that policy, and then scaling or sunsetting that policy based on the demonstrated results. 
 
 ## What a future team owns
 

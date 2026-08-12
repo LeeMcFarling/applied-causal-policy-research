@@ -41,7 +41,7 @@ The legal schema preserves the authoritative structure of law using modern versi
 - dependencies on other provisions and
 - the conditions under which a provision applies.
 
-The purpose of this schema is traceability -- giving people explicit visibility into the line-by-line legal landscape that lawmakers produce. Which can then be audited and compared against campaign donations, grey-area gifts, and lobbying talks. From there, each line item becomes resolvable both to the legal authority that creates or constrains it, and tied via foreign key relationship to the second schema. 
+The purpose of this schema is traceability -- giving people explicit visibility into the line-by-line legal landscape that lawmakers produce, so that individual additions can be audited and cross-referenced against campaign donations, gray-area gifts, and lobbyist contact -- for example, a provision quietly added to a bill after a lobbyist meeting that benefits a single corporation's bottom line. From there, each line item becomes resolvable both to the legal authority that creates or constrains it, and tied via foreign key relationship to the second schema. 
 
 ### Workflow schema
 
@@ -55,7 +55,7 @@ The purpose of the workflow schema is to expose the operational consequences of 
 - Appeal or exception path (if the step constitutes a veto-point)
 - Cost to implement (permitting fees, etc.) 
 
-The purpose of this schema is to exposes the operational consequences of every legal procedure.
+The purpose of this schema is to expose the operational consequences of every legal procedure.
 
 ### The connection between them
 
@@ -70,7 +70,7 @@ That permits questions such as:
 - Which delays are legally required, and which arise from staffing or coordination?
 
 ![Figure 1](/samples/Operating-System/figures/figure-3-clause-to-step-resolution.png)
->**Figure 1:** This illustrates the connection between legal text, and the operational sequence it creates via the dual-schema arechitecture. Details for *how* this connection is accomplished are detailed in the [GovOps technical brief](../samples/Operating-System/govops-rmc-tech-layer.md).
+>**Figure 1:** This illustrates the connection between legal text, and the operational sequence it creates via the dual-schema architecture. Details for *how* this connection is accomplished are detailed in the [GovOps technical brief](../samples/Operating-System/govops-rmc-tech-layer.md).
 
 ## Cross-jurisdictional comparison
 

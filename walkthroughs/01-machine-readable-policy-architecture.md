@@ -15,7 +15,7 @@ A policy platform can be maintained more like a complex engineered system: each 
 
 ## The problem
 
-Large policy agendas are usually assembled as collections of papers. An individual green energy policy might thoughtful, but it can still fail if it is deployed on an outdated permitting system, if it cannot connect meaningfully to fiscal policy mechanisms, or if upstream supply chain effects create artificial bottlenecks. Policies, unlike their paper representations, are deployed into a larger system with gaps, dependencies, and other constraints. But our methods for developing these policies do not allow us to fully map and account for these relationships before implementation exposes them. 
+Large policy agendas are usually assembled as collections of papers. An individual green energy policy might be thoughtful, but it can still fail if it is deployed on an outdated permitting system, if it cannot connect meaningfully to fiscal policy mechanisms, or if upstream supply chain effects create artificial bottlenecks. Policies, unlike their paper representations, are deployed into a larger system with gaps, dependencies, and other constraints. But our methods for developing these policies do not allow us to fully map and account for these relationships before implementation exposes them. 
 
 Many of these same issues have been solved in other fields. The question is therefore how we import these solutions and synthesize them into a system that is usable by lawmakers, and is able to answer the following questions reliably: 
 
@@ -73,13 +73,13 @@ That permits automated questions such as:
 
 Each brief is assigned a maturity phase. Early phases define the problem and architecture, while later phases require research integration, pilot design, implementation planning, external review, and revision. The critical feature here is not the number of phases we define. It is that advancement is tied to observable conditions. A brief cannot become “implementation ready” merely because its prose is polished. Its dependencies, evidence, legal vehicle, evaluation plan, and unresolved risks must mature with it. 
 
-The result of this is a public facing policy platform that has expert review, evaluation planning, risk mitigation, validation against existing research, and other types of scoring built-in to the platform itself. A communication layer might explain to a voter what policies are explicitly designed to address their needs. An institutional layer gets the budget scoring and other reciept mechanisms to prove that the policy is serious.  
+The result of this is a public facing policy platform that has expert review, evaluation planning, risk mitigation, validation against existing research, and other types of scoring built-in to the platform itself. A communication layer might explain to a voter what policies are explicitly designed to address their needs. An institutional layer gets the budget scoring and other receipt mechanisms to prove that the policy is serious.  
 
 ### Audience and cross-domain analysis
 
 Audience tags make it possible to generate views of the platform for different affected groups without maintaining separate, drifting copies of the same policy. Domain and subdomain fields support aggregation. If institutional actors are concerned about how the policy platform plans to address the concerns of one community in particular (e.g. rural-voters, farmers, black-community), these tags can be used to pull the relevant information without creating a stale copy of the larger document corpus (that may be updated within days or weeks), and replaces it with an updated dashboard that is directly tied to the most recent editions of policy documents and can be updated automatically as changes to the underlying corpus are published. 
 
-This also allows us to map dependencies that would otherwise have been obscured. For example, policies effecting rural voters might be a combination of healthcare, financing, right-to-repair, agricultural coordination, housing, and so on. Policies affecting the black community in a particular state might look different on the surface, but depend on similar financing mechanisms, or institutional constraints. The cross-domain analysis offered by this platform allows those dependencies to be explicitly mapped, mitigated, and pulled into meaningful information for lawmakers that says: "These voters are effected if this obscure institutional reform fails". 
+This also allows us to map dependencies that would otherwise have been obscured. For example, policies affecting rural voters might be a combination of healthcare, financing, right-to-repair, agricultural coordination, housing, and so on. Policies affecting the black community in a particular state might look different on the surface, but depend on similar financing mechanisms, or institutional constraints. The cross-domain analysis offered by this platform allows those dependencies to be explicitly mapped, mitigated, and pulled into meaningful information for lawmakers that says: "These voters are affected if this obscure institutional reform fails". 
 
 ### Gap analysis
 
@@ -98,7 +98,7 @@ NOTE: The references to policies not included in this public extract are intenti
 
 ![Figure 1](./figures/machine-readable-dependency-walkthrough-example.png)
 
-> **Figure 1: Dependencies in the Housing Domain are preserved** This figure shows a visual representation of how relevent information and dependencies may connect a document to others, and yet ignore documents that are not implicated. 
+> **Figure 1: Dependencies in the Housing Domain are preserved** This figure shows a visual representation of how relevant information and dependencies may connect a document to others, and yet ignore documents that are not implicated. 
 
 ## What this demonstration establishes
 
@@ -115,7 +115,6 @@ The extracts establish that policy documents can be represented in a form that s
 
 The demonstration does not prove that the particular schema is complete, that every dependency has been correctly identified, or that structured metadata can resolve substantive political disagreement. A graph can expose a dependency; it cannot decide whether the underlying policy is wise.
 
-The public extract also cannot run every repository-wide validation because much of the private source tree is intentionally absent.
 
 ## What a future team owns
 

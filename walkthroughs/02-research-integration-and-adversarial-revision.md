@@ -38,7 +38,7 @@ The research-integration workflow is designed to make those failures visible. In
 
 ![Figure 1](./figures/research-integration-figure-1.png)
 
-> *Figure 1:* The demonstrated workflow flows through strict phase gated steps: **Source → Structured review → Independent grading → Revised brief**. Each step only proceeds with the necessary informmation, and steps do not proceed unless the necessary conditions are met. 
+> *Figure 1:* The demonstrated workflow flows through strict phase gated steps: **Source → Structured review → Independent grading → Revised brief**. Each step only proceeds with the necessary information, and steps do not proceed unless the necessary conditions are met. 
 
 
 ## The Workflow Applied to a Specific Example: 
@@ -46,7 +46,7 @@ The following example provides a demonstration of the adversarial research workf
 
 ### Step 1: Preserve the source record
 
-The source record for the relevent document is stored directly in the research section of the platform.  [17A source record](../research-library/sources/17a-reducing-violent-crime-2026.md) The PDF for the case study is ingested using a python script and the citation metadata is stored with topical tags, linked briefs, and extracted source content. This gives later reviewers a stable research object rather than an informal link or a detached set of notes.
+The source record for the relevant document is stored directly in the research section of the platform: the [17A source record](../research-library/sources/17a-reducing-violent-crime-2026.md). The PDF for the case study is ingested using a python script and the citation metadata is stored with topical tags, linked briefs, and extracted source content. This gives later reviewers a stable research object rather than an informal link or a detached set of notes.
 
 ### Step 2: Define the source's scope
 
@@ -69,7 +69,7 @@ This distinction is the center of the workflow: “evidence consistent with this
 
 ### Step 4: Record divergences and decisions
 
-The review does not end with a literature summary. It creates a decision record. For each meaningful tensions sufaced between the existing policy proposals and the literature review, it states:
+The review does not end with a literature summary. It creates a decision record. For each meaningful tension surfaced between the existing policy proposals and the literature review, it states:
 
 1. the source position
 2. the policy position
@@ -114,9 +114,7 @@ The example demonstrates a research workflow that can:
 
 ## What it does not establish
 
-The process does not guarantee an unbiased conclusion. Review templates, source selection, model prompts, and human judgment can all introduce bias. Nor does one reviewed source establish the complete evidence base for community stabilization.
-
-The workflow is better understood as an auditable research receipt than as a stamp of truth. If utilized correctly, with genuinely adversarial examples applied to each open question; however, this generates a chain of validated evidence that strengthens the platform's design decisions. 
+This process does not guarantee an unbiased conclusion. Templates, source selection, model prompts, and human judgment can all introduce bias, and a single source does not cover the full evidence base. This workflow is best understood as an auditable research trail rather than absolute truth. When used correctly with adversarial testing for every open question, it creates a validated chain of evidence that strengthens the platform's overall design choices.
 
 ## What a future team owns
 
