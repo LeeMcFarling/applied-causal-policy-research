@@ -8,51 +8,54 @@ status: Rough Draft
 
 ## The idea in one sentence
 
-Law can remain authoritative prose while also being mapped to a structured representation of the administrative processes it creates, making implementation observable, comparable, and experimentally improvable.
+This idea ties the legal prose of laws and regulations directly to the administrative processes they create, making that implementation legible, optimizable, comparable, and experimentally improvable.
 
 > **What this is:** A technical concept for representing and studying regulatory implementation.
 >
-> **What this is not:** A proposal to automate lawmaking, remove protective review, or allow software to supersede legal authority.
+> **What this is not:** A proposal to automate lawmaking, remove protective review, or allow software to supersede lawmaker legal authority.
 
 ## The problem
 
-Legislatures enact legal obligations, but public outcomes are produced through administrative workflows: applications, notices, reviews, inspections, hearings, appeals, interagency transfers, and final decisions. Those workflows are often distributed across statutes, regulations, guidance, forms, software systems, and institutional practice.
+Legislatures enact legal artifacts in prose, but public outcomes are produced by the administrative workflows that prose creates. Applications, notices, reviews, inspections, permits, hearings, appeals, interagency transfers, or final decisions -- these workflows are built piecemeal by many legislative bodies across federal, state, and local jurisdictions and kept in disparate systems, producing a topology no one can fully parse, compare, or optimize.
 
-As a result, lawmakers can see the rule they enacted without being able to see the complete process it creates. Agencies may know their portion of a workflow without seeing delays produced at jurisdictional seams. Reform efforts then oscillate between adding new procedures and removing protections without a reliable model of which steps cause delay or which steps produce public value.
+Rules across each jurisdiction have accumulated over time, often resulting in a landscape far more complicated than the sum of its parts. Most of these rules exist as a defense against some past abuse, but their cumulative effect has brought governmental operational throughput to a crawl, while massively increasing costs at the same time. As institutional pressure for reform has built, public outcry has often called both for repealing a measure and treating it as sacred at the same time. Reform then oscillates between adding new procedures and stripping out protections, with no reliable model of which steps cause delay and which produce public value.
+
+## The proposal
+
+This proposal is designed to treat this regulatory environment for what it is: critical civilizational software. It deploys modern tool stacks – machine-readable and version-controlled repositories of every federal, state, and local regulation. Just like modern software systems, this structure allows for surfacing dependencies, jurisdictional overlaps, and redundancies, and for mapping construction timelines against these frameworks. Whenever regulation changes are proposed, it can test them in "sandbox environments" – test corridors where performance, throughput, and outcomes (be that construction timelines, environmental standards, or building standards) are measured against counterfactuals.
+
+The goal is a regulatory system that can be read, updated, and evaluated against its original purpose in real time, and a society where uncompromising clean air standards, water standards, building codes, and safety requirements can be maintained without the structural paralysis that makes it impossible for industry to function. 
 
 ## The demonstrated architecture
 
-The [GovOps technical brief](../samples/Operating-System/govops-rmc-tech-layer.md) proposes a dual-schema architecture.
+The [GovOps technical brief](../samples/Operating-System/govops-rmc-tech-layer.md) proposes a dual-schema architecture for explicitly tying legal prose to the operational workflows that it creates. The two schemas are as follows:
 
-### Legal schema
+### The Legal schema
 
-The legal schema preserves the authoritative structure of law:
+The legal schema preserves the authoritative structure of law using modern version-control software. The improvements that this provides are:
 
-- jurisdiction;
-- citation and effective date;
-- responsible authority;
-- obligations and permissions;
-- amendment history;
-- dependencies on other provisions; and
+- Explicit jurisdiction boundaries based on person and location
+- Citation and effective date
+- Line-by-line ownership by lawmakers
+- amendment history
+- dependencies on other provisions and
 - the conditions under which a provision applies.
 
-Its purpose is traceability. A workflow step must be resolvable to the legal authority that creates or constrains it.
+The purpose of this schema is traceability -- giving people explicit visibility into the line-by-line legal landscape that lawmakers produce. Which can then be audited and compared against campaign donations, grey-area gifts, and lobbying talks. From there, each line item becomes resolvable both to the legal authority that creates or constrains it, and tied via foreign key relationship to the second schema. 
 
 ### Workflow schema
 
-The workflow schema represents implementation:
+The purpose of the workflow schema is to expose the operational consequences of legal text. Every line item from the first schema is explicitly tied to the implementation sequence it creates, with: 
 
-- triggering event;
-- responsible actor;
-- required input;
-- decision rule;
-- permissible sequence or concurrency;
-- expected and observed duration;
-- output;
-- appeal or exception path; and
-- connection to the next step.
+- Temporal procedural steps (with permissible concurrencies mapped) 
+- Responsible actor for each step (including agency, department, position) 
+- Decision rule for progression
+- Expected and observed step duration
+- Output (including input documents or process starts for the next step) 
+- Appeal or exception path (if the step constitutes a veto-point)
+- Cost to implement (permitting fees, etc.) 
 
-The schema does not replace legal text. It exposes the operational consequences of that text.
+The purpose of this schema is to exposes the operational consequences of every legal procedure.
 
 ### The connection between them
 
@@ -66,7 +69,7 @@ That permits questions such as:
 - Can independent stages run concurrently without changing substantive standards?
 - Which delays are legally required, and which arise from staffing or coordination?
 
-> **Suggested figure:** Reuse Figure 3 from the GovOps brief: statutory clauses on the left, workflow stages on the right, with traceability links between them.
+![Figure 1](./)
 
 ## Cross-jurisdictional comparison
 
@@ -76,7 +79,7 @@ The dual schema makes those differences comparable at the level of function rath
 
 ## The efficient frontier
 
-The GovOps model plots implementation burden against a Protective Outcomes Index. The relevant comparison is not simply “more regulation” versus “less regulation.” It is whether an observed process is dominated by another process that already achieves equal or better protection with lower implementation cost.
+The GovOps model plots implementation burden against a Protective Outcomes Index. The relevant comparison is not simply "more regulation" versus "less regulation." It is whether an observed process is dominated by another process that already achieves equal or better protection with lower implementation cost.
 
 This reframes regulatory modernization:
 
