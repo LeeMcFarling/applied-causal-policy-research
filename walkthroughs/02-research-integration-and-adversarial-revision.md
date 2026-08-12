@@ -8,7 +8,7 @@ status: Rough Draft
 
 ## The idea in one sentence
 
-Research should not merely supply citations after a policy has been written; it should challenge the policy's mechanisms, expose unsupported assumptions, document disagreements, and produce a traceable revision record.
+What if we utilized the machine-readable nature of a policy platform, along with modern technology to pull relevant research and case studies, and then use them for an adversarial review of our platforms assumptions before going public, in an automated fashion? 
 
 > **What this is:** A worked example of a source moving through ingestion, adversarial review, independent grading, and policy revision.
 >
@@ -16,20 +16,27 @@ Research should not merely supply citations after a policy has been written; it 
 
 ## The problem
 
-Policy documents often use research selectively. Evidence that supports the preferred proposal is cited, while evidence that complicates it is softened, omitted, or treated as irrelevant. Even good-faith research synthesis can reproduce the assumptions of the team that commissioned it.
+Policy documents (and policy debates) often use research selectively. Evidence that supports the preferred proposal is cited, while evidence that complicates it is softened, omitted, or treated as irrelevant. This creates problems when the platform eventually makes contact with the media and the electorate it is supposed to serve. Furthermore, even good-faith review can reproduce the assumptions of the team that commissioned it, and might still leave gaps accordingly. 
 
-This creates several recurring failures:
+This section asks a different question. What if we utilized the machine readable nature of a platform, and then conducted an adversarial review using every case study and piece of relevant research we could get our hands on? Such a platform could take relevant critiques, and adapt itself to that criticism, or (if critiques are rebutted) proceed in a self-aware manner -- with receipts. 
+
+In this regard, research should not merely supply citations after a policy has been written, it should fundamentally challenge the policy's mechanisms, expose unsupported assumptions, document disagreements, and produce a traceable revision record. Like simulating how a bridge holds up in a hurricane, this review serves to make the platform stronger -- with evidence and receipts -- before it ever makes contact with the media. 
+
+The specific failures this process is built to avoid are:
 
 - correlation is described as causation;
-- evidence for one intervention is generalized to a much larger program;
-- silence is mistaken for contradiction—or for support;
+- evidence for one intervention is generalized to a much larger program
+- evidence for one intervention is generalized towards an adjacent intervention that the evidence does not actually support;
+- silence is mistaken for contradiction -- or for support;
 - disagreements are buried rather than recorded;
-- policy changes cannot be traced back to the evidence that caused them; and
+- policy changes cannot be traced back to the evidence that caused them
 - reviewers evaluate whether a document sounds persuasive rather than whether its inferences are disciplined.
 
-The research-integration workflow is designed to make those failures visible.
+The research-integration workflow is designed to make those failures visible. Instead of designing a bridge for ideal conditions, we do the stress testing up front, so we have a log of design changes and receipts long before the infrastructure gets built. 
 
 ## The demonstrated workflow
+
+[Figure 1]
 
 The included example follows one research source through four artifacts:
 
@@ -88,6 +95,7 @@ The [revised community-stabilization brief](../samples/Policy_Domains/Housing_an
 
 The point is not that these are necessarily the correct final choices. The point is that a reader can follow the reasoning from research finding to design decision.
 
+[figure 2]
 > **Suggested figure:** A four-column evidence chain. Under each artifact, show one representative output: source claim, adversarial qualification, grading comment, and resulting brief revision.
 
 ## What this demonstration establishes
