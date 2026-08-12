@@ -96,7 +96,7 @@ The included housing extracts show multiple levels of the architecture:
 
 NOTE: The references to policies not included in this public extract are intentionally preserved. They show that the visible briefs were removed from a larger relational system rather than written as isolated portfolio pieces.
 
-[Figure 1](./figures/machine-readable-dependency-walkthrough-example.png)
+![Figure 1](./figures/machine-readable-dependency-walkthrough-example.png)
 
 > **Figure 1: Dependencies in the Housing Domain are preserved**”
 
