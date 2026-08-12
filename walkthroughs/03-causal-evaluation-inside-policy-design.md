@@ -96,18 +96,20 @@ Even the most carefully designed policy interventions can fail because the evalu
 
 In this example, independent researchers and review panels assess the design and the evidence. A dual-key architecture design is implemented to ensure that local Universities and Independent agencies both approve a result, so that evidence toward the contrary is generated when either is compromised. That being said, they do not make the final democratic decision. Evidence establishes whether a proposal cleared its predefined test; elected or otherwise authorized institutions decide whether it becomes permanent policy.
 
-> **Suggested figure:** A horizontal lifecycle: Design → Pre-register → Match → Pilot → Measure → Independent review → Scale / Revise / Stop. Show feedback arrows from “Revise” to “Design.”
+![Figure 1](./figures/figure-1-causal-evaluation.png
+)
+> **Figure 1:** A horizontal policy proposal lifecycle based on this framework.
 
 ## What this demonstration establishes
 
 The wage pilot shows that causal inference can shape policy language before enactment. It demonstrates how a proposal can define:
 
-- a treatment;
-- a comparison strategy;
-- pre-treatment baselines;
-- outcome and implementation measures;
-- independent review;
-- evidence gates; and
+- a treatment
+- a comparison strategy
+- pre-treatment baselines
+- outcome and implementation measures
+- independent review
+- evidence gates
 - explicit scale, revision, and sunset paths.
 
 ## What it does not establish
