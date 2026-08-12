@@ -93,7 +93,8 @@ This reframes regulatory modernization:
 
 The Protective Outcomes Index would itself require transparent construction, domain expertise, sensitivity analysis, and democratic scrutiny. The demonstration provides the comparison architecture, not a universal definition of protection.
 
-![Figure 3](//samples/Operating-System/figures/figure-5-efficient-frontier.png)
+![Figure 3](/samples/Operating-System/figures/figure-5-efficient-frontier.png)
+
 > **Figure 3:** Here we see an efficient frontier modeling of the time-to-completion on the x-axis and the relative protective outcomes modeled on the y-axis. While the efficient frontier concept is borrowed from the finance industry, here it is applied to find the maximally efficient combination of regulatory legal text to balance protective outcomes and permitting throughput. 
 
 ## Operational observability
