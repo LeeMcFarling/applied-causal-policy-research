@@ -10,9 +10,8 @@ status: Rough Draft
 
 A policy platform can be maintained more like a complex engineered system: each proposal has a stable identity, declares its relationships to other proposals, advances through explicit maturity gates, and contributes to a continuously updated picture of the whole.
 
-> **What this is:** A demonstration of repository structure and policy-development workflow.
->
-> **What this is not:** A recommendation that another team adopt the policies contained in the source platform.
+> **What this is:** A demonstration of the proposed repository structure applied to a policy-development workflow.
+
 
 ## The problem
 
