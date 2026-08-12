@@ -96,10 +96,6 @@ Even the most carefully designed policy interventions can fail because the evalu
 
 In this example, independent researchers and review panels assess the design and the evidence. A dual-key architecture design is implemented to ensure that local Universities and Independent agencies both approve a result, so that evidence toward the contrary is generated when either is compromised. That being said, they do not make the final democratic decision. Evidence establishes whether a proposal cleared its predefined test; elected or otherwise authorized institutions decide whether it becomes permanent policy.
 
-![Figure 1](./figures/figure-1-causal-evaluation.png
-)
-> **Figure 1:** A horizontal policy proposal lifecycle based on this framework.
-
 ## What this demonstration establishes
 
 The wage pilot shows that causal inference can shape policy language before enactment. It demonstrates how a proposal can define:
@@ -112,23 +108,26 @@ The wage pilot shows that causal inference can shape policy language before enac
 - evidence gates
 - explicit scale, revision, and sunset paths.
 
-## What it does not establish
+  ![Figure 1](./figures/figure-1-causal-evaluation.png)
+> **Figure 1:** A horizontal policy proposal lifecycle based on this framework.
 
-The draft does not prove that the proposed wage intervention will succeed. A design written on paper may still confront spillovers, political selection, noncompliance, insufficient sample size, measurement error, or weak external validity.
+## What this does not establish
 
-Nor should every public decision be reduced to a single estimated treatment effect. Distribution, rights, democratic commitments, and implementation feasibility remain substantive considerations.
+The wage-floor pilot does not prove that the proposed wage intervention will succeed. Furthermore, this process does not guarantee policy success -- any design written on paper may still confront spillovers, political selection, noncompliance, insufficient sample size, measurement error, or weak external validity. Nor should every public decision be reduced to a single estimated treatment effect. Distribution, rights, democratic commitments, and implementation feasibility remain substantive considerations.
+
+This framework meerly suggests a method for writing policy to overcome common failures, independently evaluating that policy, and then scaling or sunsetting that policy based on the demonstrated results. 
 
 ## What a future team owns
 
 A future team would decide:
 
-- the intervention and affected population;
-- the ethically and legally permissible assignment method;
-- primary and secondary outcomes;
-- minimum detectable and substantively meaningful effects;
-- harm thresholds and stopping rules;
-- evaluation independence and data access;
-- the authority attached to an evaluation result; and
+- the intervention and affected population
+- the ethically and legally permissible assignment method
+- primary and secondary outcomes
+- minimum detectable and substantively meaningful effects
+- harm thresholds and stopping rules
+- evaluation independence and data access
+- the authority attached to an evaluation result
 - whether the evidence supports scaling in a different context.
 
 The reusable principle is simple: decide how the policy will learn before asking the public to live with it at scale.
