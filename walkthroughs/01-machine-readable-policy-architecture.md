@@ -98,7 +98,7 @@ NOTE: The references to policies not included in this public extract are intenti
 
 ![Figure 1](./figures/machine-readable-dependency-walkthrough-example.png)
 
-> **Figure 1: Dependencies in the Housing Domain are preserved**”
+> **Figure 1: Dependencies in the Housing Domain are preserved** This figure shows a visual representation of how relevent information and dependencies may connect a document to others, and yet ignore documents that are not implicated. 
 
 ## What this demonstration establishes
 
@@ -128,7 +128,7 @@ A future team would decide:
 - how disagreements and exceptions are recorded; and
 - which automated checks should block publication or implementation.
 
-The reusable idea is not this platform's answers. It is the ability to make a large body of policy work coherent, inspectable, and maintainable.
+The policies used as an example in this platform are not the primary object, rather it is the method for organizing those policies -- using machine-readable documentation to make a large body of policy work coherent, inspectable, and maintainable.
 
 ## Underlying evidence
 
