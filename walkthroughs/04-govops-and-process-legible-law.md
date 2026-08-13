@@ -1,7 +1,5 @@
 ---
 title: "Walkthrough 4: GovOps and Process-Legible Law"
-subtitle: "Connecting legal authority to the workflows government creates"
-status: Rough Draft
 ---
 
 # GovOps and Process-Legible Law

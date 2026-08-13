@@ -1,7 +1,5 @@
 ---
 title: "Walkthrough 1: Machine-Readable Policy Architecture"
-subtitle: "From a collection of proposals to a coherent, queryable system"
-status: Rough Draft
 ---
 
 # Machine-Readable Policy Architecture

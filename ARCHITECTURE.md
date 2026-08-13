@@ -192,7 +192,7 @@ This repository contains enough material to inspect four capabilities:
 3. causal evaluation embedded in a policy pilot; and
 4. legal/workflow representation through GovOps.
 
-The complete private platform contains approximately 313 briefs across 18 policy domains. Consequently:
+This architecture was developed and stress-tested across a private platform considerably larger than what's shown here. Consequently:
 
 - some dependency IDs point to briefs not included here;
 - some trackers summarize areas whose underlying files are private;

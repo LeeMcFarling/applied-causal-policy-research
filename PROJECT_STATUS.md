@@ -1,10 +1,9 @@
 # Policy Repository Status Report [Sample Metric Overview generated from 'Maturity Scan' script]
 
 **Generated:** 2026-08-02
-**Complete Private Platform:** 16 policy domains within a 4-layer architecture
 **Rows in the Sample Matrix Below:** 19 tracked areas — 16 policy domains and 3 cross-cutting layers
-**Total Policy Files:** ~113
-**Estimated Total Words:** ~200,000
+**Total Policy Files (this sample):** ~113
+**Estimated Total Words (this sample):** ~200,000
 **Phase Model:** 10-phase (0–9) — see YAML_FRONTMATTER_GUIDE.md for gate conditions
 
 ---
@@ -45,7 +44,7 @@ The demonstrated architecture is organized in four layers. L1–L3 are cross-cut
 
 ## Executive Summary [SAMPLE OVERVIEW]
 
-The complete private platform has grown to **~113 files across 16 policy domains**, totaling approximately 200,000 words. The illustrative matrix below reproduces 16 of those policy-domain rows and also includes the three cross-cutting layers—Operating System, Infrastructure, and Foundations—for a total of 19 displayed rows. Most represented areas are at Phase 2 (Architecture & Decision Rules): mechanisms are specified and internally consistent but have not yet been fully stress-tested against outside research. Labor and Healthcare are furthest along, at Phase 4–5 and Phase 4 respectively (implementation-design stage).
+This illustrative matrix totals **~113 files across 16 policy-domain rows**, plus the three cross-cutting layers—Operating System, Infrastructure, and Foundations—for 19 displayed rows in all, totaling approximately 200,000 words. The private platform this method was developed on is considerably larger. Most represented areas are at Phase 2 (Architecture & Decision Rules): mechanisms are specified and internally consistent but have not yet been fully stress-tested against outside research. Labor and Healthcare are furthest along, at Phase 4–5 and Phase 4 respectively (implementation-design stage).
 
 ---
 

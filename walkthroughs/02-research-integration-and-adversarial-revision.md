@@ -1,7 +1,5 @@
 ---
 title: "Walkthrough 2: Research Integration and Adversarial Revision"
-subtitle: "Turning outside evidence into traceable policy changes"
-status: Rough Draft
 ---
 
 # Research Integration and Adversarial Revision

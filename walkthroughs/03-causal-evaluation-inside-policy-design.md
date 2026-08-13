@@ -1,7 +1,5 @@
 ---
 title: "Walkthrough 3: Causal Evaluation Inside Policy Design"
-subtitle: "Designing a policy to learn before it scales"
-status: Rough Draft
 ---
 
 # Causal Evaluation Inside Policy Design
