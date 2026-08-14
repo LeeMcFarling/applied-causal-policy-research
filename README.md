@@ -1,6 +1,6 @@
 # Applied Causal Policy Research Architecture
 
-**Policy proposals and regulations are usually written as standalone documents. What becomes possible when we treat them instead as connected, testable, and revisable parts of a larger system? More technically, this repository demonstrates a machine-readable policy-development architecture linking dependency analysis, adversarial research review, causal evaluation, and administrative workflow modeling.**
+**Policy proposals and regulations are usually written as standalone documents. What becomes possible when we treat them more like code instead? Connected, testable, and revisable parts of a larger system? More technically, this repository demonstrates a machine-readable policy-development architecture linking dependency analysis, adversarial research review, causal evaluation, and administrative workflow modeling.**
 
 
 | Capability | The question it answers | Guided walkthrough |
