@@ -1,6 +1,8 @@
 # Applied Causal Policy Research Architecture
 
-**Policy proposals and regulations are usually written as standalone documents. What becomes possible when we treat them more like code instead? Connected, testable, and revisable parts of a larger system? More technically, this repository demonstrates a machine-readable policy-development architecture linking dependency analysis, adversarial research review, causal evaluation, and administrative workflow modeling.**
+**While policy proposals and regulations are usually written as standalone documents responding to specific problems, the systems that they are deployed into, interact with, and the broader regulatory environment that they collectively create are anything but.** 
+
+**This repository instead asks what becomes possible when we use software engineering techniques to treat policy proposals and regulations as connected, testable, and revisable parts of a larger system. Furthermore, this project demonstrates how a machine-readable policy development architecture could be used to enable dependency analysis, adversarial research reviews, causal analysis, and administrative workflow modeling.**
 
 
 | Capability | The question it answers | Guided walkthrough |
@@ -15,15 +17,15 @@
 
 The policy examples are therefore illustrative. The reusable product is the methodology, not the particular housing, wage, or regulatory positions contained in the samples. A future team would use the architecture to develop its own priorities, safeguards, implementation choices, and final recommendations.
 
-## A 90-Second Tour
+## The 10-minute Tour: 
 
-1. **See the system:** Open the [architecture reference](./ARCHITECTURE.md) to see how Markdown briefs become linked policy objects through YAML metadata, stable IDs, dependencies, audience tags, and phase gates.
-2. **See the portfolio view:** Scan the [sample project status report](./PROJECT_STATUS.md) to see how the architectural structure enables maturity matrices and gap analysis.
-3. **See evidence change a policy:** Follow one source through an [adversarial review](./research-library/reviews/community-stabilization-violence-research-review.md), an [independent grading receipt](./research-library/reviews/validation/community-stabilization-violence-research-review-grading.md), and the [revised brief](./samples/Policy_Domains/Housing_and_Public_Infrastructure/community-stabilization-framework.md).
-4. **See evaluation written into policy:** Open the [regional wage pilot](./samples/Policy_Domains/labor-and-economic-security/regional-wage-modernization-pilot.md) and jump to “Econometric Evaluation” and “Evaluation Gates.”
-5. **See law mapped to operations:** Browse the [rendered GovOps brief](./samples/Operating-System/GovOps-RMC-tech-layer.pdf) for the legal/workflow schema, cross-jurisdictional comparison, and regulatory sandbox design.
+1. **How the System Works:** Open the [architecture reference](./ARCHITECTURE.md) to see how policy briefs are structured as markdown documents and linked to each other through YAML metadata to enable database level mechanics. This YAML frontmatter includes: Stable IDs, dependencies, audience tags, and phase gates, and so on. 
+2. **Portfolio Level Analysis:** The [sample project status report](./PROJECT_STATUS.md) demonstrates how the database structure enables automated gap and maturity analysis using codebase software. 
+3. **Retrieval Augmented Generation (RAG) Assisted Adversarial Review:** Policies should be compared against the latest research from Think Tanks, Universities, and other organizations. This platform allows this process to occur systematically by giving users a folder to ingest research along with scripts to process that research and generate an adversarial review including the Chicago Style references of the provided research, along with alignment, divergences, gaps, scope differences, and so on with page references between the documents. As an example, follow this [adversarial review](./research-library/reviews/community-stabilization-violence-research-review.md) of a policy proposal, along with an [independent grading receipt](./research-library/reviews/validation/community-stabilization-violence-research-review-grading.md) using LLM-as-judge methods, and a [revised brief](./samples/Policy_Domains/Housing_and_Public_Infrastructure/community-stabilization-framework.md) that resulted from the review.
+4. **Scientific Method - for Public Policy:** To see how causal evaluation frameworks can be written into the structure of a policy itself [regional wage pilot](./samples/Policy_Domains/labor-and-economic-security/regional-wage-modernization-pilot.md) with econometric evaluation and pre-written scale, or sunset criteria to mitigate the common flaw of promising pilots not scaling, or poorly-performing policies sticking around long after they've been disproven. 
+5. **The System Applied: How to Map Regulations to the Operations they Produce:** Browse the [rendered GovOps brief](./samples/Operating-System/GovOps-RMC-tech-layer.pdf) for how the YAML metadata linkage above can be applied to regulatory environments with a dual-schema to enable efficiency comparisson between states, optimization, and regulatory sandbox design.
 
-For a narrative introduction, start with the [four walkthroughs](./walkthroughs/README.md). For implementation detail, follow their links into the underlying metadata, briefs, research receipts, trackers, scripts, and figures.
+Each capability above has it's own narrative walkthrough that describes how it works in detail. For more information, click [four walkthroughs](./walkthroughs/README.md). 
 
 ## Why This Exists
 
