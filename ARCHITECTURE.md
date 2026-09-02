@@ -2,24 +2,23 @@
 
 ## Purpose
 
-This document describes the technical and organizational architecture demonstrated by this repository. The system is designed to help a policy team maintain a large body of work as a coherent, inspectable, and revisable whole.
+This document describes the technical architecture used to organize documents in this repository. The broader purpose of this design is to help policy teams maintain a large body of work as a coherent whole. 
 
-The included briefs are extracts from a larger private platform. Their policy content is illustrative. A future team would determine its own priorities, substantive positions, safeguards, and implementation choices. The reusable subject of this document is the development method.
+The included briefs are extracts from a larger private platform, and the policies presented are meant to illustrate the structure instead of advocating for any policy in particular. The methodology of how those documents are prepared, and stored is the reusable piece of this architecture. 
 
 ## Design Goals
 
-The architecture is intended to make several questions answerable across a large policy portfolio:
+The architecture is intended to enable a stakeholder to answer the following questions quickly: 
 
 - What does each proposal depend on?
-- Which proposals or institutions must be developed first?
-- Where do different domains interact or conflict?
-- Which audiences are affected?
-- How mature is each proposal, and what prevents it from advancing?
-- What outside evidence supports, qualifies, or contradicts its mechanisms?
-- How will implementation generate credible evidence?
+- Which institutions does this policy depend on for implementation? 
+- Where do different domains interact or conflict with each other?
+- How does this policy affect different segments of the electorate? 
+- How mature is each proposal in our Healthcare domain? What is preventing us from advancing? 
+- What outside evidence supports our claims? Is there evidence that contradicts our policies? 
 - What result would cause a proposal to scale, change, or stop?
 
-The repository supports those questions through structured policy objects, explicit relationships, maturity gates, research receipts, and evaluation requirements.
+The repository architecture enables this by structuring each policy in a standardized manner, linking them together with foreign keys, organizing them in a broader structured repository, and including scripts for automated maturity tracking, etc. 
 
 ## Four-Layer Model
 
