@@ -1,4 +1,4 @@
----
+    ---
 id: regional-wage-modernization-pilot
 title: Regional Wage Modernization Pilot
 sidebar_label: Regional Wage Pilot

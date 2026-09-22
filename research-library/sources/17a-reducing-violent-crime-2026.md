@@ -1,53 +1,1262 @@
 ---
 citation-key: 17a-reducing-violent-crime-2026
-institution: 17A
 chicago: "Eichenbaum, Joe. *Reducing Violent Crime Without New Budget, New Staff, or More Arrests: A Pragmatic Guide for City Leaders*. New York: 17A, February 2026."
 url: TBD
-accessed: 2026-08-04
-topics:
-  - community-stabilization
-  - violent-crime
-  - environmental-intervention
-  - place-based-strategy
-  - coordination
-briefs:
-  - community-stabilization-framework
-  - violence-interruption-youth-off-ramps
-  - homelessness-prevention-automatic-stabilizer
-  - built-environment-community-anchors
-  - land-use-stabilization-inclusive-growth
-phase-3-review: research-library/reviews/community-stabilization-violence-research-review.md
+accessed: 2026-09-16
 ---
 
 ## Citation
 
 Eichenbaum, Joe. *Reducing Violent Crime Without New Budget, New Staff, or More Arrests: A Pragmatic Guide for City Leaders*. New York: 17A, February 2026.
 
-**Contributors:** Martin O'Malley (Senior Strategic Advisor, 17A; former Mayor of Baltimore 1999–2007, Governor of Maryland 2007–2015)
-
-**Core empirical claims:**
-- Across 9 cities analyzed, 3–5% of city geography accounts for 20% of all violent crime ("law of crime concentration," Weisburd 2015)
-- In a typical city, 1/3 to 1/2 of highest-crime micro-areas are different from one year to the next — concentration churns substantially
-- 90% of city geography is stable year-over-year; improvement outpaces deterioration nearly 5:1
-- Places trending in the wrong direction represent just 1–3% of city geography at any given time — roughly 20–30 half-mile areas in a typical city
-- Greening vacant lots reduces nearby gun violence by 29% (Branas et al., 2018, Philadelphia RCT)
-- Improved street lighting cuts outdoor nighttime crime by 39% (Chalfin et al., 2021, NYC public housing)
-- Dallas 2024–2025 coordinated intervention: middle-tier areas declined 8% vs. comparable non-intervention areas that were flat; highest-risk areas saw less than half the crime increase of non-intervention areas; homicide gaps were even larger
-
-**Key methodological note:** The Dallas analysis is not a randomized controlled trial. Intervention areas were selected because they had high crime and conditions amenable to environmental intervention. The intervention effect is statistically significant in the middle concentration tier (Poisson-based methods); not statistically significant in the highest- and lowest-risk tiers due to small sample sizes.
-
-**What this paper is and isn't:** This is explicitly a "what can city leaders do with existing resources" document — not a structural reform document. It does not evaluate long-term housing, workforce, or behavioral health interventions; it explicitly notes these "matter immensely but are slow, expensive, or politically contentious."
-
 ---
 
 ## Content
 
-[Full text extracted from PDF — see source file for complete content]
+<!-- Page 1 -->
+Reducing Violent Crime
+Without New Budget, New
+Staff, or More Arrests
+APragmaticGuideforCityLeaders
+JoeEichenbaum,Partner
+17A
+February2026
 
-Key sections:
-1. Executive Summary (p. 3)
-2. Where Violence Is, and How It Moves (p. 5) — concentration data, churn analysis, 9-city comparison
-3. What City Leaders Can Do: Environmental Interventions (p. 11) — evidence base, agency roles, targeting and coordination gaps
-4. Case Study: Coordinated Action in Dallas (p. 13) — weekly targeting, cross-agency coordination, outcome results
-5. Getting Started: A Practical Roadmap (p. 18) — 90-day launch, what you need vs. don't need, common pitfalls
-6. Appendices — definitions, national crime trends data, concentration methodology, multi-city analysis, Dallas intervention results, statistical significance testing
+<!-- Page 2 -->
+Contents
+1. ExecutiveSummary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2. WhereViolenceIs,andHowItMoves . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+3. WhatCityLeadersCanDo: EnvironmentalInterventions . . . . . . . . . . . . . . . 11
+4. CaseStudy: CoordinatedActioninDallas . . . . . . . . . . . . . . . . . . . . . . . . . 13
+5. GettingStarted: APracticalRoadmap. . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+Appendix . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+2
+
+<!-- Page 3 -->
+17A
+1. Executive Summary
+Violentcrimeconcentratesgeographically,andtheconcentrationisextreme. Acrossninecitiesana‑
+lyzedforthispaper,roughly3–5%ofcitygeographyaccountsfor20%ofallviolentcrime.Thepattern
+holdseverywhere: asmallnumberofplacescarryavastlydisproportionateshareofviolence. Code
+violations,311complaints,andillegaldumpingclusterinmuchofthesameterritory.Forresidentsin
+theseareas,citywidestatisticsshowingdecliningcrimecanfeelmeaningless,andthey’rerighttosay
+so.
+Violent crime’s geographic concentration is not static. It shifts substantially from year to year. The
+measuredconcentrationchurns: inatypicalcity,athirdtohalfofthehighest‑crimemicro‑areasare
+differentfromoneyeartothenext. Someofthatturnoverreflectsgenuineshiftsinconditions—a
+corridordeteriorates,aproblempropertyattractsactivity.Someofitreflectstheinherentvolatilityof
+small‑numbercrimedata,whereahandfulofadditionalincidentscanpushaneighborhoodacrossa
+threshold. Butfromthestandpointofacitytryingtodirectresources,thedistinctiondoesn’tmatter
+much. Eitherway,lastyear’sprioritylistiswrong. Thegeographythatshowsupinyourdatamoves,
+andyourresponsehastomovewithit.
+Thegoodnews: thebroadtrendisfavorable,andtherealtargetissmall. Violentcrimeisdeclining
+nationallyandinmostcities,includinginchronicallyhigh‑crimeneighborhoods. Acrossninecities,
+roughly90%ofgeographyisstablefromyeartoyear,andwherecrimeisgenuinelyshifting,improve‑
+mentoutpacesdeteriorationbynearlyfivetoone. Theplacestrendinginthewrongdirectionrepre‑
+sentjust1–3%ofcitygeographyinanygivenyear—roughly20to30half‑mileareasinatypicalcity.
+That’snotanoverwhelmingproblem.It’salistthatfitsonasinglepage.Buteachofthoseareas,once
+you’reontheground,containsdozensofspecificproblemsatspecificaddresses,eachoneownedby
+adifferentcitydepartment.Thetargetingtellsyouwheretolook.Theharderpartiscoordinatingthe
+response: gettingtherightagenciestotherightaddresses,trackingfollow‑through,andsustaining
+engagementovertime.
+Citiescanrespondrapidlyusingcapacitytheyalreadyhave.Environmentalinterventions—cleaning
+vacantlots,fixingstreetlights,citingblightedproperties,removingillegaldumping—canbedirected
+tospecificblockswithinweeksandredirectedasconditionsshift. Thedepartmentsthatdeliverthis
+work—codeenforcement,sanitation,publicworks,parks—alreadyexist,alreadyhavestaffandbud‑
+gets,andalreadydothisworkeveryday. Whattheytypicallylackisasystemthattellsthemwhereit
+mattersmostthisweek. Policingreformandlarge‑scalesocialprogramsmatterimmenselybutare
+slow,expensive,orpoliticallycontentious.Environmentalinterventionsoccupyadifferentspace:fast,
+adaptive,anddeliverablewithexistingresources. Andbecausegeographicconcentrationcharacter‑
+izesnotjustviolencebutalso311requests, codeviolations, andotherindicatorsofneighborhood
+distress,thesamecoordinationmodelservesmultiplecityprioritiesatonce.
+Theseinterventionswork,andtheyworkbestwhenpairedwithaback‑officeenginethatkeepsthem
+targeted. Randomizedtrialshaveshownthatgreeningvacantlotsreducesnearbygunviolenceby
+3
+
+<!-- Page 4 -->
+17A
+29%andthatimprovedstreetlightingcutsoutdoornighttimecrimeby39%. Buttheevidencealso
+suggeststhatisolated,one‑offdeploymentslosetheireffect. Whatsustainsimpactisacoordination
+system that combines data‑driven targeting with operational follow‑through: identifying the small
+numberofplacestrendingthewrongway,assigningtherightagencies,andretargetingasconditions
+shift. Inourownlocalgovernmentpublicsafetywork,wehaveseenfirsthandhowthiscoordinated
+approachgetsresults. ThisisespeciallytrueinDallas. In2024–2025,thecitydeployedcoordinated
+environmentalinterventionsacrossdepartments, retargetingweekly. Ateveryrisklevel, areasthat
+receivedinterventionoutperformedcomparableareasthatdidnot—andtheeffectwasstrongestin
+areasatthetippingpointbetweenstabilityandescalation.Section4presentsthefullcasestudy.
+Anycitycanstartin90dayswithexistingstaffanddata.Thisapproachdoesnotrequirenewprograms,
+newhires,ornewfunding. Itrequiresacoordinator,ashortlistofprioritylocationsdrawnfromfre‑
+quentlyupdateddata,andacommitmenttoregularcross‑agencymeetings. Citiesthatsustainthis
+worktreatitasanoperatingrhythm—notaone‑timecampaign.Thegoalisnotasingleprogrambut
+awayofdirectingcitygovernmenttowardwhereverconcentratedneedemerges, adaptingasthat
+geographyshifts.
+4
+
+<!-- Page 5 -->
+17A
+2. Where Violence Is, and How It Moves
+Violentcrimedevastatesindividuals,families,andcommunities. Beyondthedirectharmtovictims,
+persistentviolenceerodestrustingovernmentandmakesfutureviolencemorelikely. Whereviolent
+crimeiscommonandsustained,thefailuretoreduceitiswidelyperceivedasafailureofgovernment
+itself.
+Understandingwhereviolenceconcentrates,andhowthatconcentrationchangesovertime,isthe
+foundationforanyplace‑basedstrategy.
+Thebroaddeclineisreal
+Onaverage,Americanstodayareroughlyhalfaslikelytobethevictimofaviolentcrimeastheywerein
+theearly1990s.Thisdeclineisoneofthemostsignificantandundercelebratedpublicsafetyachieve‑
+ments of the last fifty years. After a sharp spike during the COVID‑19 pandemic (homicides surged
+roughly30%in2020),violentcrimehasresumeditsdownwardtrajectory.By2025,nationalhomicide
+rateshadfallenbelowpre‑pandemiclevelstotheirlowestpointinoversixtyyears.
+Thisisn’tjustanationalaverage.Eightofninecitiesanalyzedforthispapersawviolentcrimedecline
+from2024to2025,withcitywidedropsrangingfrom3%to24%.
+5
+
+<!-- Page 6 -->
+17A
+Concentrationisdevastatingwhereitlands
+Butthatbroaddeclinecoexistswithawell‑documentedlocalreality:violentcrimeconcentratesgeo‑
+graphically.Whatcriminologistscallthe“lawofcrimeconcentration”—formalizedbyDavidWeisburd
+in2015—holdsthatasmallshareofplacesaccountsforadisproportionateshareofcrime. Astudy
+ofsixmajorU.S.citiesfoundthat3%to10%ofstreetsegmentsaccountedforhalfofallcrime.
+Thisconcentrationisextreme.InDallas,thegeographycontainingthetop20%ofviolentcrimerepre‑
+sentsjust3.4%ofthecity. InNewYork,2.5%. InDenver,1.6%. Forresidentslivingintheseareas,the
+nationaldeclinecanfeelinvisible.Thedangerisrealandthefrustrationislegitimate.
+FormerBaltimoreMayorandMarylandGovernor,andcurrent17ASeniorAdvisorMartinO’Malleysaw
+thisdynamicfirsthand. “WhenIwasmayorofBaltimore,I’dwalkneighborhoodswherethreeorfour
+shootingshad happened in a month, and someone would alwayssay, ‘They keep tellingus crime
+isgoingdown. Where?’” herecalls. “Theyweren’twrong. Citywidenumberswereimproving, but
+violencehadmovedontotheirblockthatyear,andthatwasallthatmatteredtothem.”
+What'sactuallychanging
+Thecommonassumptionisthatthesameneighborhoodsstaydangerousyearafteryearwhilethe
+restofthecityimproves.Thedatatellsadifferentstory.
+When you test whether year‑over‑year changes in each half‑mile area reflect an emerging trend —
+ratherthanthenormalupsanddownsyou’dexpectfromsmallnumbers—aclearpictureemerges
+acrosstencities.
+6
+
+<!-- Page 7 -->
+17A
+Thisiswhat“crimeisgoingdown”actuallylookslikeattheneighborhoodlevel. It’snotauniform
+declineeverywhere. Thereisbroadstabilityacrossmostofmostcities,concentratedimprovement
+inarelativelysmallnumberofplaces, andamuchsmallernumberofplacesmovinginthewrong
+direction. Thatlastgroup—the1–3%whereviolenceisescalating—iswheretargetedintervention
+canhavethegreatestimpact.
+7
+
+<!-- Page 8 -->
+17A
+Thereareexceptions.Denver’schronichotspotsworsenedevenasthecityoverallimproved.Atlanta’s
+worsenedalongsideacitywideincrease.Butthedominantpattern—insevenofninecities—isthat
+persistentlyhigh‑crimeareasaredeclining.Theyarenotbeingleftbehind.
+Therealpolicytargetissmall.Evenasoverallconcentrationpersists—roughly3–5%ofcitygeography
+continuestoaccountfor20%ofviolentcrime,yearafteryear—thespecificlocationsshift. InDallas,
+nearlyhalfofthecellsinthehighest‑concentrationtierin2025werenotinthattierin2024.Thisisnot
+aDallasanomaly. Acrossninecities, thegeographyofconcentrationreshufflessubstantiallyevery
+year—withyear‑over‑yearoverlapinthehighesttierrangingfromjust28%(Dallas)to79%(Denver).
+WheelerandReuter(2021)foundthesamepatternintheiranalysisofDallashotspots: traditionally
+definedboundariesfailtocapturehowconcentrationmovesovertime.
+8
+
+<!-- Page 9 -->
+17A
+Understandingthisrotationisimportant. Someofitreflectsrealshifts—acorridordeteriorates, a
+problempropertyattractsactivity, apreviouslystableareastartstrendingthewrongway. Someof
+itissimplythenatureofsmallnumbers: anareawith3violentcrimesoneyearand7thenextcan
+crossaconcentrationthresholdwithoutanythingfundamentalhavingchanged.Thestabilityanalysis
+helpsdistinguishbetweenthetwo.Whenyoufocusontheareaswherethechangeislargeenoughto
+indicateagenuinetrend,thepicturesharpensconsiderably:theplaceswhereviolenceisescalatingin
+agivenyearrepresentroughly1–3%ofcitygeography.InDallas,thatwas26half‑mileareas.That’snot
+9
+
+<!-- Page 10 -->
+17A
+anoverwhelmingproblem.That’salistthatfitsonasinglepage—andit’swheretargetedintervention
+candothemostgood.
+Whythismattersforcityleaders
+Thisreframesthechallenge.Thequestionforanewmayorordeputymayorisn’t“howdowefixevery
+high‑crimeneighborhood?” Mostofthecityisstable,chronichotspotsaregenerallyimproving,and
+thebroadtrendisyourally. Thequestionis: canyouidentifythesmallnumberofplaces—roughly
+20to30atanygiventime—whereviolenceisescalating,andcanyougettherefastenoughtomake
+adifference?
+That’snotaresourceproblem. It’sadetectionandcoordinationproblem. Youdon’tneednewpro‑
+grams, newstaff, ornewfundingtorespondto25locations. Youneedasystemthatcanspotthe
+emergingtroublespotsandredirectexistingcitycapacity—codeenforcement,publicworks,street‑
+lights,propertymaintenance—towardthoseplacesonarollingbasis. Andyouneedthatsystemto
+beadaptive,becausethelistwillchange.
+Thispattern—geographicconcentrationthatpersistsstructurallyevenasthespecificlocationsshift
+—isnotuniquetoviolentcrime. Citiesseesimilardynamicsin311servicerequests,codeviolations,
+illegaldumping complaints, and otherindicatorsof neighborhood distress. The placesgenerating
+themostservicedemandrotateovertime, evenastheoveralllevelofconcentrationstaysroughly
+constant. Violenceisthehighest‑stakesversionofamoregeneralphenomenon: cityresourcesneed
+tofollowshiftinggeographicneed,andmostcitiesaren’tsetuptodothat.Wefocusonviolenceinthis
+paperbecausetheconsequencesofgettingitwrongaremostsevereandthedataismostgranular—
+butthecoordinationmodeldescribedinSections4and6applieswhereverconcentratedneedmoves
+fasterthanthecity’sresponse.
+Thenextsectionexplainswhyenvironmentalinterventions—thekindofworkthosecitydepartments
+alreadydo—areeffectiveatreducingviolence. Thesectionafterthatshowshowonecitybuiltthe
+coordinationsystemtodeploythem.
+10
+
+<!-- Page 11 -->
+17A
+3. What City Leaders Can Do: Environmental Interventions
+Mostpublicsafetystrategiesfallintotwofamiliarcategories.Thefirstispolitical:policingreform,crim‑
+inaljusticepolicy,sentencingchanges. Thesedebatesareimportant,buttheyareslow,contentious,
+andoftenoutsidethedirectcontrolofcitygovernment.Thesecondisexpensive:housing,behavioral
+health,workforcedevelopment,large‑scalesocialprograms. Theseinvestmentsmatterimmensely,
+buttheyrequiresignificantnewresourcesandtakeyearstoshowresults.
+Thereisathirdcategorythatisneitherpoliticalnorexpensive: environmentalinterventions. These
+strategiesfocusonthephysicalconditionsofplaceswhereviolenceconcentrates,andcanoftenbe
+deployedquicklyusingexistingcitycapacity.
+Whattheresearchshows
+Environmentalinterventionsaddresswhatablockorcorridorlookslike, howitismaintained, and
+whatbehaviorsitenablesordiscourages.Asubstantialbodyofresearchshowsthatimprovingphysi‑
+calenvironmentsinhigh‑violencelocationscanmeaningfullyreducecrime:
+• A randomized controlled trial in Philadelphia found that cleaning and greening vacant lots re‑
+ducednearbygunviolenceby29%(Branasetal.,2018).
+• AstudyofNewYorkCitypublichousingfoundthatimprovedstreetlightingledtoa39%reduction
+inoutdoornighttimecrimes,includingviolentoffenses(Chalfinetal.,2021).
+• Additional studies show consistent benefits from graffiti removal, trash cleanup, and securing
+abandonedbuildings.
+These effects occur not simply because places look better, but because environmental conditions
+shape opportunity, visibility, and social norms. Well‑maintainedspaces arehardertouse for illicit
+activityandsignalthatsomeoneispayingattention.
+GovernorO’MalleydescribesasimilardynamicfromhistimeinBaltimore. “Residentsalwaysknew
+whichvacantlotwastheproblem,whichstreetlighthadbeenoutformonths. Whenthecityfinally
+showedupandaddressedthosethings,peoplenoticedovernight.You’dhearitatthenextcommunity
+meeting.Andtheguyswhohadbeenusingthatcornernoticedtoo.”
+Theagenciesthatcandeliver
+Thedepartmentsthatcanexecuteenvironmentalinterventionsalreadyexistineverycitygovernment.
+Theyalreadydothiswork,justnotnecessarilyintheplaceswhereitwouldhavethegreatestimpact
+onviolence.
+CodeEnforcementisoftentheanchoragency. Codeofficerscanissuecitations, conductproperty
+11
+
+<!-- Page 12 -->
+17A
+assessments,andpursuenuisanceabatementforpersistentlyproblematicaddresses.Theapproach
+mayvarydependingonthepropertyowner:alargeinstitutionallandlordwithapatternofneglectwar‑
+rantsadifferentenforcementposturethananelderlylongtimehomeownerwhomayneedsupport
+navigatingrepairs.
+Sanitationhandlestrashremovalandillegaldumpingcleanup, visiblesignsofdisorderthatshape
+howaspacefeelsandwhetheritattractsfurtherneglect.
+PublicWorksmaintainslighting,signage,andinfrastructure.Brokenstreetlightsandmissingsignage
+createopportunitiesforcrimeandsignalthatnooneiswatching.
+Transportationcaninstallbarriers,adjustsignaltiming,addcrosswalks,andimprovestreetsignage
+toimprovesafetyandvisibility.
+ParksandRecreationcangreenvacantland,maintainpublicspaces,andactivateunderusedareasto
+increaselegitimatefoottrafficandcommunitypresence.
+Thegaps: targetingandcoordination
+Theseagenciesalreadyhavestaff.Theyalreadyhavebudgets.Theyalreadydocleanups,inspections,
+andrepairseveryday.Whattheytypicallylackaretwothings:
+Targeting: A clear, data‑driven answer to the question: whichblocksshouldweprioritize? This re‑
+quirescombiningcrimedatawithlocalknowledge,identifyingnotjustwhereviolencehasoccurred
+butwhereconditionsareripestforittocontinue. Andbecausethegeographyofviolenceshiftsover
+time,targetingmustbeupdatedfrequentlyenoughtokeeppacewithchangingconditions.AsSection
+2describes,thenumberofareastrendinginthewrongdirectionatanygiventimeissmall,roughly20
+to30inatypicalcity.That’samanageablelist.Butit’sonlythefirstscaleoftheproblem.
+Coordination: Eachofthose20to30areas,onceyou’reontheground,containsdozensofspecific
+problemsatspecificaddresses:avacantlotthatneedsclearing,astreetlightthat’sbeenoutformonths,
+ablightedpropertythatneedsacodecitation,illegaldumpingthatneedscleanup,abusstopthat’s
+becomeagatheringpoint. Asinglecorridormightinvolvefourorfivedifferentdepartments. Thetar‑
+getingtellsyouwheretolook. Coordinationiswhatgetstherightagenciestotherightaddresses,
+trackswhethertheworkisactuallyhappening,andensuresrepeatengagementovertime. Without
+thatmanagementstructure,evenwell‑targetedeffortsfadeafterthefirstvisit.
+Whencityleadershipprovidesboth—clearprioritiesandastructuretoexecuteonthem—routinecity
+functionsbecomeacoordinatedresponsetotheplaceswheremultipleformsofneedconcentrate.
+Violencereductionisthehighest‑stakesapplication,butthesamecoordinationstructureaddresses
+blight,illegaldumping,lightingfailures,andthe311backlogsthateroderesidents’confidenceincity
+government.
+12
+
+<!-- Page 13 -->
+17A
+4. Case Study: Coordinated Action in Dallas
+In2024–2025,Dallastestedwhatthisapproachlookslikeinpractice. Thecity’sleadership,inclose
+partnership with Child Poverty Action Lab (“CPAL”), committed to treating violence reduction as a
+broaderqualityoflifeprobleminthecity.Cityleadersreframedviolentcrimeasacross‑agencycoordi‑
+nationproblem,notapolicingproblem,anddirecteddepartmentsthatshapephysicalenvironments
+towardtheplaceswhereviolencewasconcentrating.
+Theeffortwaspartofalong‑runningpartnershipbetweentheCityofDallasandCPAL.CPAL’sworking
+teambuiltananalyticalinfrastructurethatmadetargetingpossible,translateddataintooperational
+prioritiesonaweeklycycle,andkepttheworkaccountabletooutcomes.Citydepartments(codeen‑
+forcement,transportation,andpublicworks)executedtheinterventions. CPAL’sprogrampersonnel
+ensuredtheinitiallistofprioritieswasalignedwithneighborhoodrealities,andbuiltaprocessforsite
+validationthattheCityisnowcarryingforward.
+Theresultsoffertheclearestavailableevidencethatcoordinated,place‑basedenvironmentalinter‑
+ventionworkswithexistingcityresources.
+WhatDallasdid
+Thecityorganizedtheworkaroundfourideas.
+First,cityleadershipmadeitclearthatviolencereductionwasacross‑agencypriority. Department
+heads heard directly from the City that they would be expected to prioritize specific high‑violence
+locationsandreportonprogress.Thiswasacoreexpectationfrommanagement.
+Second,theworkingteammaintainedashort,continuouslyupdatedlistofprioritylocations.Ourana‑
+lystscombinedcrimedata,codeviolations,311complaints,andenvironmentalindicatorstoidentify
+roughly50–100sitesatanygiventime. Critically, thelistwasn’tstatic. Asconditionsshifted(some
+areasstabilizing,othersdeteriorating),theteamshiftedthetargetingwiththem,typicallyonaweekly
+cycle. ThisisexactlytheadaptiveapproachSection2arguesisnecessary: targetingthatmovesas
+thegeographyofviolencemoves.
+Third,coordinationhappenedonaregularweeklycadence. Theteamreviewedtargetingdataand
+fieldintelligenceeveryMonday, updatingprioritiesbasedonthelatestconditions. Separatemeet‑
+ingswithoperationaldepartmentsonTuesdays,facilitatedbyCPAL,trackedactivecases,assigned
+follow‑ups,andclosedoutcompletedwork. Throughouttheweek,fieldstaffvisitedsites,assessed
+conditions, andgatheredthecontextthatCPALfedbackintothenextcycle’stargeting. CPALfunc‑
+tionedastheconnectivetissuebetweendataandaction,ensuringthatwhatthenumbersshowed
+actuallytranslatedintoworkontheground.
+13
+
+<!-- Page 14 -->
+17A
+Fourth,everysitehadclearownershipandfollow‑through.Departmentstrackedtheircasesinshared
+systems,updatingprogressasworkmoved. Sitesstayedontheactivelistuntilconditionsstabilized,
+not until the first intervention was complete. On average, high‑priority locations received multiple
+roundsofengagementoverseveralmonths.
+Whattheworklookedlike
+The team’s targeting identified where to focus. But each priority area, once you’re on the ground,
+containeddozensofspecificproblemsatspecificaddresses,eachonetheresponsibilityofadifferent
+department. Ninety micro‑areas produced over 250 completed interventions spanning vegetation
+clearing, streetlightrepairs, trashanddumpingcleanup, propertycitations, andinfrastructurefixes.
+CPAL’s Neighborhood’s team was the core translation layer between data‑driven prioritization and
+workassignment.
+Somesiteshadclearsolutions.AfteramurdernearanapartmentinOldEastDallas,theteamassessed
+avacantlotsandwichedbetweenacottageandamodernthree‑storybuilding. Thelothadankle‑
+high grass, graffiti on the fence, and old streetlights. The diagnosis was straightforward: cut back
+vegetation,paintovergraffiti,convertstreetlightstoLEDbulbs. Withintwoweeks,thegrasswascut.
+Theremainingitemswereinprogress. Whenpeoplefeelsafewalkingaround,therearemoreeyes
+andearstoreportissues,andmorecommunityinvestmentinmaintainingtheimprovement.
+Other sites didn’t have a two‑week fix. A house near the intersection of North Buckner Boulevard
+14
+
+<!-- Page 15 -->
+17A
+andPeavyRoadinFarEastDallaspresentedadifferentchallenge. Theproperty’sout‑of‑stateowner
+hadletitbecomeacampforpeopleexperiencinghomelessness.Acrossthestreet,abeerstoreclerk
+describedconstantdrugactivityand911calls. Abusstopnearbyhadbecomeagatheringpointfor
+peoplewhoneverboardedbuses. Asurveillancecameratowerinstalledmonthsearlierhadn’tde‑
+terreddrugdealingbeneathit. Theteamconsideredoptions: workwithDallasAreaRapidTransitto
+removethebench,increasepatrols,pursuetheabsenteelandlordthroughcommunityprosecution.
+Theytooktheclerk’sinformationandpromisedtoreturn. Thisareawouldlikelyrequiremonthsof
+repeatvisitsacrossdozensofinterventions.
+AsKevinOden,Dallas’sdirectorofEmergencyManagementandCrisisResponse,putit: “Notevery
+siteneedsthesamethings.It’sasudokuforthemtofigureout.”
+Agenciesarealreadyexcellentatdeployinginterventions. TheCitycanprovidethoseagenciesthe
+disciplineofconcentratingthem. Citygovernmentoftendefaultstospreadingresourcesonafirst‑in,
+first‑outbasis,butviolenceconcentratesgeographically,andtheresponsehastoconcentrateinre‑
+turn.Fiftylocationswithrepeatedengagementwillhavemoreimpactthan500locationswithone‑off
+visits.Andbecauseenvironmentalconditionsdeteriorate(vacantlotsrefillwithtrash,codeviolations
+recur),theworkdidn’tendafterafirstpass.Thegoalwasn’tacleanblockforaphoto.Itwassustained
+changeintheconditionsthatenableviolence.
+Whathappened
+WeknowthatDallasimproved. Violentcrimedeclined14.5%citywide,partofanationaltrend. The
+questioniswhetherareasthatreceivedcoordinatedinterventionfaredbetterthancomparableareas
+thatdidn’t.Theteam’sevaluationframework,comparinginterventionareastonon‑interventionareas
+withinthesamerisktier,providestheclearesttest.Ateveryrisklevel,theanswerisyes.
+15
+
+<!-- Page 16 -->
+17A
+Thestabilizationeffectwasclearestinthemiddletier:areaswithenoughcrimetobeatriskofescalat‑
+ing,butnotsoentrenchedthatdeeperstructuralforcesdominate. Here,interventionareasdeclined
+8%whilecomparablenon‑interventionareaswereflat. ThesearepreciselytheareasSection2iden‑
+tifiesasthenarrowpolicytarget: the1–3%ofgeographyatriskoftippingintohigherconcentration.
+Interventionpulledthembackfromthatedge.
+Eveninthehighest‑riskareas,wherecrimeincreasedregardless,interventionareassawlessthanhalf
+theincreaseofnon‑interventionareas.Dampeningthemagnitudeofsurgesmatters—it’swhatkeeps
+atemporaryspikefrombecominganentrenchedhotspot.
+Theresultsforhomicidespecificallywereevenstronger. Ateveryrisktier,thegapbetweeninterven‑
+tionandnon‑interventionareaswaslargerforhomicidethanforviolentcrimeoverall. AppendixE
+presentsthefullinterventionresults,andAppendixFteststheirstatisticalsignificanceusingmethods
+appropriateforcrimecountdata.
+Whatthisdoesn'tprove
+Thisisnotarandomizedcontrolledtrial. Interventionareasweren’tassignedrandomly; theywere
+chosenbecausetheyhadhighcrimeandconditionsthatseemedamenabletoenvironmentalinter‑
+vention. It’spossiblethatsomethingabouttheseareas,beyondtheinterventionitself,explainspart
+ofthedifference.
+WhentestedusingPoisson‑basedmethodsappropriateforcrimecountdata(seeAppendixF),the
+interventioneffectisstatisticallysignificantinthetierwherethetheorypredictsitshouldbestrongest:
+16
+
+<!-- Page 17 -->
+17A
+areasbetweenthe20thand50thpercentileofcrimeconcentration.Inthehighest‑riskandlowest‑risk
+tiers,thedifferencesgointhesamedirectionbutarenotstatisticallysignificant,largelybecausethe
+samplesizesaretoosmalltodetecttheobservedeffectswithconfidence. Theconsistentdirection
+acrossalltiersisitselfnotable.
+Buttheconsistencyofthepattern,andthesizeofthedifferences,suggeststhattargeted,repeated,
+cross‑departmentalactionmadearealcontribution. Dallasisonecityandoneyearofdata. Butit’s
+evidencethatthisapproachcanwork—andthatcitiesdon’thavetowaitforperfectproofbefore
+starting.
+17
+
+<!-- Page 18 -->
+17A
+5. Getting Started: A Practical Roadmap
+Theprevioussectionsdescribewhatcoordinated,place‑basedactionlookslikeandtheevidencethat
+itworks.Thissectionisabouthowtobegin.
+Thedatamakesthecaseforstarting: acrosstencities,roughly90%ofgeographyisstable,thebroad
+trendisfavorable,andtheplaceswhereviolenceistrendingthewrongwayrepresentjust1–3%ofcity
+geographyinanygivenyear.That’sroughly20to30half‑mileareas.Thechallengeisnotthesizeofthe
+problem.It’sbuildingthesystemtodetectthoseareasandgetcityresourcestherebeforeconditions
+entrench.
+Anycitycanlaunchthisapproachin90daysandseemeasurableoutcomeswithin180,usingexisting
+staffandexistingdata.Thisisnotanewprogram.It’sawayofdirectingwhatcitygovernmentalready
+doestowardtheplaceswhereitwillhavethegreatestimpact,startingwithviolentcrimebutextending
+naturallytothecodeviolations,311backlogs,andquality‑of‑lifeconditionsthatconcentrateinmany
+ofthesameplaces.
+Whatyouneed
+Mayoralcommitment.Thisworkonlymovesifcityleadershipmakesclearthatviolencereductionisa
+cross‑agencypriority,notjustapolicedepartmentproblem.Departmentheadsneedtohear,directly,
+thattheywillbeexpectedtoprioritizespecifichigh‑violencelocationsandreportonprogress.Without
+thatsignalfromthetop,coordinationmeetingsbecomeoptionalandfollow‑throughfades.
+Acoordinator.Oneperson(existingstaff,notanewhire)whoownstherhythm:schedulingmeetings,
+trackingassignments,flaggingstalledcases,andconnectinganalyticaltargetingwithoperationalex‑
+ecution. InDallas,thisrolesatintheEmergencyManagementandCrisisResponseoffice. Inother
+cities,itcouldsitinthemayor’soffice,thecitymanager’soffice,orapublicsafetycoordinatorrole.
+Thetitledoesn’tmatter.WhatmattersisthatsomeonewakesupeveryMondaythinkingaboutwhich
+sitesneedattentionthisweek.
+Twotothreeinvested,capableagencyleadsatthetable. Youdon’tneedeveryrelevantdepartment
+ondayone. Tostart,youneedcodeenforcementandoneortwootheragencies—sanitation,public
+works,ortransportation—withleadswhoarewillingtoshowupanddothework.Overtime,youcan
+expandtoparks,additionalpublicworksdivisions,andotherdepartments. Withineachagency,the
+rightconfigurationwillemerge: inDallas,codeenforcementbroughtrepresentativesfrommultiple
+divisions(fieldinspections,nuisanceabatement,multi‑tenant)becausetheworktouchedallofthem.
+Startwithasmall,committedgroup.Thetablegrowsastheworkprovesitsvalue.
+Datatoidentifyprioritylocations. Atminimum,incident‑levelcrimedataforhomicide,robbery,and
+aggravatedassaultwithaddressesorcoordinates—anythinggeocodable. Mostcitiesalreadycollect
+this through NIBRS. But crime data alone understates the opportunity. Code violations, 311 com‑
+18
+
+<!-- Page 19 -->
+17A
+plaints,vacancyrates,andlightingoutagereportsoftenconcentrateinoverlappinggeography,and
+theygiveoperationaldepartmentsadirectreasontoengage.Citiesthatlayerthesedatasourcesinto
+thetargetingprocessfindthattheprioritylistservesmultipledepartments’missions,notjustpublic
+safety.Abasiccrimemapisenoughtostart;richerdatasourcesmakethecoordinationmoreeffective
+andmoredurableovertime.
+Ashortlistofprioritylocations. Don’ttrytocoverthewholecity,andthedatasaysyoudon’thave
+to. Ninetypercentofthecityisstable. TheDallasmodelworkedbecauseitconcentratedresources
+onroughly50–100locationsatatime,fewenoughtoallowrepeatengagement,enoughtocoverthe
+placeswhereviolencewasmostacute.Thedisciplineofashortlistiswhatseparatestargetedaction
+frombusinessasusual.
+Whatyoudon'tneed
+Newfunding. Thedepartmentsinvolvedalreadyhavebudgetsandstaff. Codeenforcementalready
+conductsinspections. Sanitationalreadycleansupdumping. Publicworksalreadyfixesstreetlights.
+Theinterventionisredirectingashareofexistingcapacitytowardspecificlocations,notbuildingsome‑
+thingfromscratch. Theprimaryupfrontinvestmentisanalytical: someoneneedstopullthecrime
+data,identifypriorityareas,andmatchthemwithappropriateinterventions. Inmostcities,thiscan
+bedonewithexistinganalystsorashort‑termpartnership.
+Perfectanalytics. Youdon’tneedapredictivemodel,arisk‑terrainanalysis,oraproprietaryplatform
+togetstarted.Amapofwhereviolentcrimeconcentrates,builtfromthedatayourpolicedepartment
+alreadycollects,issufficient. Analyticalsophisticationcangrowovertime,butitshouldneverbethe
+reasonyouhaven’tstarted.
+Anewdepartmentorprogram. Thisisacoordinationmechanism,notaninitiativewithitsownstaff
+andletterhead. Itlivesinthespacebetweenexistingdepartments,connectingwhattheyalreadydo
+towhereit’smostneeded. Citiesthattreatthisasanewprogramriskbuildingsomethingthat’seasy
+todefund.Citiesthatembeditasanoperatingrhythmmakeithardertoundo.
+Thetimeline
+TheframingthatguidedDallas,andthatwe’drecommendforanycity,is:90daystolaunch,180days
+tomeasurableoutcomes.
+Weeks1‐‐4: Buildthefoundation.
+Secureexplicitcommitmentfromthemayororcitymanager. Designateacoordinator. Identifythe
+firsttwotothreeagencyleadswhowillparticipate. Pullcrimedataandgenerateaninitiallistofcan‑
+didate priority locations. Hold an initial convening to explain the approach, set expectations, and
+19
+
+<!-- Page 20 -->
+17A
+establishthemeetingcadence.Thegoalbytheendofmonthoneisafunctioningcoordinationstruc‑
+turewithafirstroundofprioritysites.
+Weeks5‐‐8: Assessanddeploy.
+Conductfieldassessmentsofprioritylocations:walkthesites,photographconditions,talktonearby
+residentsandbusinesses. Matchspecificinterventionstospecificsites: whichlocationsneedcode
+enforcementaction? Whereisthelightingproblem? Whichlotsneedclearing? Beginfirst‑roundin‑
+terventionsandestablishthelivetrackingsystem(asharedspreadsheetorprojecttrackerisfineto
+start).Holdthefirstfullcycleofweeklycoordinationmeetings.
+Months3‐‐6: Buildtherhythm.
+Thisiswherethemodeleithertakesholdorfades. Theweeklycadenceshouldberoutinebynow:
+strategy meetings to identify new sites and review field work, department meetings to track cases
+and assign follow‑ups. The key indicator isn’t how many cleanups you’ve done; it’s whether high‑
+prioritylocationsarereceivingrepeatengagement.Sitesshouldstayonthelistuntilconditionshave
+stabilized,notuntilthefirstinterventioniscomplete. Bymonthsix,thecoordinatorshouldbeable
+toreportonwhichsiteshavebeenclosedout,whicharestillactive,andhowinterventionareasare
+performingrelativetocomparablenon‑interventionareas.
+Month6andbeyond: Assess,refine,institutionalize.
+Evaluateresults. Areinterventionareasoutperformingcomparablenon‑interventionareas? Which
+typesofinterventionsseemmosteffectiveinwhichcontexts?Refinetheprioritylistbasedonupdated
+crimedata. Identifywhat’sworkingandexpandit;identifywhatisn’tandadjust. Thegoalistoshift
+fromapilottoaninstitutionalrhythm,somethingthathappenseveryweekbecauseit’showthecity
+operates,notbecausesomeoneischampioningaproject.
+Commonpitfalls
+Citiesthathaveattemptedplace‑basedcoordinationtendtoencounterthesamefailuremodes.Know‑
+ingtheminadvancemakesthemeasiertoavoid.
+Spreadingtoothin. Theinstinctincitygovernmentistoservethewholecityequally. Itfeelspolit‑
+ically safer than concentrating resources in specific areas. But even distribution is the default that
+theseneighborhoodshavebeenlivingunder,anditisn’tworking.Thedatashowsthatroughly20–30
+areasinatypicalcityaretrendingtowardescalationatanygiventime.That’samanageablelist.Fifty
+locationswithsustained,repeatengagementwillhavemoreimpactthan500locationswithasingle
+visit.Thedisciplineofsaying“theseblocksfirst”iswhatmakesthisapproachdifferentfrombusiness
+asusual.
+20
+
+<!-- Page 21 -->
+17A
+Confusingactivitywithimpact. Countingcleanups,inspections,andlightingrepairsfeelsproductive.
+Butthemeasureofsuccessisn’thowmanyworkordersyou’vecompleted; it’swhetherviolenceis
+decliningintheplacesyou’retargeting.Trackinterventions,butevaluateoutcomes.Ifalocationhas
+receivedmultipleroundsofengagementandconditionshaven’timproved,that’sasignaltoreassess
+theapproach,nottokeepdoingthesamething.
+Skippingthedata. Thismodeldependsonknowingwhere. Withoutcrimedatatoidentifypriority
+locations,you’reguessing,andinmostcitiestheguesswillbewrong. Theareasthatshowupin311
+complaintsorcouncilconstituentcallsaren’talwaystheareaswiththehighestviolence.Datadoesn’t
+needtobeperfect,butitneedstoexist.
+Letting the cadence slip. Weekly meetings sound easy until competing priorities push them to bi‑
+weekly, thenmonthly, then“asneeded.” Thecoordinationrhythmistheengine. Whenitstops, so
+doesfollow‑through. Protectthemeetingcadencethewayyou’dprotectanycriticalmanagement
+function.Ifthecoordinatorisout,someoneelserunsthemeeting.Itdoesn’tgetcanceled.
+Treatingthisasaone‑timecampaign. Environmentalconditionsdeteriorate. Vacantlotsrefillwith
+trash. Code violations recur. Absentee landlords don’t change behavior after a single citation. A
+cleanup that makes a block look better for a week isn’t a violence reduction strategy. Sustained
+change requires sustained attention. The cities that get results are the ones that commit to being
+intheseplacesrepeatedly,overmonths,nottheonesthatlaunchavisiblepushandmoveon.
+21
+
+<!-- Page 22 -->
+17A
+About the Author
+JoeEichenbaum
+Partner,17A
+JoeEichenbaumisapartnerat17A,amanagementconsultingfirmthatworksexclusivelywithstate
+andlocalgovernment. Hispracticefocusesonpublicsafetyanalytics,place‑basedstrategy,andop‑
+erational coordination for cities. He has led analytical and advisory engagements for multiple city
+governments,withparticulardepthincrimeconcentrationanalysis,cross‑agencycoordination,and
+theuseofadministrativedatatodirectcityresourcestowardconcentratedneed.
+TheanalysisinthispaperdrawsonworkconductedinpartnershipwiththeCityofDallasandtheChild
+PovertyActionLab(CPAL),aswellasmulti‑cityresearchusingopendatafromnineU.S.cities.
+Contributor
+MartinO’Malley
+SeniorStrategicAdvisor,17A
+MartinO’MalleyservedasMayorofBaltimorefrom1999to2007andasGovernorofMarylandfrom
+2007to2015. Asmayor,heledBaltimorethroughasustainedreductioninviolentcrimeusingdata‑
+driven, place‑basedstrategies, includingthepioneeringCitiStatperformancemanagementsystem.
+GovernorO’Malleycontributedtothispaperasa17ASeniorStrategicAdvisor,drawingonhisexperi‑
+enceleadingpublicsafetyoperationsinoneofAmerica’smostchallengingurbanenvironments.
+22
+
+<!-- Page 23 -->
+17A
+Appendix
+A.Definitions
+Violent crime in this paper refers to homicide, robbery, and non‑family aggravated assault. We ex‑
+cludefamily‑relatedaggravatedassaultsbecausetheseoffensesreflectdynamics(domesticviolence,
+intimatepartnerviolence)thatarelessresponsivetoenvironmentalinterventionandaretypicallyad‑
+dressedthroughdifferentpolicychannels.
+ThisdefinitionisnarrowerthantheFBI’sUniformCrimeReporting(UCR)standard,whichincludesall
+aggravatedassaultsandforciblerapeinitsviolentcrimecategory.Itisalsonarrowerthanmanycities’
+internal definitions, which may include additional offense types or use local classification systems.
+Weusethenarrowerdefinitionbecauseitmorepreciselycapturestheplace‑based,stranger‑involved
+violencethatenvironmentalinterventionsaremostlikelytoaffect.
+Homicidedatainthenationaltrendssection(Section2)usestheFBIUCRdefinition:murderandnon‑
+negligentmanslaughter.City‑levelhomicidecountsaredrawnfromlocalpolicedepartmentdatavia
+theAHDatalyticsReal‑TimeCrimeIndex(RTCI),whichtracksreportedhomicidesacrossmajorU.S.
+citiesusingofficialdepartmentsources.
+Geographicconcentrationismeasuredbydividingacityintouniformspatialunits(half‑milegridcells
+intheDallasanalysis)andrankingthoseunitsbythevolumeofviolentcrimeincidents. “Top20%”
+referstothecellsthatcollectivelyaccountfor20%ofthecity’stotalviolentcrime;“bottom50%”refers
+tothecellsthataccountforthelowest50%ofviolentcrime. Becausecrimeishighlyconcentrated,
+thetop20%ofviolentcrimetypicallyoccursinaverysmallshareofcitygeography(3.4%inDallas),
+whilethebottom50%ofcrimeisspreadacrossalargegeographicmajority(86.2%inDallas).
+AsdescribedinAppendixC,measuringchangeinconcentratedareasrequirescareaboutwhichyear’s
+data is used to define the geography. This paper uses a persistent‑cell approach that avoids the
+methodologicalpitfallsofsingle‑baselineanalysis.
+B.NationalCrimeTrends: DataandSources
+NationalviolentcrimeandhomicideratesshowninSection2aredrawnfromtheFBIUniformCrime
+Reporting(UCR)program,whichhascollectedstandardizedcrimedatafromlawenforcementagen‑
+ciesacrosstheUnitedStatessince1960.
+Thedatacovers1960–2025andincludesratesper100,000populationforviolentcrime,murder,and
+propertycrime.Keyreferencepoints:
+23
+
+<!-- Page 24 -->
+17A
+Year ViolentCrimeRate HomicideRate Notes
+1960 160.9 5.1 Seriesbaseline
+1980 596.6 10.2 Firstpeak
+1991 758.2 9.8 Historichigh(violentcrime)
+2000 506.5 5.5 Post‑1990sdecline
+2014 361.1 4.4 Pre‑COVIDlow
+2019 362.4 5.1 Pre‑pandemicbaseline
+2020 380.3 6.7 COVID‑erasurge(+30%homicide)
+2021 359.3 6.5 Elevated
+2022 377.8 6.6 Elevated
+2023 370.3 5.9 Beginningdecline
+2024 348.6 5.2 Approachingpre‑pandemiclevels
+2025 316.8 4.3 Belowpre‑pandemiclevels(partialyear)
+Ratesareper100,000population.Source:FBIUniformCrimeReportingProgram.
+City‑levelhomicideratesreferencedinSection2aredrawnfromtheAHDatalyticsReal‑TimeCrime
+Index(RTCI),whichcompilesreportedhomicidecountsfromofficialcitypolicedepartmentsources.
+TheRTCIcoversmajorU.S.citiesfrom2018tothepresentandisupdatedregularly. Sourcelinksfor
+individualcitiesareavailableinthedatafilesaccompanyingthispaper.
+C.Methodology: CrimeConcentrationAnalysis
+Theconcentrationanalysisusedinthispaperdividesacity’sgeographyintouniformhalf‑mile(ap‑
+proximately800‑meter)gridcells. Each cellis assigned thecountof violentcrime incidents(homi‑
+cide,robbery,non‑familyaggravatedassault)thatoccurredwithinitsboundariesduringtheanalysis
+period.
+Rankingandtiering. Cellsarerankedbytotalviolentcrimevolume. Tiersaredefinedbycumulative
+shareoftotalviolentcrime:
+• Top20%tier:Thesmallestsetofcellsthatcollectivelyaccountfor20%ofthecity’stotalviolent
+crime.InDallas,thiscorrespondsto3.4%ofcitygeography(35cells).
+• Top50%tier:Thesmallestsetofcellsthatcollectivelyaccountfor50%ofthecity’stotalviolent
+crime.InDallas,thiscorrespondsto13.8%ofcitygeography(144cells).
+• Bottom50%tier:Allremainingcells—thosethatcollectivelyaccountforthelowest50%ofviolent
+crime.InDallas,thiscorrespondsto86.2%ofcitygeography(897cells).
+Thebaselineselectionproblem
+Whenmeasuringyear‑over‑yearchangeinconcentratedareas,resultsdependheavilyonwhichyear
+definesthegeography.Therearetwonaturalapproaches:
+24
+
+<!-- Page 25 -->
+17A
+• Current‑yearbaseline(2025):Rankcellsby2025volume,identifythetoptier,thencomparethose
+specificcells’2024countstotheir2025counts.
+• Prior‑yearbaseline(2024):Rankcellsby2024volume,identifythetoptier,thencomparethose
+specificcells’2024countstotheir2025counts.
+These approaches select different cell sets, and the results can diverge dramatically. Using Dallas
+asanexample: thetop‑20%tierdefinedby2025datashowsa+6.7%increaseinviolentcrime. The
+top‑20%tierdefinedby2024datashowsa
+−32.9%decline.
+Thesamecity,sametimeperiod,same
+underlyingdata—a40percentagepointswingdrivenentirelybywhichyeardefinesthegeography.
+Thishappensbecausethe2025baselinemechanicallyselectscellsthatspikedorstayedhigh,while
+the2024baselineselectscellsthatwereattheirpeakandarelikelytoregress. Neitherapproachis
+wrong,butneitherisbias‑free.
+Thepersistent‐cellapproach
+Tocutthroughthisproblem,theanalysisinthispaperclassifiescellsintofourgroupsbasedontheir
+statusinbothyears:
+• Persistent:Inthetoptierinboth2024and2025.Thesearechronichigh‑crimelocations.
+• Rotatedin:Inthetoptierin2025butnot2024.Theseareasnewlyenteredconcentration.
+• Rotatedout:Inthetoptierin2024butnot2025. Theseareasimprovedrelativetotherestofthe
+city.
+• Allother:Notinthetoptierineitheryear.
+This classification avoids the baseline selection bias entirely. Persistent cells are in the top tier re‑
+gardlessofwhichyearyouuse—theyrepresentthegenuinelychroniclocations.Theiryear‑over‑year
+changeisthecleanestreadonwhetherconcentratedareasareimproving.
+GeographicchurnismeasuredbytheJaccardindex: thenumberofcellsinthetoptierinbothyears,
+dividedbythenumberinthetoptierineitheryear.AJaccardoverlapof100%wouldmeanthesame
+cellsareconcentratedinbothyears;lowervaluesindicatemoregeographicturnover.
+Dallasgridparameters:
+• Gridcellsize:0.5milesx0.5miles
+• TotalgridcellscoveringDallascitylimits:1,041
+• Violentcrimedefinition:murder,robbery,aggravatedassault
+• Baselineyear:2024
+• Evaluationyear:2025
+25
+
+<!-- Page 26 -->
+17A
+• Crimedatasource: DallasPoliceDepartmentNIBRSquarterlydata, geocodedtogridcells(see
+AppendixI)
+D.Multi‐CityConcentrationAnalysis
+Thetablesbelowpresentthefullresultsoftheconcentrationanalysisacrossninecities,includingthe
+baselinesensitivitycomparison,geographicchurnmeasures,andpersistent‑cellfindingsdiscussed
+inSection2.
+D.1BaselineSensitivity: Top‐20%Tier
+Thesamedatacantelldifferentstoriesdependingonwhichyeardefinestheconcentratedgeography.
+Thistableshowshowthemeasuredchangeinthetop‑20%tiervariesbybaselineyear.
+City Citywide Top‑20% Top‑20% Swing Jaccard
+Change (2025base) (2024base) Overlap
+Dallas −14.4% +6.7% −32.9% 39.6pp 35%
+St.Louis −15.9% +5.2% −20.5% 25.7pp 44%
+Atlanta +11.8% +32.5% −4.7% 37.3pp 40%
+Detroit −6.1% +11.1% −13.7% 24.8pp 43%
+NewYorkCity −2.8% +1.4% −8.7% 10.1pp 55%
+Denver −8.2% +6.3% +2.1% 4.2pp 79%
+Chicago
+−23.9% −17.1% −23.3%
+6.2pp 67%
+Seattle
+−12.0% −4.9% −7.0%
+2.1pp 67%
+Baltimore
+−18.0% −18.7% −25.2%
+6.5pp 67%
+pp=percentagepoints.Jaccardoverlap=shareofcellsinthetop‑20%tierinbothyearsoutofall
+cellsinthetierineitheryear.
+26
+
+<!-- Page 27 -->
+17A
+CitieswithlowJaccardoverlap(Dallas,St. Louis,Atlanta,Detroit)showthelargestswingsbetween
+baselines. Citieswithhighoverlap(Denver, Seattle, Chicago, Baltimore)showconsistentresultsre‑
+gardlessofbaseline.Thisconfirmsthatthedivergentreadingsareanartifactofgeographicchurn,not
+arealdifferenceinhowconcentratedareasaretrending.
+D.2BaselineSensitivity: Top‐50%Tier
+City Citywide Top‑50% Top‑50% Swing Jaccard
+Change (2025base) (2024base) Overlap
+Dallas
+−14.4% −1.8% −26.0%
+24.2pp 50%
+St.Louis −15.9% +1.4% −22.8% 24.2pp 45%
+Atlanta +11.8% +20.1% −7.1% 27.2pp 53%
+Detroit −6.1% +5.6% −12.0% 17.5pp 52%
+NewYorkCity −2.8% 0.0% −5.5% 5.5pp 74%
+Denver −8.2% +7.3% −12.7% 20.0pp 51%
+Chicago
+−23.9% −19.1% −27.4%
+8.3pp 64%
+Seattle
+−12.0% −5.7% −9.5%
+3.9pp 82%
+Baltimore
+−18.0% −13.8% −21.6%
+7.9pp 66%
+The50%tierisbroaderandsomewhatmorestable,butthebaselinesensitivitypatternpersists. In
+volatilecities,theswingremainslarge(Dallas:24pp,St.Louis:24pp,Atlanta:27pp).
+27
+
+<!-- Page 28 -->
+17A
+D.3GeographicChurnSummary
+City 20%Tier: 20%Tier:%Newly 50%Tier: 50%Tier:%Newly
+Jaccard Concentrated Jaccard Concentrated
+Dallas 35% 49% 50% 35%
+St.Louis 44% 35% 45% 35%
+Atlanta 40% 43% 53% 35%
+Detroit 43% 39% 52% 30%
+NewYorkCity 55% 30% 74% 15%
+Denver 79% 0% 51% 28%
+Chicago 67% 17% 64% 21%
+Seattle 67% 14% 82% 6%
+Baltimore 67% 22% 66% 20%
+“%NewlyConcentrated”=shareof2025’stop‑tiercellsthatwerenotinthetoptierin2024.
+Inthemostvolatilecities,halformoreofthehighest‑concentrationgeographyturnsoverinasingle
+year.Eveninrelativelystablecities,14–28%oftheworstcellsarenew.Thisisthechurnthatdemands
+adaptivetargeting.
+D.4Persistentvs. RotatingCells: Top‐20%Tier
+Thistabledecomposeseachcity’sconcentrationgeographyintofourgroups: persistent(highboth
+years),rotatedin(newlyhigh),rotatedout(nolongerhigh),andallothercells.
+City Persistent Persistent RotatedIn: RotatedIn: RotatedOut: RotatedOut:
+Cells VCChange Cells VCChange Cells VCChange
+Dallas 18 −16.0% 17 +58.6% 17 −55.0%
+St.Louis 11 −6.7% 6 +46.7% 8 −42.5%
+Atlanta 12 +13.0% 9 +84.5% 9 −32.3%
+Detroit 25 −2.6% 16 +49.6% 17 −32.3%
+NewYorkCity 50 −3.9% 21 +21.5% 20 −23.8%
+Denver 11 +6.3% 0 n/a 3 −20.3%
+Chicago 39
+−18.6%
+8
+−4.8%
+11
+−43.6%
+Seattle 6 −6.6% 1 +13.0% 2 −9.0%
+Baltimore 14 −22.6% 4 +8.0% 3 −41.9%
+Thepersistentcells—thegenuinelychroniclocations—aregenerallydecliningalongsideornearthe
+citywiderate. InDallas, persistentcellsdeclined16.0%versus14.4%citywide. InBaltimore, 22.6%
+versus18.0%.InChicago,18.6%versus23.9%.
+Therotationmechanicislargeandsymmetric: cellsthatrotatedintypicallyshow+30%to+85%
+increases(thisisessentiallydefinitional—theyenteredthetierbecausetheyspiked). Cellsthatro‑
+tatedoutshow
+−30%to −55%declines(theyleftbecausetheycooled).
+Theseextremeswingsare
+whatcreatedivergentreadingsbetweenbaselines, buttheydescribethemechanicsofgeographic
+28
+
+<!-- Page 29 -->
+17A
+turnover,notatrendinchronicareas.
+D.5Persistentvs. RotatingCells: Top‐50%Tier
+City Persistent Persistent RotatedIn: RotatedIn: RotatedOut: RotatedOut:
+Cells VCChange Cells VCChange Cells VCChange
+Dallas 94 −13.6% 50 +63.6% 44 −60.7%
+St.Louis 43 −9.5% 23 +50.0% 29 −50.4%
+Atlanta 60 +5.2% 33 +104.5% 21 −54.7%
+Detroit 96 −3.4% 41 +44.3% 48 −34.4%
+NewYorkCity 230 −2.4% 41 +28.6% 39 −32.5%
+Denver 49 −1.7% 19 +105.6% 28 −52.0%
+Chicago 154 −23.1% 41 +14.4% 44 −50.5%
+Seattle 31 −7.2% 2 +52.1% 5 −33.1%
+Baltimore 56 −18.5% 14 +29.9% 15 −40.6%
+Thesamepatternsholdatthe50%tier. Persistentcellstracknearcitywidedeclines(Dallas:
+−13.6%
+vs.
+−14.4%citywide).
+Therotationmechanicsareevenlargeratthistier,withcellsenteringconcen‑
+trationoftendoublingtheirprior‑yearcrimecounts.
+D.6City‐SpecificParameters
+City GridCell Total ViolentCrime DataSource
+Size Cells Definition
+Dallas 0.5mi 1,041 Murder,robbery,aggravatedassault DallasPoliceDepartment(NIBRS)
+St.Louis 0.4mi 416 Homicide,robbery,aggravatedassault SLMPD
+NewYorkCity 0.33mi 2,854 Murder&non‑negligentmanslaughter, NYCOpenData
+robbery,felonyassault
+Atlanta 0.4mi 614 Homicide,robbery,aggravatedassault AtlantaPoliceOpenData
+Detroit 0.5mi 595 Homicide,robbery,aggravatedassault DetroitOpenData
+Denver 0.4mi 671 Murder,robbery,aggravatedassault DenverOpenData
+Chicago 0.4mi 1,300 Homicide, robbery, aggravated bat‑ ChicagoDataPortal
+tery/assault
+Seattle 0.4mi 480 Homicide,robbery,aggravatedassault SeattleOpenData
+Baltimore 0.4mi 470 Homicide,robbery,aggravatedassault OpenBaltimore
+Alldata:full‑year2024vs.2025incidentcounts.Eightcitiesusedatafrommunicipalopendataportals;
+DallasusesNIBRSdataprovideddirectlybytheDallasPoliceDepartment(seeAppendixIforcontext
+onthisdatasourcedecision).Gridcellsizesvarybycitytoaccountfordifferencesincityareaand
+density.Violentcrimedefinitionsvaryslightlyacrosscitiesbasedonlocalclassificationsystems;all
+includehomicide,robbery,andaggravatedassault/battery.
+29
+
+<!-- Page 30 -->
+17A
+E.DallasInterventionAnalysis: DetailedResults
+Section4presentsasimplifiedcomparisonofinterventionversusnon‑interventionareas. Thisap‑
+pendixprovidesthefulldataunderlyingthosecomparisons.
+E.1DeploymentSummary
+TheDallascoordinatedactionmodeloperatedfrom2024into2025.Keydeploymentmetrics:
+• Totalmicro‑areasreceivingintervention:approximately90
+• Totaldiscreteinterventionscompleted:over250
+• Averageroundsofengagementperhigh‑prioritysite:3–4
+• Interventiontypes: vegetation/visibility,lighting,trash/dumping,propertyconditions,infrastruc‑
+ture,codeenforcement,serviceconnections
+E.2Interventionvs. Non‐InterventionOutcomesbyRiskTier
+Theanalysiscomparesviolentcrimechange(2024–2025)incellsthatreceivedcoordinatedinterven‑
+tionversuscellsatthesamerisklevelthatdidnot.
+TableE.2a:ViolentCrimeChangebyConcentrationTierandInterventionStatus
+RiskTier %ofCity %ofCity Intervention Non‑Intervention Difference
+Geography ViolentCrime Areas Areas
+Top20%(highestrisk) ~3% ~20% +4.7% +11.1% 6.4ppbetter
+Top50%(highrisk) ~14% ~50% −8.1% +0.7% 8.8ppbetter
+Bottom50%(lowerrisk) ~86% ~50%
+−27.4% −23.4%
+4.0ppbetter
+pp=percentagepoints.“Better”meanstheinterventiongrouphadalower(orlesspositive)rateof
+change.
+Keyobservations:
+Top20%tier.Bothinterventionandnon‑interventionareasinthistiersawincreasesinviolentcrime
+— this tier did not benefit from citywide tailwinds. However, intervention areas saw less than half
+theincreaseofnon‑interventionareas(+4.7%vs. +11.1%). Dampeningthemagnitudeofsurges
+matters: itisthedifferencebetweenatemporaryspikeandanareathatbecomesentrenchedinthe
+highesttier.
+Top50%tier.Thisiswherethestabilizationeffectwasmostpronounced.Interventionareasdeclined
+8.1%whilecomparablenon‑interventionareaswereessentiallyflat(+0.7%). Inasystemwherecon‑
+centrationpersiststhroughgeographicchurn,theareasthatfailtodeclinearepreciselythoseatrisk
+ofrotatingintohigher‑risktiers.Interventionpulledareasbackfromthatedge.
+30
+
+<!-- Page 31 -->
+17A
+Bottom50%tier.Eveninareasalreadybenefitingfrombroadercitywideimprovement,intervention
+areasdeclinedfasterthannon‑interventionareas(
+−27.4%vs. −23.4%).
+E.3Homicide‐SpecificResults
+AsnotedinSection4,theinterventioneffectisevenlargerwhenmeasuredbyhomicidealonerather
+thanviolentcrimeoverall.Ateveryrisktier,thegapbetweeninterventionandnon‑interventionareas
+iswiderforhomicidethanforthebroaderviolentcrimecategory.
+[PLACEHOLDER:Detailedhomicidetabletobeaddedwhenfinaldataisconfirmed]
+E.4Caveats
+Thisanalysisisobservational,notexperimental.Interventionareaswereselectedbasedoncrimedata
+andenvironmentalconditions,notrandomlyassigned. Severalfactorsshouldbeconsideredwhen
+interpretingresults:
+• Selectioneffects: Interventionareaswerechosenbecausetheyhadhighcrimeandconditions
+amenabletoenvironmentalintervention. Itispossiblethatsomecharacteristicoftheseareas—
+beyondtheinterventionitself—contributedtobetteroutcomes.
+• Temporalscope:Resultsreflectoneyearofdata(2024–2025).Longer‑termsustainabilityisnotyet
+demonstrated.
+• Attribution:Multiplefactorsaffectcrimetrendssimultaneously. Theanalysiscannotisolatethe
+effectofenvironmentalinterventionfromotherconcurrentchanges(policingactivity, seasonal
+patterns,economicconditions).
+• Dosagevariation:Notallinterventionareasreceivedthesameintensityortypeofintervention.
+Theanalysistreatsallinterventionareasequallyratherthandifferentiatingbydosage.
+Despite these limitations, the consistency of the pattern — intervention areas outperforming non‑
+interventionareasateveryrisklevel,forbothviolentcrimeoverallandhomicidespecifically—sug‑
+geststhatthecoordinatedapproachcontributedmeaningfullytooutcomes.
+F.StatisticalSignificanceofYear‐Over‐YearChanges
+Thecomparisonsinthispaper—includingthecitywidetrends,concentrationtieranalysis,andinter‑
+ventionevaluation—relyonyear‑over‑yearpercentchanges.Thisappendixexamineswhetherthose
+changesarestatisticallydistinguishablefromtherandomvariationinherentincrimedata,usingmeth‑
+odsdrawnfromthePoissondistribution.
+31
+
+<!-- Page 32 -->
+17A
+F.1WhyThisMatters: TheLimitsofPercentChange
+Crimecountsatthemicro‑geographiclevelaresmallnumbers. Ahalf‑milegridcellinDallasmight
+see8violentcrimesoneyearand14thenext—a75%increasethatsoundsalarmingbutrepresents
+only6additionalincidents. Whetherthatincreasereflectsagenuineshiftinconditionsorordinary
+randomfluctuationisaquestionpercentchangealonecannotanswer.
+ThePoissondistributionprovidesaframeworkforansweringit.Undertheassumptionthatcrimeata
+givenlocationfollowsaPoissonprocess(areasonablefirstapproximationforrareeventsdistributed
+acrossspaceandtime),theexpectedrandomvariationincrimecountscanbeestimateddirectlyfrom
+thecountsthemselves. Astatisticaltest—thePoissonz‑score—canthendistinguishchangesthat
+exceedexpectedvariationfromthosethatfallwithinit.
+ThePoissonz‑scoreiscalculatedas:
+[√ √ ]
+z = 2× Current − Historical
+Thisapproximatesastandardnormaldistributionunderthenullhypothesisthattheunderlyingcrime
+ratehasnotchanged.Positivez‑valuesindicateanincreasebeyondwhatrandomnesswouldpredict;
+negativez‑valuesindicateadecrease. Athresholdof |z| ≥ 3.0correspondsroughlytoa1‑in‑1,000
+probabilityofoccurringbychance—appropriatewhenmonitoringmanygeographicunitssimulta‑
+neously,astheriskoffalsepositivescompoundswitheachadditionalcomparison. Thisthreshold
+andformulafollowWheeler(2016),whodevelopedtheapproachspecificallyforcrimeanalysisappli‑
+cations.
+F.2Cell‐LevelAnalysis: HowMuchYear‐Over‐YearChangeIsNoise?
+ApplyingthePoissonz‑scoretoall1,035Dallasgridcellswithanyviolentcrimeineitheryearproduces
+astrikingresult: themajorityofyear‑over‑yearchangesarenotstatisticallydistinguishablefromran‑
+domvariation.
+SignificanceLevel Cells Share
+Significantatp < 0.001( |z| ≥ 3.0) 159 15.4%
+Suggestive(1.96 ≤ |z| < 3.0) 352 34.0%
+Notsignificant( |z| < 1.96) 524 50.6%
+The |z| ≥ 3.0thresholdisusedthroughoutthisappendix,followingWheeler’srecommendationfor
+contextsinvolvingmultiplesimultaneouscomparisons.Thesuggestivecategory(1.96 ≤ |z| < 3.0)
+wouldbeconsideredsignificantinasingle‑comparisoncontextbutistreatedconservativelyhere.
+32
+
+<!-- Page 33 -->
+17A
+Ofthe159cellsthatclearedthestrictestthreshold,100showedstatisticallysignificantdecreasesand
+59showedsignificantincreases—aratioconsistentwiththeoverallcitywidedecline.
+Themostrevealingfindingconcernscellswithlargepercentchanges.Ofthe549cellsshowing ≥ 50%
+year‑over‑yearchangeineitherdirection,431—79%—werenotstatisticallysignificantatthe
+|z| ≥
+3.0threshold. Acellthatwent from2 crimesto6shows a200% increase, butthe Poissonz‑score
+isonly1.7: wellwithintherangeofrandomfluctuation. Acellthatwentfrom10to4showsa60%
+decrease,butz = −2.0—suggestivebutnotdefinitive.
+Thishasdirectimplicationsforhowyear‑over‑yearcomparisonsshouldbeinterpreted. Attheindi‑
+vidualcelllevel,mostchanges—evendramatic‑lookingones—cannotbeconfidentlyattributedto
+anythingotherthanrandomness.Thepatternsbecomemeaningfulprimarilywhenaggregatedacross
+manycells,wheretherandomnoisecancelsoutandgenuinetrendsemerge.
+F.3InterventionAnalysis: TestingtheCoordinatedInterventionEffect
+TheinterventionevaluationinSection4andAppendixEcomparespercentchangesinviolentcrime
+betweeninterventionareasandnon‑interventionareasateachconcentrationtier.Thequestionthis
+sectionaddressesiswhetherthosedifferencesarestatisticallysignificant—thatis,largerthanwhat
+Poissonvariationalonewouldproduce.
+Becausetheinterventionandnon‑interventiongroupsdiffersubstantiallyinsize(90interventioncells
+versus931non‑interventioncellsacrossalltiers),theappropriatetestistheincidencerateratio(IRR).
+The IRR compares therateof change — the ratio of post‑intervention to pre‑intervention crime —
+33
+
+<!-- Page 34 -->
+17A
+betweenthetwogroups,ratherthancomparingrawcounts.AnIRRbelow1.0indicatesthattheinter‑
+ventiongroupimprovedmorethanthecomparisongroup.
+TableF.3:IncidenceRateRatioTestsbyConcentrationTier
+RiskTier Intervention Intervention Non‑Intervention IRR 95%CI p‑value
+→ →
+Cells (2024 2025) (2024 2025)
+Top20% 17 615 → 644(+4.7%) 441 → 490(+11.1%) 0.94 0.80–1.12 0.49
+Next30% 21 450
+→
+339(
+−24.7%)
+1,461
+→
+1,363(
+−6.7%)
+0.81 0.69–0.95 0.008
+Bottom50% 52 432
+→
+303(
+−29.9%)
+3,249
+→
+2,545(
+−21.7%)
+0.90 0.77–1.05 0.16
+IRR< 1.0indicatesinterventionareasimprovedmorethannon‑interventionareas.95%CI=95%
+confidenceintervalfortheIRR.p‑valuesaretwo‑tailed.
+TheNext30%tier—areasbetweenthe20thand50thpercentileofcrimeconcentration—showsa
+statisticallysignificantinterventioneffect. TheIRRof0.81(95%CI:0.69–0.95, p = 0.008)indicates
+thatinterventionareasexperiencedarateofchangeroughly19%morefavorablethancomparable
+non‑interventionareas. Inconcreteterms: interventionareasinthistierdeclined24.7%whilenon‑
+interventionareasinthesametierdeclinedonly6.7%. Thisdifferenceislargerthanexpectedfrom
+Poissonvariationalone.
+TheTop20%andBottom50%tierdifferencesgointhesamedirectionbutarenotstatisticallysignif‑
+icant. IntheTop20%tier,theIRRof0.94reflectsapatternconsistentwiththeSection4narrative—
+34
+
+<!-- Page 35 -->
+17A
+interventionareassawlessthanhalftheincreaseofnon‑interventionareas—buttheconfidenceinter‑
+val(0.80–1.12)includes1.0,meaningthedifferencecannotbeconfidentlydistinguishedfromchance.
+Thisislargelyafunctionofsamplesize:withonly17interventioncellsand16non‑interventioncellsin
+thistier,amuchlargereffectwouldberequiredtoachievestatisticalsignificance.IntheBottom50%
+tier,theIRRof0.90issimilarlyfavorablebutnotsignificant(p = 0.16),againreflectingthedifficultyof
+detectingmodesteffectswithlimitedstatisticalpower.
+F.4WhatThisMeans
+Threeconclusionsfollowfromthisanalysis.
+First,theinterventioneffectisstrongest—andstatisticallyconfirmed—inthetierwherethepaper’s
+theorypredictsitshouldbe. TheNext30%tierrepresentsareaswithenoughcrimetobeatriskof
+escalatingintotheworstconcentrationtier,butnotsoentrenchedthatdeeperstructuralforcesdom‑
+inate. Thesearetheareaswhereenvironmentalinterventionhasthemosttheoreticalleverage,and
+theyaretheareaswherethedatashowstheclearesteffect.
+Second,theabsenceofstatisticalsignificanceintheTop20%andBottom50%tiersdoesnotmean
+theinterventionhadnoeffectthere. Itmeansthedataisinsufficienttodistinguishtheobserveddif‑
+ferencesfromrandomvariation. Withcrimecountsthissmallinindividualcells, detectingmodest
+effectsrequireseitherlargertreatmentgroups,longertimeperiods,orboth.Theconsistentdirection
+oftheeffectacrossallthreetiers—interventionareasoutperformingnon‑interventionareasatevery
+level—issuggestiveevenwhereindividualtier‑leveltestsareunderpowered.
+Third, thecell‑levelPoissonanalysisreinforcesthecentralfindingofSection2: muchoftheappar‑
+entgeographicchurnincrimeconcentrationisnoise. When79%ofcellswith ≥ 50%year‑over‑year
+change are not statistically significant, the implication is that a meaningful share of what appears
+tobegeographicmovementisrandomvariationratherthangenuineshiftsinunderlyingconditions.
+Thismakesthecaseforadaptivetargetingstronger,notweaker:ifcitiescannottellinrealtimewhich
+changes are signal and which are noise, frequent reassessment and rapid response become even
+moreimportant.
+F.5MethodologicalNotes
+ThePoissonz‑scoreandincidencerateratiotestsusedinthisappendixassumethatcrimecounts
+follow a Poisson distribution — that is, that the variance equals the mean. Crime data sometimes
+exhibitsoverdispersion(varianceexceedingthemean),whichwouldmakethestandarderrorsinthese
+teststoosmallandthep‑valuestoooptimistic.The |z| ≥ 3.0thresholdusedforthecell‑levelanalysis
+(ratherthantheconventional1.96)providesapartialguardagainstthis. Forthetier‑levelIRRtests,
+overdispersionislessofaconcernbecauseaggregationacrossmanycellstendstosmoothoutthe
+excessvariationpresentattheindividualcelllevel.
+35
+
+<!-- Page 36 -->
+17A
+Theanalysisuses2024concentrationtierstoclassifycells,matchingthemethodologyinAppendixE.
+Crimecountsareannualtotalsforfull‑year2024and2025.
+References:Wheeler,A.P.(2016).Tablesandgraphsformonitoringtemporalcrimetrends:Translating
+theoryintopracticalcrimeanalysisadvice.InternationalJournalofPoliceScience&Management,
+18(3),159–172.
+G.Multi‐CityStabilityAnalysis: Methodology
+Section 2 classifies every half‑mile area in each city asstable,improving, orworseningbased on
+whetheritsyear‑over‑yearchangeinviolentcrimeexceedswhatrandomvariationwouldpredict.This
+appendixdescribeshowthatclassificationworks.
+G.1TheProblem: DistinguishingSignalfromNoiseinSmall‐AreaCrimeData
+Crimecountsinhalf‑milegridcellsaresmallnumbers.Acellwith5violentcrimesoneyearand9the
+nextshowsan80%increase—butwithcountsthislow,swingsofthatsizehappenroutinelybychance.
+Thequestioniswhetheragivenchangereflectssomethingreal(ashiftinunderlyingconditions)orfalls
+withintherangeofnormalyear‑to‑yearvariation.
+The Poisson distribution provides a framework for answering this. If crime at a location follows a
+roughlyPoissonprocess—astandardassumptionincriminologyforrareeventsdistributedacross
+spaceandtime—thentheexpectedrandomvariationcanbeestimateddirectlyfromtheprioryear’s
+count.
+G.2TheWheelerZ‐Score
+For each grid cell with at least one violent crime in the prior year, a z‑score is computed using the
+variance‑stabilizingsquare‑roottransformdevelopedbyWheeler(2016):
+[√ √ ]
+z = 2× observed2025 − expected
+2024
+wherethecell’sown2024countservesastheexpectedvalueandits2025countistheobservedvalue.
+Thisformulaapproximatesastandardnormaldistributionunderthenullhypothesisthattheunder‑
+lyingcrimeratehasnotchanged.
+Wheeler(2016)specificallyrecommendsthissquar√e‑roottransformoverthemorecommonstandard
+Poissonz‑scoreformula[(observed − expected)/ expected]becauseitproducesmorereliablesig‑
+nificanceestimatesatthelowcrimecountstypicalofhalf‑milegridcells.Thestandardformulatends
+tooverstatesignificancewhenexpectedcountsaresmall(e.g.,1–3crimes),whichiscommoninthe
+lowerhalfofcells.Thesquare‑roottransformcorrectsforthis.
+36
+
+<!-- Page 37 -->
+17A
+→
+• Positivez crimeincreasedbeyondexpectedvariation(worsening)
+→
+• Negativez crimedecreasedbeyondexpectedvariation(improving)
+• Cells with 2024 = 0 receiveno z‑score(a Poissonexpectationcannot be computedfroma zero
+baseline)
+G.3SignificanceThresholdandMultipleComparisons
+Atypicalcityanalysistestshundredsofgridcellssimultaneously. Whenrunningmanytestsatonce,
+theriskoffalsepositivescompounds: attheconventionalp < 0.05level( |z| ≥ 1.96),roughly5%of
+cellswouldappearsignificantbychancealoneevenifnothingchangedanywhere.Inacitywith1,000
+testablecells,thatwouldproduce~50falsepositives.
+Wheeler(2016)recommendsa |z| ≥ 3.0thresholdforcrimemonitoringcontextsinvolvingmultiple
+comparisons. This corresponds roughly to p < 0.001 per test and substantially reduces the false
+positiverate. Atthisthreshold,theexpectednumberoffalsepositivesina1,000‑cellanalysisdrops
+from~50to~3.
+TheclassificationsinSection2usethis |z| ≥ 3.0threshold:
+Classification Criterion Interpretation
+Improving z ≤ −3.0 Decreaselargeenoughtoindicateanemerging
+trend,notjustfluctuation
+Worsening z ≥ 3.0 Increaselargeenoughtoindicateanemerging
+trend
+Stable −3.0 < z < 3.0,orzundefined Changewithintherangeofnormalyear‑to‑year
+variation,orinsufficientbaselinedata
+G.4Cross‐CityApplication
+Thesameformulaandthresholdwereappliedidenticallyacrossalltencities.Foreachcity:
+1. Gridcelldatawasloadedfromthemulti‑citycrimeexplorerdataset,whichcontainshalf‑milecells
+withcrimes_2024andcrimes_2025columns(violentcrimecountsbyyear).
+2. Cells with crimes_2024 > 0 were included in the z‑score computation. Cells with zero 2024
+crimeswereclassifiedasstablebydefault(z‑scoreundefined).
+3. TheWheelerz‑scorewascomputedforeacheligiblecell.
+4. Cellswereclassifiedasimproving(z ≤ −3.0),worsening(z ≥ 3.0),orstable( |z| < 3.0).
+5. City‑levelpercentageswerecomputedassharesofallcells(includingthosewithzerobaselines),
+notjusttestablecells.
+37
+
+<!-- Page 38 -->
+17A
+Thenumberoftestablecells(thosewithatleastoneviolentcrimein2024)variesbycity,fromroughly
+200insmallercitiestoover2,000inNewYork.Acrossalltencitiescombined,7,332cellsweretestable.
+G.5ResultsSummary
+City TotalCells Testable Stable Improving Worsening Ratio
+Chicago 1,300 892 88% 12% 1% 17:1
+Oakland 350 271 73% 25% 2% 11:1
+Baltimore 470 357 88% 11% 1% 9:1
+St.Louis 416 286 93% 6% 1% 5:1
+Dallas 1,041 894 86% 11% 3% 4:1
+Seattle 480 301 93% 7% <1% 17:1
+Denver 671 403 93% 5% 1% 4:1
+Detroit 595 477 94% 4% 2% 2:1
+NewYorkCity 2,854 2,164 92% 5% 3% 2:1
+Atlanta 614 287 97% 2% 1% 2:1
+Allcities 8,791 7,332 90% 8% 2% 4.3:1
+÷
+Ratio=improvingcells worseningcells.Percentagesareoftotalcells(includingnon‑testable).“Sta‑
+ble”includescellswithzero2024baseline(z‑scoreundefined).
+Thecross‑citypatternisremarkablyconsistent: regardlessofwhetheracity’soverallcrimedeclined
+sharply(Chicago,
+−24%)orincreased(Atlanta,+12%),roughly90%ofitsgeographyshowednostatis‑
+ticallysignificantchange.Thevariationisprimarilyintheratioofimprovingtoworseningcells,which
+trackscloselywiththecitywidetrenddirectionandmagnitude.
+G.6WhereCitywideImprovementComesFrom
+Thestabilityclassificationalsorevealshowcitywidedeclinesaredistributedacrossthethreegroups.
+Insomecities,themajorityofthenetdeclinecomesfromconcentratedimprovementinthe~8%of
+cellsclassifiedasimproving. Inothers,itcomesfromtheincrementalgainsacrossthemuchlarger
+stablecategory.
+Onaverage,stablecells—whilenotshowingstatisticallysignificantindividualchanges—aregently
+improving,withroughly0.5to2.5fewerviolentcrimespercellperyear.Becausestablecellsaccount
+for~90%ofgeography,thesesmallper‑cellchangessumtoasubstantialshareofthecitywidedecline.
+Themixvaries: inDallas,88%ofthenetviolentcrimedeclinecamefromtheconcentratedimprove‑
+mentcells;inSt. Louis,73%camefromdistributedimprovementacrossstablecells. Bothpathways
+contributetocitywideimprovement;thestabilityanalysisidentifiesthesmallsliceofgeographywhere
+thatimprovementisnotoccurringandwhereconditionsmaybedeteriorating.
+38
+
+<!-- Page 39 -->
+17A
+G.7AssumptionsandLimitations
+• Poissonassumption.Themodelassumescrimecountsareindependenteventswithastableun‑
+derlyingrate—asimplification,butstandardinthecriminologyofplace. Crimedatasometimes
+exhibitsoverdispersion(varianceexceedingthemean),whichcouldproducemoresignificantre‑
+sultsthanwarranted.Theconservative |z| ≥ 3.0thresholdpartiallymitigatesthis.
+• Singleyear‑over‑yearcomparison.Theanalysiscompares2024to2025.Amulti‑yearanalysis(e.g.,
+2022–2025)wouldprovideamorerobustpictureoftrendsbutrequiresconsistentmulti‑yeardata
+acrossallcities,whichwasnotavailableforallten.
+• Zero‑baselinecells. Cellswithzeroviolentcrimesin2024areexcludedfromthez‑scorecompu‑
+tationandclassifiedasstablebydefault. Insomecities,thisisalargeshareofcells(e.g.,~45%in
+Dallas). Thesecellsaredisproportionatelylow‑crimeareaswheretheclassificationisunlikelyto
+bewrong,butasmallnumbermayhaveexperiencedgenuineemergenceofviolencefromazero
+baseline.
+• Gridcellsize. Allcitiesuseapproximatelyhalf‑milegridcells,butexactdimensionsvaryslightly
+(0.33 to 0.5 miles) to account for differences in city area and density. The z‑score is computed
+withineachcity’sowngridandisnotdirectlycomparableacrosscitiesinabsoluteterms,though
+thepercentagebreakdownsarecomparable.
+Reference:Wheeler,A.P.(2016).Tablesandgraphsformonitoringtemporalcrimetrends:Translating
+theoryintopracticalcrimeanalysisadvice.InternationalJournalofPoliceScience&Management,
+18(3),159–172.
+H.DataSourcesandReferences
+39
+
+<!-- Page 40 -->
+17A
+H.1DataSources
+Source What It Pro‑ Coverage UsedIn
+vides
+FBIUniformCrimeReporting(UCR)Program National 1960–present,annual Section 2
+violent (national
+crime and trends)
+homicide
+rates
+AHDatalyticsReal‑TimeCrimeIndex(RTCI) City‑level 2018–present,multiplecities Section 2
+homicide (city com‑
+counts and parisons)
+rates
+DallasPoliceDepartment(NIBRS) Incident‑ 2024–2025 Section 4,
+level Appendix
+crime data C–E
+(geocoded),
+provided
+directly by
+DPD
+Cityopendataportals Incident‑ Variesbycity Appendix D,
+level crime G
+data for
+multi‑city
+analysis
+FBINIBRS Incident‑ OngoingtransitionfromUCR Referenced
+level inSection5
+national
+crimedata
+311/Servicerequestsystems Code viola‑ Variesbycity Referenced
+tions,illegal in Sections
+dumping, 3,4,6
+lighting
+complaints
+H.2References
+Branas,C.C.,South,E.,Kondo,M.C.,Hohl,B.C.,Bourgois,P.,Wiebe,D.J.,&MacDonald,J.M.(2018).
+Citywide cluster randomizedtrial to restoreblighted vacant land and its effectson violence, crime,
+andsafety.ProceedingsoftheNationalAcademyofSciences,115(12),2946–2951.
+Chalfin,A.,Hansen,B.,Lerner,J.,&Parker,L.(2021). Reducingcrimethroughenvironmentaldesign:
+EvidencefromarandomizedexperimentofstreetlightinginNewYorkCity.Criminology,60(1),3–44.
+Weisburd,D.(2015).Thelawofcrimeconcentrationandthecriminologyofplace.Criminology,53(2),
+133–157.
+Wheeler,A.P.(2016).Tablesandgraphsformonitoringtemporalcrimetrends:Translatingtheoryinto
+40
+
+<!-- Page 41 -->
+17A
+practicalcrimeanalysisadvice. InternationalJournalofPoliceScience&Management, 18(3), 159–
+172.
+Wheeler,A.P.,&Reuter,S.(2021).RedrawinghotspotsofcrimeinDallas,Texas.PoliceQuarterly,24(2),
+159–184.
+[Additionalreferencestobeaddedasdraftingcontinues]
+I.DataSourceStabilityandReproducibility
+Opendataportals—particularlythosebuiltonSocrata—arelivesystems. Datasetsareupdated,re‑
+structured,andoccasionallyre‑publishedinwaysthatcansilentlyaffectdownstreamanalyses. This
+appendixdocumentsdatastabilityissuesencounteredduringthisprojectandthestepstakentoad‑
+dressthem.
+I.1TheProblem: MutableDataSources
+Themulti‑cityconcentrationanalysis(AppendixD)drawsincident‑levelcrimedatafromninemunici‑
+palopendataportals. Theseportalsserveasthepublicinterfaceforpolicedepartmentrecords,but
+theyarenotstaticarchives.Recordsmaybeadded,reclassified,deduplicated,orremovedafterinitial
+publication,anddatasetschemascanchangewithoutnotice.
+Thiscreatesareproducibilitychallenge: thesameAPIqueryrunagainstthesameendpointontwo
+differentdatescanreturnmateriallydifferentresults. Unlikeapublisheddatasetwithafixedversion,
+anopendataportalisamovingtarget.
+I.2Dallas: ObservedDiscrepancy
+Duringvalidation,weidentifiedasignificantdiscrepancybetweentwodatapullsfromtheDallasPo‑
+liceIncidentsdataset(Socrataresourceqv6i-rri7):
+Year EarlierDataPull CurrentAPIQuery(Feb2025) Difference
+2024 6,648violentcrimes 4,989violentcrimes
+−25%
+2025 5,684violentcrimes 4,455violentcrimes
+−22%
+TheearlierpullwasusedtogeneratetheCrimeExplorergridandhadbeenvalidatedagainstDallas
+Police Department reporting. The current API query uses the same offense filter (murder, robbery,
+aggravatedassaultviaNIBRScrimetype)butreturnssubstantiallyfewerrecords. Thegapisnotex‑
+plainedbydifferencesinfilteringlogic—thesameoffensestringsreturnfewermatchingrecordsfrom
+theendpointtodaythantheydidwhenthedatawasoriginallyexported.
+41
+
+<!-- Page 42 -->
+17A
+Possibleexplanationsincludedatasetre‑publicationwithdifferentdeduplicationrules(incident‑level
+vs. offense‑levelcounting),retroactivereclassificationofoffensetypes,orreplacementoftheunder‑
+lyingdataset.Wewereunabletodeterminetheprecisecause,asSocratadoesnotmaintainapublic
+changelogfordatasetrevisions.
+FortheDallasanalysisinthispaper,weusedataprovideddirectlybytheDallasPoliceDepartment,
+whichmatchestheearlier(higher)totalsandisconsistentwithDPD’sownreporting.
+I.3ImplicationsfortheMulti‐CityAnalysis
+Theconcentrationandchurnmetricscentraltothispaper(Jaccardindices,tierclassifications,persistent‑
+cellanalysis)measuregeographicoverlapratherthanabsolutecrimecounts. Thesemetricsarero‑
+busttouniformundercounting—ifeverypartofacityisundercountedbythesameproportion,cells
+rankinthesameorderandthesamecellsappearinthesametiers. TheJaccardvaluesandchurn
+patternsreportedinAppendixDarethereforeunlikelytobemateriallyaffectedbytheDallasdatais‑
+sue,providedtheundercountisgeographicallyuniform(whichisexpected,sincethefilteringapplies
+citywidewithoutaspatialcomponent).
+However,absolutecrimecountsandyear‑over‑yearpercentagechangesatthecitylevelaredirectly
+affected. AnycitywidetotalsforDallasreportedinthispapershouldbeunderstoodasdrawnfrom
+DPD‑provideddata,notfromthecurrentstateoftheopendataportal.
+I.4RecommendationsforReproducibility
+Basedonthisexperience,werecommendthefollowingpracticesforanalysesthatdependonmunic‑
+ipalopendata:
+1. Archiverawdatapulls.SavetimestampedcopiesofrawAPIresponsesorCSVexportsatthetime
+ofanalysis.Donotassumethesamequerywillreturnthesameresultslater.
+2. Validateagainstauthoritativesources. Wherepossible,cross‑checkopendatatotalsagainstoffi‑
+cialdepartmentreports,UCRsubmissions,ordirectagencycorrespondence.
+3. Documentqueryparameters. RecordtheexactAPIendpoint,filters,anddateofaccessforeach
+datapull.
+4. Pintoadataversion. Iftheportalsupportsdatasetversioningorsnapshots,referenceaspecific
+versionratherthantheliveendpoint.
+Therawdatafilesandqueryparametersusedinthisanalysisareavailableintheprojectrepository.
+42

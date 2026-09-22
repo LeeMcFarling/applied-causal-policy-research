@@ -1,0 +1,1089 @@
+sources:
+  aneja-xu-civil-service-state-capacity-2024:
+    title: 'Strengthening State Capacity: Civil Service Reform and Public Sector Performance'
+    authors:
+    - Aneja, Abhay, and Guo Xu
+    institution: American Economic Review
+    publication_place: Nashville, TN
+    publication_date: '2024'
+    chicago: 'Aneja, Abhay, and Guo Xu. *Strengthening State Capacity: Civil Service Reform and Public Sector Performance*.
+      Nashville, TN: American Economic Review, 2024.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - civil-service-reform
+    - state-capacity
+    - pendleton-act
+    - bureaucratic-autonomy
+    - turnover
+    - merit-based-hiring
+    - institutional-regeneration
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/aneja-xu-civil-service-state-capacity-2024.pdf
+      extracted: research-library/sources/aneja-xu-civil-service-state-capacity-2024.md
+      rag: research-library/rag/aneja-xu-civil-service-state-capacity-2024.jsonl
+      sha256: a6ca0dbb4c8a9ca063a5e005e6292b3cf5e51a949c2d5f76c87266605a406472
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 36
+      chunks: 43
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  christiansen-klitgaard-veil-of-vagueness-2010:
+    title: 'Behind the Veil of Vagueness: Success and Failure in Institutional Reforms'
+    authors:
+    - Christiansen, Thomas, and Robert Klitgaard
+    institution: Journal of Public Policy
+    publication_place: Cambridge
+    publication_date: '2010'
+    chicago: 'Christiansen, Thomas, and Robert Klitgaard. *Behind the Veil of Vagueness: Success and Failure in Institutional
+      Reforms*. Cambridge: Journal of Public Policy, 2010.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - institutional-reform
+    - veto-players
+    - strategic-ambiguity
+    - reform-sequencing
+    - designated-losers
+    - Denmark
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/christiansen-klitgaard-veil-of-vagueness-2010.pdf
+      extracted: research-library/sources/christiansen-klitgaard-veil-of-vagueness-2010.md
+      rag: research-library/rag/christiansen-klitgaard-veil-of-vagueness-2010.jsonl
+      sha256: bbb1de8f0a98e08101495e49555768fa58dc8077f4d796476aa1c2d04297e4b3
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 18
+      chunks: 19
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  angelova-veto-player-reform-2018:
+    title: Veto Player Theory and Reform Making in Western Europe
+    authors:
+    - Angelova, Mariyana, Thomas König, and Sven-Oliver Proksch
+    institution: European Journal of Political Research
+    publication_place: Oxford
+    publication_date: '2018'
+    chicago: 'Angelova, Mariyana, Thomas König, and Sven-Oliver Proksch. *Veto Player Theory and Reform Making in Western
+      Europe*. Oxford: European Journal of Political Research, 2018.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - veto-players
+    - reform-making
+    - Western-Europe
+    - minimal-winning-coalition
+    - crisis-driven-reform
+    - ideological-distance
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/angelova-veto-player-reform-2018.pdf
+      extracted: research-library/sources/angelova-veto-player-reform-2018.md
+      rag: research-library/rag/angelova-veto-player-reform-2018.jsonl
+      sha256: 4af6de903e4114d5a2ec8bdebbc14798429d2b9d391e3a9d0671be0e6d67f747
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 26
+      chunks: 28
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  andrews-pritchett-woolcock-pdia-2012:
+    title: Escaping Capability Traps through Problem Driven Iterative Adaptation (PDIA)
+    authors:
+    - Andrews, Matt, Lant Pritchett, and Michael Woolcock
+    institution: Harvard Kennedy School / Center for International Development
+    publication_place: Cambridge, MA
+    publication_date: '2012'
+    chicago: 'Andrews, Matt, Lant Pritchett, and Michael Woolcock. *Escaping Capability Traps through Problem Driven Iterative
+      Adaptation (PDIA)*. Cambridge, MA: Harvard Kennedy School / Center for International Development, 2012.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - capability-traps
+    - isomorphic-mimicry
+    - PDIA
+    - iterative-adaptation
+    - authorizing-environment
+    - institutional-regeneration
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/andrews-pritchett-woolcock-pdia-2012.pdf
+      extracted: research-library/sources/andrews-pritchett-woolcock-pdia-2012.md
+      rag: research-library/rag/andrews-pritchett-woolcock-pdia-2012.jsonl
+      sha256: af2cbaf2ca9f84a74b6b0b811247311e54916829d9d5d43394fac333c07707cd
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 28
+      chunks: 26
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  huber-mccarty-delegation-reform-2004:
+    title: Bureaucratic Capacity, Delegation, and Political Reform
+    authors:
+    - Huber, John D., and Nolan McCarty
+    institution: American Political Science Review
+    publication_place: Washington, D.C.
+    publication_date: '2004'
+    chicago: 'Huber, John D., and Nolan McCarty. *Bureaucratic Capacity, Delegation, and Political Reform*. Washington, D.C.:
+      American Political Science Review, 2004.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - bureaucratic-capacity
+    - delegation
+    - political-reform
+    - low-capacity-trap
+    - formal-model
+    - institutional-reform
+    - bad-equilibrium
+    - comprehensive-reform
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/huber-mccarty-delegation-reform-2004.pdf
+      extracted: research-library/sources/huber-mccarty-delegation-reform-2004.md
+      rag: research-library/rag/huber-mccarty-delegation-reform-2004.jsonl
+      sha256: 22e86b4c0937fc0637f57b869d8eb4c6ecf5a940139f116bbb99708f4f244822
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 14
+      chunks: 23
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  rich-outsourcing-bureaucracy-2023:
+    title: 'Outsourcing Bureaucracy to Evade Accountability: How Public Servants Build Shadow State Capacity'
+    authors:
+    - Rich, Jessica A. J.
+    institution: American Political Science Review
+    publication_place: Washington, D.C.
+    publication_date: '2023'
+    chicago: 'Rich, Jessica A. J.. *Outsourcing Bureaucracy to Evade Accountability: How Public Servants Build Shadow State
+      Capacity*. Washington, D.C.: American Political Science Review, 2023.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - state-capacity
+    - accountability
+    - outsourcing
+    - shadow-capacity
+    - bureaucratic-effectiveness
+    - accountability-capacity-tension
+    - Brazil
+    - pockets-of-effectiveness
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/rich-outsourcing-bureaucracy-2023.pdf
+      extracted: research-library/sources/rich-outsourcing-bureaucracy-2023.md
+      rag: research-library/rag/rich-outsourcing-bureaucracy-2023.jsonl
+      sha256: f172e4f818bdb928296f7e5bb9f1d94918e7c65cbd7d4fabca6bf86bdb7869f2
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 16
+      chunks: 31
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  abbink-staff-rotation-anti-corruption-2004:
+    title: 'Staff Rotation as an Anti-Corruption Policy: An Experimental Study'
+    authors:
+    - Abbink, Klaus
+    institution: European Journal of Political Economy
+    publication_place: Nottingham
+    publication_date: '2004'
+    chicago: 'Abbink, Klaus. *Staff Rotation as an Anti-Corruption Policy: An Experimental Study*. Nottingham: European Journal
+      of Political Economy, 2004.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - anti-corruption
+    - staff-rotation
+    - regulatory-capture
+    - experimental-economics
+    - bribery
+    - institutional-design
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/abbink-staff-rotation-anti-corruption-2004.pdf
+      extracted: research-library/sources/abbink-staff-rotation-anti-corruption-2004.md
+      rag: research-library/rag/abbink-staff-rotation-anti-corruption-2004.jsonl
+      sha256: f72b35fdab0e0158083302aebe2166da6cd4bee011d4a6f5d89af3b6de8fc5d9
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 20
+      chunks: 17
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  agarwal-inconsistent-regulators-2012:
+    title: 'Inconsistent Regulators: Evidence from Banking'
+    authors:
+    - Agarwal, Sumit, David Lucca, Amit Seru, and Francesco Trebbi
+    institution: Federal Reserve Bank of Chicago / NBER
+    publication_place: Chicago, IL
+    publication_date: '2012'
+    chicago: 'Agarwal, Sumit, David Lucca, Amit Seru, and Francesco Trebbi. *Inconsistent Regulators: Evidence from Banking*.
+      Chicago, IL: Federal Reserve Bank of Chicago / NBER, 2012.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - regulatory-capture
+    - banking-supervision
+    - regulatory-inconsistency
+    - rotation-policy
+    - state-capacity
+    - institutional-design
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/agarwal-inconsistent-regulators-2012.pdf
+      extracted: research-library/sources/agarwal-inconsistent-regulators-2012.md
+      rag: research-library/rag/agarwal-inconsistent-regulators-2012.jsonl
+      sha256: e846747a7347ad744b9a943a89c4c908ddee648cb5d29b83293bca2a18827d72
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 59
+      chunks: 47
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  walsh-ungson-organizational-memory-1991:
+    title: Organizational Memory
+    authors:
+    - Walsh, James P., and Gerardo Rivera Ungson
+    institution: Academy of Management Review
+    publication_place: Briarcliff Manor, NY
+    publication_date: '1991'
+    chicago: 'Walsh, James P., and Gerardo Rivera Ungson. *Organizational Memory*. Briarcliff Manor, NY: Academy of Management
+      Review, 1991. https://www.jstor.org/stable/258607.'
+    url: https://www.jstor.org/stable/258607
+    accessed: '2026-08-19'
+    tags:
+    - organizational-memory
+    - institutional-knowledge
+    - knowledge-retention
+    - personnel-rotation
+    - state-capacity
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/walsh-ungson-organizational-memory-1991.pdf
+      extracted: research-library/sources/walsh-ungson-organizational-memory-1991.md
+      rag: research-library/rag/walsh-ungson-organizational-memory-1991.jsonl
+      sha256: be50114a8daf62d587baf1eb7dd39d945ede7c6f26ab8402536a590885f55644
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 36
+      chunks: 35
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  brown-duguid-organizational-learning-1991:
+    title: 'Organizational Learning and Communities-of-Practice: Toward a Unified View of Working, Learning, and Innovation'
+    authors:
+    - Brown, John Seely, and Paul Duguid
+    institution: Organization Science
+    publication_place: Catonsville, MD
+    publication_date: '1991'
+    chicago: 'Brown, John Seely, and Paul Duguid. *Organizational Learning and Communities-of-Practice: Toward a Unified View
+      of Working, Learning, and Innovation*. Catonsville, MD: Organization Science, 1991. https://www.jstor.org/stable/2634938.'
+    url: https://www.jstor.org/stable/2634938
+    accessed: '2026-08-19'
+    tags:
+    - organizational-learning
+    - communities-of-practice
+    - tacit-knowledge
+    - institutional-knowledge
+    - knowledge-transfer
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/brown-duguid-organizational-learning-1991.pdf
+      extracted: research-library/sources/brown-duguid-organizational-learning-1991.md
+      rag: research-library/rag/brown-duguid-organizational-learning-1991.jsonl
+      sha256: 08f5f31c07dcfcb9695cdf87a7170692d00c68a0fc5be4eb2b9b8025d14a0e9e
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 19
+      chunks: 34
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  argote-fahrenkopf-knowledge-transfer-2016:
+    title: 'Knowledge Transfer in Organizations: The Roles of Members, Tasks, Tools, and Networks'
+    authors:
+    - Argote, Linda, and Erin Fahrenkopf
+    institution: Organizational Behavior and Human Decision Processes
+    publication_place: Pittsburgh, PA
+    publication_date: '2016'
+    chicago: 'Argote, Linda, and Erin Fahrenkopf. *Knowledge Transfer in Organizations: The Roles of Members, Tasks, Tools,
+      and Networks*. Pittsburgh, PA: Organizational Behavior and Human Decision Processes, 2016.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - knowledge-transfer
+    - organizational-learning
+    - institutional-knowledge
+    - personnel-rotation
+    - state-capacity
+    - networks
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/argote-fahrenkopf-knowledge-transfer-2016.pdf
+      extracted: research-library/sources/argote-fahrenkopf-knowledge-transfer-2016.md
+      rag: research-library/rag/argote-fahrenkopf-knowledge-transfer-2016.jsonl
+      sha256: 9caa53ddd773ffb977bdbb7a4facad2687be3da38f21ef7a96fc2394e03d7e9e
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 14
+      chunks: 37
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  makkai-braithwaite-revolving-door-1992:
+    title: 'In and Out the Revolving Door: Making Sense of Regulatory Capture'
+    authors:
+    - Makkai, Toni, and John Braithwaite
+    institution: Journal of Public Policy
+    publication_place: Cambridge
+    publication_date: '1992'
+    chicago: 'Makkai, Toni, and John Braithwaite. *In and Out the Revolving Door: Making Sense of Regulatory Capture*. Cambridge:
+      Journal of Public Policy, 1992.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - regulatory-capture
+    - revolving-door
+    - regulatory-enforcement
+    - institutional-design
+    - anti-capture
+    - personnel-rotation
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/makkai-braithwaite-revolving-door-1992.pdf
+      extracted: research-library/sources/makkai-braithwaite-revolving-door-1992.md
+      rag: research-library/rag/makkai-braithwaite-revolving-door-1992.jsonl
+      sha256: eba13255c5368737fb51d671204fbc3d55924fe8c9ce8e360c463d7e591a0dcc
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 0
+      chunks: 0
+      chunker_version: 2
+      embedding_model:
+      embedding_version:
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: pending
+  ranchordas-sunset-clauses-2014:
+    title: 'Sunset Clauses and Experimental Legislation: Blessing or Curse for Innovation'
+    authors:
+    - Ranchordas, Sofia
+    institution: Tilburg University
+    publication_place: Tilburg
+    publication_date: '2014'
+    chicago: 'Ranchordas, Sofia. *Sunset Clauses and Experimental Legislation: Blessing or Curse for Innovation*. Tilburg:
+      Tilburg University, 2014. https://research.tilburguniversity.edu/en/publications/77232cd7-d329-408e-91c1-1fefefdba42d.'
+    url: https://research.tilburguniversity.edu/en/publications/77232cd7-d329-408e-91c1-1fefefdba42d
+    accessed: '2026-08-19'
+    tags:
+    - sunset-clauses
+    - experimental-legislation
+    - regulatory-experimentation
+    - temporary-governance
+    - innovation
+    - legislative-design
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/ranchordas-sunset-clauses-2014.pdf
+      extracted: research-library/sources/ranchordas-sunset-clauses-2014.md
+      rag: research-library/rag/ranchordas-sunset-clauses-2014.jsonl
+      sha256: 302fdb0b2e47983030bd08236fdfff8abd125c6b3210e0b7f6a147e85c02a9f8
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 369
+      chunks: 327
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  beetsma-independent-fiscal-councils-2018:
+    title: 'Independent Fiscal Councils: Recent Trends and Performance'
+    authors:
+    - Beetsma, Roel M.W.J., et al.
+    institution: International Monetary Fund
+    publication_place: Washington, D.C.
+    publication_date: '2018'
+    chicago: 'Beetsma, Roel M.W.J., et al.. *Independent Fiscal Councils: Recent Trends and Performance*. Washington, D.C.:
+      International Monetary Fund, 2018.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - fiscal-councils
+    - independent-oversight
+    - automatic-triggers
+    - fiscal-governance
+    - institutional-design
+    - accountability
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/beetsma-independent-fiscal-councils-2018.pdf
+      extracted: research-library/sources/beetsma-independent-fiscal-councils-2018.md
+      rag: research-library/rag/beetsma-independent-fiscal-councils-2018.jsonl
+      sha256: f5b44d8a4c650cd7835c1def5778721c77ea4917c79a356ade1b76ab987599be
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 29
+      chunks: 27
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  jones-quandt-iridescent-sunset-2025:
+    title: 'An Iridescent Sunset: An Empirical Analysis of Sunset Legislation'
+    authors:
+    - Jones, Tanner, and Ryan Quandt
+    institution: Journal of Regulatory Economics
+    publication_place: New York, NY
+    publication_date: '2025'
+    chicago: 'Jones, Tanner, and Ryan Quandt. *An Iridescent Sunset: An Empirical Analysis of Sunset Legislation*. New York,
+      NY: Journal of Regulatory Economics, 2025. https://doi.org/10.1007/s11149-025-09498-5.'
+    url: https://doi.org/10.1007/s11149-025-09498-5
+    accessed: '2026-08-19'
+    tags:
+    - sunset-legislation
+    - regulatory-review
+    - automatic-triggers
+    - temporary-governance
+    - good-government
+    - empirical-analysis
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/jones-quandt-iridescent-sunset-2025.pdf
+      extracted: research-library/sources/jones-quandt-iridescent-sunset-2025.md
+      rag: research-library/rag/jones-quandt-iridescent-sunset-2025.jsonl
+      sha256: 91260abe298ac2625e9eae21540f6d2b74a74c06e82035b1fda60405fdc15d8a
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 39
+      chunks: 38
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  dziuda-loeper-sunset-provisions-2024:
+    title: Sunset Provisions
+    authors:
+    - Dziuda, Wioletta, and Antoine Loeper
+    institution: University of Chicago / Universidad Carlos III de Madrid
+    publication_place: Chicago, IL
+    publication_date: '2024'
+    chicago: 'Dziuda, Wioletta, and Antoine Loeper. *Sunset Provisions*. Chicago, IL: University of Chicago / Universidad
+      Carlos III de Madrid, 2024.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - sunset-provisions
+    - temporary-legislation
+    - legislative-inertia
+    - automatic-triggers
+    - policy-expiration
+    - regulatory-reform
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/dziuda-loeper-sunset-provisions-2024.pdf
+      extracted: research-library/sources/dziuda-loeper-sunset-provisions-2024.md
+      rag: research-library/rag/dziuda-loeper-sunset-provisions-2024.jsonl
+      sha256: 9f6c24a83aadbe7654ba2f150502d2b63c94565a4ea7ef10cc71f32e75f99a29
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 14
+      chunks: 15
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  wang-zhou-regulatory-sandboxes-2026:
+    title: 'Effectiveness of Regulatory Sandboxes in Financial Services: A Systematic Review'
+    authors:
+    - Wang, Yanqing, and Zijian Zhou
+    institution: Regulation & Governance
+    publication_place: London
+    publication_date: '2026'
+    chicago: 'Wang, Yanqing, and Zijian Zhou. *Effectiveness of Regulatory Sandboxes in Financial Services: A Systematic Review*.
+      London: Regulation & Governance, 2026.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - regulatory-sandboxes
+    - fintech
+    - regulatory-experimentation
+    - innovation
+    - financial-services
+    - systematic-review
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/wang-zhou-regulatory-sandboxes-2026.pdf
+      extracted: research-library/sources/wang-zhou-regulatory-sandboxes-2026.md
+      rag: research-library/rag/wang-zhou-regulatory-sandboxes-2026.jsonl
+      sha256: 53df281e4fcbaefb7f27255ae19cc7f2877ddaa868575a9c7032e3622f9638ed
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 20
+      chunks: 31
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  fahy-regulatory-sandbox-fintech-2022:
+    title: "Regulator Reputation and Stakeholder Participation: A Case Study of the UK's Regulatory Sandbox for Fintech"
+    authors:
+    - Fahy, Lauren
+    institution: European Journal of Risk Regulation
+    publication_place: Cambridge
+    publication_date: '2022'
+    chicago: "Fahy, Lauren. *Regulator Reputation and Stakeholder Participation: A Case Study of the UK's Regulatory Sandbox
+      for Fintech*. Cambridge: European Journal of Risk Regulation, 2022."
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - regulatory-sandboxes
+    - fintech
+    - stakeholder-participation
+    - regulator-reputation
+    - regulatory-experimentation
+    - UK
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/fahy-regulatory-sandbox-fintech-2022.pdf
+      extracted: research-library/sources/fahy-regulatory-sandbox-fintech-2022.md
+      rag: research-library/rag/fahy-regulatory-sandbox-fintech-2022.jsonl
+      sha256: 0e20e7cda1cc488e0ad234902a2303d16f61eaf67636a4645c586250f5b35c7f
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 20
+      chunks: 22
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  vowles-electoral-change-nz-2006:
+    title: Forecasting and Evaluating the Consequences of Electoral Change in New Zealand
+    authors:
+    - Vowles, Jack, Susan A. Banducci, and Jeffrey A. Karp
+    institution: Acta Politica
+    publication_place: London
+    publication_date: '2006'
+    chicago: 'Vowles, Jack, Susan A. Banducci, and Jeffrey A. Karp. *Forecasting and Evaluating the Consequences of Electoral
+      Change in New Zealand*. London: Acta Politica, 2006.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - electoral-systems
+    - mixed-member-proportional
+    - coalition-government
+    - New-Zealand
+    - electoral-reform
+    - public-mandates
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/vowles-electoral-change-nz-2006.pdf
+      extracted: research-library/sources/vowles-electoral-change-nz-2006.md
+      rag: research-library/rag/vowles-electoral-change-nz-2006.jsonl
+      sha256: dbd36f1f3a8c01ed7bf1339cd5e7b50857885728c8d77cb351eeaa2f57548ee8
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 19
+      chunks: 18
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  gerber-lupia-mccubbins-voter-initiatives-2011:
+    title: 'Direct Democracy, Indirect Results: When Does Government Limit the Impact of Voter Initiatives?'
+    authors:
+    - Gerber, Elisabeth R., Arthur Lupia, and Mathew D. McCubbins
+    institution: Political Research Quarterly
+    publication_place: Ann Arbor, MI
+    publication_date: '2011'
+    chicago: 'Gerber, Elisabeth R., Arthur Lupia, and Mathew D. McCubbins. *Direct Democracy, Indirect Results: When Does
+      Government Limit the Impact of Voter Initiatives?*. Ann Arbor, MI: Political Research Quarterly, 2011. https://ssrn.com/abstract=1002821.'
+    url: https://ssrn.com/abstract=1002821
+    accessed: '2026-08-19'
+    tags:
+    - direct-democracy
+    - voter-initiatives
+    - implementation
+    - legislative-compliance
+    - public-mandates
+    - electoral-systems
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/gerber-lupia-mccubbins-voter-initiatives-2011.pdf
+      extracted: research-library/sources/gerber-lupia-mccubbins-voter-initiatives-2011.md
+      rag: research-library/rag/gerber-lupia-mccubbins-voter-initiatives-2011.jsonl
+      sha256: f00ff2bd36c15a9122788262f7e58cbbfc1debf12e2766778f39db7c4001d668
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 34
+      chunks: 30
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  martel-rand-warning-labels-2023:
+    title: 'Misinformation Warning Labels Are Widely Effective: A Review of Warning Effects and Their Moderating Features'
+    authors:
+    - Martel, Cameron, and David G. Rand
+    institution: Current Opinion in Psychology
+    publication_place: Amsterdam
+    publication_date: '2023'
+    chicago: 'Martel, Cameron, and David G. Rand. *Misinformation Warning Labels Are Widely Effective: A Review of Warning
+      Effects and Their Moderating Features*. Amsterdam: Current Opinion in Psychology, 2023.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - misinformation
+    - warning-labels
+    - fact-checking
+    - information-integrity
+    - belief-correction
+    - platform-governance
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/martel-rand-warning-labels-2023.pdf
+      extracted: research-library/sources/martel-rand-warning-labels-2023.md
+      rag: research-library/rag/martel-rand-warning-labels-2023.jsonl
+      sha256: 581d6842b0ed2dc27c5ab61ab4d739a41bb34d7f397b9bc58892bb50e0e22c33
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 2
+      chunks: 1
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  swire-ecker-misinformation-correction-2018:
+    title: 'Misinformation and its Correction: Cognitive Mechanisms and Recommendations for Mass Communication'
+    authors:
+    - Swire, Briony, and Ullrich Ecker
+    institution: University of Western Australia
+    publication_place: Perth
+    publication_date: '2018'
+    chicago: 'Swire, Briony, and Ullrich Ecker. *Misinformation and its Correction: Cognitive Mechanisms and Recommendations
+      for Mass Communication*. Perth: University of Western Australia, 2018.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - misinformation
+    - belief-correction
+    - cognitive-mechanisms
+    - information-integrity
+    - mass-communication
+    - debunking
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/swire-ecker-misinformation-correction-2018.pdf
+      extracted: research-library/sources/swire-ecker-misinformation-correction-2018.md
+      rag: research-library/rag/swire-ecker-misinformation-correction-2018.jsonl
+      sha256: 8fe1730347ef5ce720ad0a948cd043bb63d2a9f12eb88850b41340ba12dc2366
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 25
+      chunks: 19
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  wang-guan-sunlight-mistrust-2023:
+    title: Can Sunlight Disperse Mistrust? A Meta-Analysis of the Effect of Transparency on Citizens' Trust in 
+      Government
+    authors:
+    - Wang, Qiushi, and Zhen Guan
+    institution: Journal of Public Administration Research and Theory
+    publication_place: Oxford
+    publication_date: '2023'
+    chicago: "Wang, Qiushi, and Zhen Guan. *Can Sunlight Disperse Mistrust? A Meta-Analysis of the Effect of Transparency
+      on Citizens' Trust in Government*. Oxford: Journal of Public Administration Research and Theory, 2023. https://doi.org/10.1093/jopart/muac040."
+    url: https://doi.org/10.1093/jopart/muac040
+    accessed: '2026-08-19'
+    tags:
+    - transparency
+    - government-trust
+    - information-integrity
+    - meta-analysis
+    - public-administration
+    - sunlight-provisions
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/wang-guan-sunlight-mistrust-2023.pdf
+      extracted: research-library/sources/wang-guan-sunlight-mistrust-2023.md
+      rag: research-library/rag/wang-guan-sunlight-mistrust-2023.jsonl
+      sha256: 4f6356d72c14a98fbf1caf5797e7c5abf244f160dbcb14adf1295548b834a68e
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 16
+      chunks: 29
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  teles-kludgeocracy-2012:
+    title: 'Kludgeocracy: The American Way of Policy'
+    authors:
+    - Teles, Steven M.
+    institution: New America Foundation
+    publication_place: Washington, D.C.
+    publication_date: '2012'
+    chicago: 'Teles, Steven M.. *Kludgeocracy: The American Way of Policy*. Washington, D.C.: New America Foundation, 2012.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - kludgeocracy
+    - complexity
+    - policy-accumulation
+    - institutional-design
+    - state-capacity
+    - reform
+    - operating-system
+    - administrative-state
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/teles-kludgeocracy-2012.pdf
+      extracted: research-library/sources/teles-kludgeocracy-2012.md
+      rag: research-library/rag/teles-kludgeocracy-2012.jsonl
+      sha256: ba649c38ce048669de5dcbafa8b5628e4b350aa8cecd0fafebdc9c10c7de417a
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 11
+      chunks: 15
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  keiser-shapiro-clean-water-act-2018:
+    title: Consequences of the Clean Water Act and the Demand for Water Quality
+    authors:
+    - Keiser, David A., and Joseph S. Shapiro
+    institution: Center for Agricultural and Rural Development, Iowa State University
+    publication_place: Ames, IA
+    publication_date: '2018'
+    chicago: 'Keiser, David A., and Joseph S. Shapiro. *Consequences of the Clean Water Act and the Demand for Water Quality*.
+      Ames, IA: Center for Agricultural and Rural Development, Iowa State University, 2018.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - clean-water-act
+    - environmental-regulation
+    - regulatory-effectiveness
+    - water-quality
+    - causal-identification
+    - policy-evaluation
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/keiser-shapiro-clean-water-act-2018.pdf
+      extracted: research-library/sources/keiser-shapiro-clean-water-act-2018.md
+      rag: research-library/rag/keiser-shapiro-clean-water-act-2018.jsonl
+      sha256: f497a3841dbe75e12917bf740e9eed2f8aae264f1f199a9f569b0cc0a473b564
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 94
+      chunks: 90
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  fukuyama-political-order-decay-2014:
+    title: 'Political Order and Political Decay: From the Industrial Revolution to the Globalization of Democracy'
+    authors:
+    - Fukuyama, Francis
+    institution: Farrar, Straus and Giroux
+    publication_place: New York, NY
+    publication_date: '2014'
+    chicago: 'Fukuyama, Francis. *Political Order and Political Decay: From the Industrial Revolution to the Globalization
+      of Democracy*. New York, NY: Farrar, Straus and Giroux, 2014.'
+    url:
+    accessed: '2026-08-19'
+    tags:
+    - state-capacity
+    - rule-of-law
+    - accountability
+    - political-decay
+    - institutional-development
+    - democracy
+    - bureaucracy
+    - operating-system
+    - reform
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/fukuyama-political-order-decay-2014.pdf
+      extracted: research-library/sources/fukuyama-political-order-decay-2014.md
+      rag: research-library/rag/fukuyama-political-order-decay-2014.jsonl
+      sha256: dea46491f015410ca13a11a7e15c949166f3182b3a89c026021d2c70f0383c6a
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-08-19'
+      pages: 672
+      chunks: 601
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete
+  17a-reducing-violent-crime-2026:
+    title: 'Reducing Violent Crime Without New Budget, New Staff, or More Arrests: A Pragmatic Guide for City Leaders'
+    authors:
+    - Eichenbaum
+    - Joe
+    institution: 17A
+    publication_place: New York
+    publication_date: February 2026
+    chicago: 'Eichenbaum, Joe. *Reducing Violent Crime Without New Budget, New Staff, or More Arrests: A Pragmatic Guide for
+      City Leaders*. New York: 17A, February 2026.'
+    url:
+    accessed: '2026-09-16'
+    tags:
+    - community-stabilization
+    - violent-crime
+    - environmental-intervention
+    - place-based-strategy
+    - coordination
+    briefs: []
+    reviews: []
+    claims: []
+    source:
+      type: pdf
+      file: research-library/originals/17a-reducing-violent-crime-2026.pdf
+      extracted: research-library/sources/17a-reducing-violent-crime-2026.md
+      rag: research-library/rag/17a-reducing-violent-crime-2026.jsonl
+      sha256: d5ae59d1de876cf9bd08572638cb4dd3eba2289938e394a1f2e4aca8ce6aaedb
+    ingestion:
+      extractor: pdfplumber
+      extractor_version: 0.11.10
+      extracted_at: '2026-09-16'
+      pages: 42
+      chunks: 42
+      chunker_version: 2
+      embedding_model: BAAI/bge-large-en-v1.5
+      embedding_version: 1
+    status:
+      phase_3_review: pending
+      extraction: complete
+      embedding: complete

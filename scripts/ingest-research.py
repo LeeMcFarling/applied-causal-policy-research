@@ -1,96 +1,127 @@
 #!/usr/bin/env python3
 """
-Ingest a research document (PDF or existing text) into the platform research library.
+Ingest a research document (PDF) into the platform research library.
 
 Usage:
     python3 scripts/ingest-research.py path/to/report.pdf
     python3 scripts/ingest-research.py path/to/report.pdf --key rand-superannuation-2019
 
 Workflow:
-  1. Extracts text from PDF using pdfplumber
-  2. Prompts for citation metadata (institution, title, authors, year, URL)
-  3. Generates Chicago citation
-  4. Writes formatted .md to research-library/sources/
-  5. Adds entry to research-library/index.md
+  1. Extracts text per page from the PDF using pdfplumber
+  2. Prompts for citation metadata (authors, title, institution, city, year, URL, tags)
+  3. Chunks the extraction by page (splitting oversized pages, never merging
+     across a page boundary) so every RAG record carries an exact page
+     reference -- this is what lets a review cite a page and have it be
+     checkable, instead of inferred from a table of contents
+  4. Writes:
+       research-library/originals/<key>.pdf   (byte-for-byte copy of the input)
+       research-library/rag/<key>.jsonl       (canonical chunk records)
+       research-library/sources/<key>.md      (human-readable extraction)
+  5. Adds/updates the source's entry in research-library/index.yaml
 
-After ingestion, run a Phase 3 review pass:
-    - Provide Claude with the source .md + relevant platform brief(s)
-    - Ask for the four-section review (aligned, gaps, divergences, open questions)
-    - Save output to research-library/reviews/<topic>-research-review.md
-    - Add inline citations to the brief using footnote syntax
+Does NOT touch research-library/index.md -- that file is hand-curated prose
+for this sample repository, not a generated view. Run
+research_lib.regenerate_index_md() yourself if this project's index.md is
+meant to be a generated listing instead.
+
+After ingestion:
+    python3 scripts/embed-research.py --key <key>
+    python3 scripts/query-research.py "some question" --tag <a-tag>
 """
 
+from __future__ import annotations
+
 import argparse
+import hashlib
 import re
+import shutil
 import sys
 from datetime import date
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).parent.parent
-SOURCES_DIR = REPO_ROOT / "research-library" / "sources"
-INDEX_FILE = REPO_ROOT / "research-library" / "index.md"
+sys.path.insert(0, str(Path(__file__).parent))
+
+import pdfplumber
+
+from research_lib import (
+    CURRENT_CHUNKER_VERSION,
+    DEFAULT_MAX_CHARS,
+    DEFAULT_OVERLAP_CHARS,
+    INDEX_YAML,
+    ORIGINALS_DIR,
+    RAG_DIR,
+    SOURCES_DIR,
+    load_index,
+    save_index,
+    write_rag_records,
+)
 
 
-def extract_pdf_text(pdf_path: Path) -> str:
-    try:
-        import pdfplumber
-    except ImportError:
-        print("Error: pdfplumber not installed. Run: pip3 install pdfplumber --break-system-packages")
-        sys.exit(1)
+def sha256_of(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for block in iter(lambda: f.read(1 << 20), b""):
+            h.update(block)
+    return h.hexdigest()
 
+
+def extract_pages(pdf_path: Path) -> list[tuple[int, str]]:
+    """Returns [(page_number, text), ...], 1-indexed, skipping blank pages."""
     pages = []
     with pdfplumber.open(pdf_path) as pdf:
         total = len(pdf.pages)
         print(f"  Extracting {total} pages...", end="", flush=True)
         for i, page in enumerate(pdf.pages):
             text = page.extract_text()
-            if text:
-                pages.append(f"<!-- Page {i+1} -->\n{text.strip()}")
+            if text and text.strip():
+                pages.append((i + 1, text.strip()))
             if (i + 1) % 10 == 0:
-                print(f" {i+1}...", end="", flush=True)
+                print(f" {i + 1}...", end="", flush=True)
     print(" done.")
-    return "\n\n".join(pages)
+    return pages
 
 
-def prompt(label: str, default: str = "") -> str:
-    if default:
-        val = input(f"  {label} [{default}]: ").strip()
-        return val if val else default
-    val = input(f"  {label}: ").strip()
-    return val
+def chunk_by_page(
+    key: str,
+    pages: list[tuple[int, str]],
+    max_chars: int = DEFAULT_MAX_CHARS,
+    overlap_chars: int = DEFAULT_OVERLAP_CHARS,
+) -> list[dict]:
+    """
+    One chunk per page by default. A page longer than max_chars is split into
+    multiple overlapping chunks, but a chunk never spans two pages -- every
+    record's page_start == page_end, so a citation to a chunk is a citation
+    to one specific, checkable page, not a range inferred from context.
+    """
+    records: list[dict] = []
+    for page_num, text in pages:
+        if len(text) <= max_chars:
+            records.append({"page_start": page_num, "page_end": page_num, "text": text})
+            continue
+        start = 0
+        while start < len(text):
+            end = min(start + max_chars, len(text))
+            piece = text[start:end].strip()
+            if piece:
+                records.append({"page_start": page_num, "page_end": page_num, "text": piece})
+            if end == len(text):
+                break
+            start = end - overlap_chars
+
+    for i, record in enumerate(records):
+        record["chunk_index"] = i
+        record["citation_key"] = key
+        record["id"] = f"{key}__{i:04d}"
+    return records
 
 
-def slugify(text: str) -> str:
-    text = text.lower()
-    text = re.sub(r"[^\w\s-]", "", text)
-    text = re.sub(r"[\s_]+", "-", text)
-    text = re.sub(r"-+", "-", text)
-    return text.strip("-")
-
-
-def build_chicago(authors: str, title: str, institution: str,
-                  city: str, year: str, url: str) -> str:
-    # Format: Last, First[, and First Last]. *Title*. City: Institution, Year. URL.
-    chicago = f"{authors}. *{title}*. {city}: {institution}, {year}."
-    if url:
-        chicago += f" {url}."
-    return chicago
-
-
-def build_source_doc(key: str, institution: str, chicago: str, url: str,
-                     accessed: str, topics: list, content: str) -> str:
-    topics_yaml = "\n".join(f"  - {t}" for t in topics) if topics else "  - general"
-
+def build_source_md(key: str, chicago: str, url: str, accessed: str, pages: list[tuple[int, str]]) -> str:
+    body = "\n\n".join(f"<!-- Page {n} -->\n{text}" for n, text in pages)
     return f"""---
 citation-key: {key}
-institution: {institution}
 chicago: "{chicago}"
 url: {url or 'TBD'}
 accessed: {accessed}
-topics:
-{topics_yaml}
-briefs: []
-phase-3-review: TBD
 ---
 
 ## Citation
@@ -101,64 +132,118 @@ phase-3-review: TBD
 
 ## Content
 
-{content}
+{body}
 """
 
 
-def update_index(key: str, institution: str, chicago: str, topics: list,
-                 out_path: Path):
-    entry = f"- [{key}]({out_path.relative_to(REPO_ROOT)}) — {institution} — {', '.join(topics) if topics else 'general'}\n"
+def prompt(label: str, default: str = "") -> str:
+    if default:
+        val = input(f"  {label} [{default}]: ").strip()
+        return val if val else default
+    return input(f"  {label}: ").strip()
 
-    if not INDEX_FILE.exists():
-        INDEX_FILE.write_text(
-            "# Research Library Index\n\n"
-            "Sources are listed below. See `reviews/` for Phase 3 review outputs.\n\n"
-            "## Sources\n\n"
-        )
 
-    content = INDEX_FILE.read_text()
-    if "## Sources" not in content:
-        content += "\n## Sources\n\n"
+def slugify(text: str) -> str:
+    text = text.lower()
+    text = re.sub(r"[^\w\s-]", "", text)
+    text = re.sub(r"[\s_]+", "-", text)
+    text = re.sub(r"-+", "-", text)
+    return text.strip("-")
 
-    if key not in content:
-        idx = content.find("## Sources") + len("## Sources\n\n")
-        content = content[:idx] + entry + content[idx:]
-        INDEX_FILE.write_text(content)
-        print(f"  Added to index.")
+
+def build_chicago(authors: str, title: str, institution: str, city: str, year: str, url: str) -> str:
+    chicago = f"{authors}. *{title}*. {city}: {institution}, {year}."
+    if url:
+        chicago += f" {url}."
+    return chicago
+
+
+def upsert_index_entry(
+    key: str,
+    *,
+    title: str,
+    authors: str,
+    institution: str,
+    city: str,
+    year: str,
+    chicago: str,
+    url: str,
+    accessed: str,
+    tags: list[str],
+    pdf_path: Path,
+    sha256: str,
+    pages: int,
+    chunks: int,
+) -> None:
+    index = load_index(INDEX_YAML)
+    sources = index["sources"]
+    existing = sources.get(key, {})
+    sources[key] = {
+        "title": title,
+        "authors": [a.strip() for a in authors.split(",")] if authors else [],
+        "institution": institution,
+        "publication_place": city,
+        "publication_date": year,
+        "chicago": chicago,
+        "url": url or None,
+        "accessed": accessed,
+        "tags": tags,
+        "briefs": existing.get("briefs", []),
+        "reviews": existing.get("reviews", []),
+        "claims": existing.get("claims", []),
+        "source": {
+            "type": "pdf",
+            "file": f"research-library/originals/{key}.pdf",
+            "extracted": f"research-library/sources/{key}.md",
+            "rag": f"research-library/rag/{key}.jsonl",
+            "sha256": sha256,
+        },
+        "ingestion": {
+            "extractor": "pdfplumber",
+            "extractor_version": __import__("pdfplumber").__version__,
+            "extracted_at": accessed,
+            "pages": pages,
+            "chunks": chunks,
+            "chunker_version": CURRENT_CHUNKER_VERSION,
+        },
+        "status": {
+            "phase_3_review": existing.get("status", {}).get("phase_3_review", "pending"),
+            "extraction": "complete",
+            "embedding": "pending",
+        },
+    }
+    save_index(index, INDEX_YAML)
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="Ingest a research document into the platform research library"
-    )
-    parser.add_argument("input", help="Path to PDF or text file")
+    parser = argparse.ArgumentParser(description="Ingest a PDF into the platform research library")
+    parser.add_argument("input", help="Path to PDF")
     parser.add_argument("--key", help="Citation key slug (auto-generated if omitted)")
-    parser.add_argument("--no-extract", action="store_true",
-                        help="Skip PDF extraction (use for already-converted text)")
     args = parser.parse_args()
 
     src = Path(args.input).resolve()
     if not src.exists():
         print(f"File not found: {src}")
         sys.exit(1)
+    if src.suffix.lower() != ".pdf":
+        print("Only PDF input is supported by this script.")
+        sys.exit(1)
 
     print(f"\nIngesting: {src.name}")
     print("─" * 50)
 
-    # Metadata prompts
     print("\nCitation metadata (press Enter to skip optional fields):\n")
-    authors   = prompt("Authors (Last, First[, and First Last])")
-    title     = prompt("Title")
+    authors = prompt("Authors (Last, First[, and First Last])")
+    title = prompt("Title")
     institution = prompt("Institution (e.g. RAND Corporation)")
-    city      = prompt("City of publication", "Santa Monica" if "rand" in institution.lower() else "Washington, D.C.")
-    year      = prompt("Year")
-    url       = prompt("URL (optional)")
+    city = prompt("City of publication", "Washington, D.C.")
+    year = prompt("Year")
+    url = prompt("URL (optional)")
     topics_in = prompt("Topics (comma-separated, e.g. superannuation,retirement)")
-    topics    = [t.strip() for t in topics_in.split(",") if t.strip()]
+    tags = [t.strip() for t in topics_in.split(",") if t.strip()]
 
-    accessed  = date.today().isoformat()
+    accessed = date.today().isoformat()
 
-    # Generate key
     if args.key:
         key = args.key
     else:
@@ -171,39 +256,53 @@ def main():
     print(f"\n  Citation key: {key}")
     print(f"  Chicago:      {chicago[:80]}...")
 
-    # Extract content
-    if src.suffix.lower() == ".pdf" and not args.no_extract:
-        content = extract_pdf_text(src)
-    else:
-        content = src.read_text(encoding="utf-8")
+    sha256 = sha256_of(src)
+    pages = extract_pages(src)
+    if not pages:
+        print("  No extractable text found in this PDF (scanned image with no OCR layer?).")
+        sys.exit(1)
 
-    # Write source document
-    out_path = SOURCES_DIR / f"{key}.md"
-    if out_path.exists():
-        overwrite = input(f"\n  {out_path.name} already exists. Overwrite? [y/N] ").strip().lower()
-        if overwrite != "y":
-            print("  Skipped.")
-            sys.exit(0)
+    records = chunk_by_page(key, pages)
+    print(f"  {len(pages)} pages -> {len(records)} chunks (page-bounded, max {DEFAULT_MAX_CHARS} chars/chunk)")
 
-    doc = build_source_doc(key, institution, chicago, url, accessed, topics, content)
-    out_path.write_text(doc, encoding="utf-8")
-    print(f"\n  Written: research-library/sources/{out_path.name}")
+    ORIGINALS_DIR.mkdir(parents=True, exist_ok=True)
+    dest_pdf = ORIGINALS_DIR / f"{key}.pdf"
+    shutil.copy2(src, dest_pdf)
 
-    # Update index
-    update_index(key, institution, chicago, topics, out_path)
+    rag_path = write_rag_records(key, records, RAG_DIR)
+    print(f"  Written: {rag_path.relative_to(rag_path.parent.parent.parent)}")
+
+    SOURCES_DIR.mkdir(parents=True, exist_ok=True)
+    md_path = SOURCES_DIR / f"{key}.md"
+    md_path.write_text(build_source_md(key, chicago, url, accessed, pages), encoding="utf-8")
+    print(f"  Written: research-library/sources/{md_path.name}")
+
+    upsert_index_entry(
+        key,
+        title=title,
+        authors=authors,
+        institution=institution,
+        city=city,
+        year=year,
+        chicago=chicago,
+        url=url,
+        accessed=accessed,
+        tags=tags,
+        pdf_path=dest_pdf,
+        sha256=sha256,
+        pages=len(pages),
+        chunks=len(records),
+    )
+    print(f"  Updated: research-library/index.yaml ({key})")
 
     print(f"""
 Next steps:
-  1. Review the extracted text in:
-       research-library/sources/{out_path.name}
-  2. Add relevant brief slugs to the 'briefs:' field in its frontmatter
-  3. Run a Phase 3 review pass:
-       - Provide Claude with this source + the relevant platform brief(s)
-       - Ask for the four-section review (aligned findings, gaps, divergences, open questions)
-       - Save the review to:
-           research-library/reviews/<topic>-research-review.md
-  4. Add inline citations to the brief using footnote syntax:
-       [^1]: {chicago[:60]}...
+  1. Review the extraction in:
+       research-library/sources/{md_path.name}
+  2. Embed it into the vector store:
+       python3 scripts/embed-research.py --key {key}
+  3. Spot-check retrieval:
+       python3 scripts/query-research.py "some question about {key}" --tag {tags[0] if tags else '<tag>'}
 """)
 
 

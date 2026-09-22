@@ -35,7 +35,9 @@ briefs:
 
 *Claims where reviewed research supports the platform position, evaluated within the source's stated scope. Use precise language: "provides evidence consistent with," "supports this mechanism," "is consistent with" — not "validates platform." Note what the source itself demonstrates vs. what the platform infers from it.*
 
-- **[Finding]** — [Source(s)]. [1-2 sentences on what the source found and how it aligns.] *[Optional: note the inferential step between the source finding and the platform design conclusion.]*
+*Every claim that cites a specific finding, statistic, or quotation must include a page reference — `[citation-key, p. X]` or `[citation-key, pp. X–Y]`. Each cited claim gets a row in the Citation Verification section below.*
+
+- **[Finding]** — [Source(s), p. X]. [1-2 sentences on what the source found and how it aligns.] *[Optional: note the inferential step between the source finding and the platform design conclusion.]*
 
 ---
 
@@ -43,7 +45,7 @@ briefs:
 
 *Topics that fall within the source's stated scope where the source is nonetheless silent, inconclusive, or weaker than expected. Do not list out-of-scope topics here — those belong in Source Scope above.*
 
-- **[Gap]** — [What the literature does not address, why it falls within this source's scope, and what the platform's position is in the absence of evidence.]
+- **[Gap]** — [What the literature does not address, why it falls within this source's scope (cite the page range searched, e.g. `[citation-key, pp. X–Y]`, so a reviewer can confirm the silence rather than just trusting it), and what the platform's position is in the absence of evidence.]
 
 ---
 
@@ -51,7 +53,7 @@ briefs:
 
 *Points where reviewed research contradicts, qualifies, or complicates the platform position — and the platform rationale for the chosen approach.*
 
-- **[Divergence]** — [Source(s)]. [What the source says.] *platform position:* [Why we hold the position despite the divergence — mechanism difference, scope difference, empirical dispute, values priority.]
+- **[Divergence]** — [Source(s), p. X]. [What the source says.] *platform position:* [Why we hold the position despite the divergence — mechanism difference, scope difference, empirical dispute, values priority.]
 
 ---
 
@@ -93,15 +95,29 @@ briefs:
 
 ---
 
+## Citation Verification
+
+*Every claim above that cites a specific source finding, statistic, or quotation — in Aligned Findings, Gaps, Divergences, or Design Decisions — gets one row here, regardless of how it was sourced in the body above. This table is the master checklist a human reviewer works through to confirm each citation actually says what the review claims it says, at the page cited. This is a citation-accuracy check, not a re-evaluation of the claim's substance: substance is argued in the sections above. Leave `Verified` unchecked until a human has opened the source at the cited page and confirmed the match.*
+
+| # | Claim (short label) | Appears in | Source | Page(s) | Verified |
+|---|---|---|---|---|---|
+| 1 | [Short label] | [Aligned Findings #1] | [citation-key] | p. X | [ ] |
+| 2 | [Short label] | [Gaps #1] | [citation-key] | pp. X–Y | [ ] |
+
+*If a row fails verification (page doesn't support the claim, page is wrong, or claim overstates/understates the source), do not silently fix it — flag it in the LLM Grading Status handoff below and correct the review body with a note in Design Decisions if the correction changes a platform decision.*
+
+---
+
 ## LLM Grading Status
 
-*This review is subject to an independent grading pass using a separate LLM (different provider/family) to check for source fidelity, selective emphasis, missing challenges, and framing neutrality. See `research-library/reviews/validation/` for the grading output.*
+*This review is subject to an independent fidelity-grading pass using a separate LLM (different provider/family), run against `research-library/reviews/validation/_GRADING_TEMPLATE.md`. That pass grades whether this review is faithful to the source material and the brief(s) — not whether the review's conclusions are correct. See `research-library/reviews/validation/` for the grading output, saved as `<this-review-filename>-grading.md`.*
 
 | Item | Status |
 |------|--------|
 | Grading submitted | [ ] |
 | Grading report filed | [ ] |
-| Grading findings addressed | [ ] |
+| Fidelity findings addressed | [ ] |
+| Citation Verification rows checked off | [ ] |
 | `grading_status` YAML updated | [ ] |
 
 *Until grading is complete, this review should be treated as a working draft, not a validated research receipt.*
