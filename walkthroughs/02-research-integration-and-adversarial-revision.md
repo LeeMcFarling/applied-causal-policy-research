@@ -97,7 +97,9 @@ The [revised community-stabilization brief](../samples/Policy_Domains/Housing_an
 
 The point is not that these are necessarily the correct final choices. The point is that a reader can follow the reasoning from research finding to design decision.
 
-![Figure 2](./figures/research-integration-figure-2.png)
+<img src="./figures/research-integration-figure-2.png"
+     alt="Figure 2"
+     style="display: block; width: 600px; max-width: 100%; height: auto; margin-left: auto; margin-right: auto;">
 
 > **Figure 2:** A four-column evidence chain. Under each artifact, show one representative output: source claim, adversarial qualification, grading comment, and resulting brief revision.
 
