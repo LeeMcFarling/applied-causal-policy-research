@@ -34,11 +34,9 @@ The research-integration workflow is designed to make those failures visible. In
 
 ## The demonstrated workflow
 
-<div style="text-align: center;">
-  <img src="./figures/research-integration-figure-1.png"
-       alt="Figure 1"
-       style="width: 600px; max-width: 100%; height: auto;">
-</div>
+<img src="./figures/research-integration-figure-1.png"
+     alt="Figure 1"
+     style="display: block; width: 600px; max-width: 100%; height: auto; margin-left: auto; margin-right: auto;">
 
 > *Figure 1:* The demonstrated workflow flows through strict phase gated steps: **Source → Structured review → Independent grading → Revised brief**. Each step only proceeds with the necessary information, and steps do not proceed unless the necessary conditions are met. 
 
