@@ -1,131 +1,129 @@
 # Applied Causal Policy Research Architecture
 
-**While policy proposals and regulations are usually written as standalone documents responding to specific problems, the systems that they are deployed into, interact with, and the broader regulatory environment that they collectively create are anything but.** 
+**Policy proposals and regulations are usually written as standalone documents, each responding to a specific problem; the systems they are deployed into, and the regulatory environment they collectively create, are anything but standalone.**
 
-**This repository instead asks what becomes possible when we use software engineering techniques to treat policy proposals and regulations as connected, testable, and revisable parts of a larger system. Furthermore, this project demonstrates how a machine-readable policy development architecture could be used to enable dependency analysis, adversarial research reviews, causal analysis, and administrative workflow modeling.**
+**This repository asks what becomes possible when we borrow the techniques of software engineering and treat policies and regulations as connected, testable, and revisable parts of a larger system. In particular, it demonstrates how a machine-readable policy architecture can support dependency analysis, adversarial research review, causal evaluation, and administrative workflow modeling.**
 
 
 | Capability | The question it answers | Guided walkthrough |
 |---|---|---|
-| **Machine-readable architecture** | *What is our climate policy missing? Are there dependencies from manufacturing, trade, or finance we haven't caught that will sink this energy policy?* | [Architecture](./walkthroughs/01-machine-readable-policy-architecture.md) |
-| **Adversarial research integration** | *How does our housing policy compare with the relevant research from think tanks, universities, and policy organizations? Where are the strongest gaps and deviations?* | [Research integration](./walkthroughs/02-research-integration-and-adversarial-revision.md) |
-| **Causal evaluation by design** | *Can a policy carry its own evaluation architecture from day one—producing the comparisons and evidence needed to decide whether it should scale, change, or stop?* | [Causal evaluation](./walkthroughs/03-causal-evaluation-inside-policy-design.md) |
-| **GovOps** | *What are the exact word-for-word regulatory differences in housing policy across all 50 states? What are the operational workflow differences that result? How can we see these differences in a real-time dashboard? What regulatory landscape leads to the fastest, cheapest, and *safest* results?* | [Process-legible law](./walkthroughs/04-govops-and-process-legible-law.md) |
+| **Machine-readable architecture** | *What is our climate policy missing? Are there dependencies in manufacturing, trade, or finance that we haven't caught, and that could sink this energy policy?* | [Architecture](./walkthroughs/01-machine-readable-policy-architecture.md) |
+| **Adversarial research integration** | *How does our housing policy hold up against the relevant research from think tanks, universities, and policy organizations? Where are the largest gaps and divergences?* | [Research integration](./walkthroughs/02-research-integration-and-adversarial-revision.md) |
+| **Causal evaluation by design** | *Can a policy carry its own evaluation architecture from day one, producing the comparisons and evidence needed to decide whether it should scale, change, or stop?* | [Causal evaluation](./walkthroughs/03-causal-evaluation-inside-policy-design.md) |
+| **GovOps** | *What are the exact, word-for-word differences in housing regulation across all 50 states, and what operational workflows do those differences produce? Can we see them in a real-time dashboard? Which regulatory landscape delivers the fastest, cheapest, and safest results?* | [Process-legible law](./walkthroughs/04-govops-and-process-legible-law.md) |
 
 
-> **Note: The policy examples above are illustrative.** These methods were developed and operationalized against a larger private policy corpus. This repository includes selected artifacts that allow readers to inspect the architecture without requiring them to navigate—or agree with—the source platform's substantive political positions.
+> **Note: the policy examples above are illustrative.** The methodology on display here is the conversion of policy documents into machine-readable objects, not the individual policy positions contained in the samples. The intent is for a future team to use this architecture to develop its own policies and implementation choices.
 
-The policy examples are therefore illustrative. The reusable product is the methodology, not the particular housing, wage, or regulatory positions contained in the samples. A future team would use the architecture to develop its own priorities, safeguards, implementation choices, and final recommendations.
+## A 10-Minute Tour
 
-## The 10-minute Tour: 
+1. **How the system works:** The [architecture reference](./ARCHITECTURE.md) shows how policy briefs are written as markdown documents and linked to one another through YAML metadata, which gives the collection database-level mechanics. That front matter includes stable IDs, dependencies, audience tags, and phase gates, among other fields.
+2. **Portfolio-level analysis:** The [sample project status report](./PROJECT_STATUS.md) shows how that database structure enables automated gap and maturity analysis across the whole platform.
+3. **Retrieval-augmented generation (RAG) for adversarial review:** Policies should be tested against the latest research from think tanks, universities, and other organizations, and this platform makes that process systematic. Users drop research into an ingestion folder; scripts then process it and generate an adversarial review. The output includes Chicago-style references to the source research, along with the alignment, divergences, gaps, and scope differences between that research and the policy proposal, each claim backed by page references in both documents. To see it in action, follow this [adversarial review](./research-library/reviews/community-stabilization-violence-research-review.md) of a policy proposal, the [independent grading receipt](./research-library/reviews/validation/community-stabilization-violence-research-review-grading.md) produced with LLM-as-judge methods, and the [revised brief](./samples/Policy_Domains/Housing_and_Public_Infrastructure/community-stabilization-framework.md) that resulted.
+4. **The scientific method, applied to public policy:** The [regional wage pilot](./samples/Policy_Domains/labor-and-economic-security/regional-wage-modernization-pilot.md) shows how a causal evaluation framework can be written into the structure of a policy itself: econometric evaluation plus pre-written criteria to scale or sunset. This is meant to address two common failures: promising pilots that never scale, and poorly performing policies that linger long after they have been disproven.
+5. **The system applied to regulation:** The [GovOps brief](./samples/Operating-System/govops-rmc-tech-layer.md) shows how the same YAML linkage can be applied to regulatory environments through a dual schema, enabling efficiency comparisons between states, optimization, and regulatory sandbox design.
 
-1. **How the System Works:** Open the [architecture reference](./ARCHITECTURE.md) to see how policy briefs are structured as markdown documents and linked to each other through YAML metadata to enable database level mechanics. This YAML frontmatter includes: Stable IDs, dependencies, audience tags, and phase gates, and so on. 
-2. **Portfolio Level Analysis:** The [sample project status report](./PROJECT_STATUS.md) demonstrates how the database structure enables automated gap and maturity analysis using codebase software. 
-3. **Retrieval Augmented Generation (RAG) Assisted Adversarial Review:** Policies should be compared against the latest research from Think Tanks, Universities, and other organizations. This platform allows this process to occur systematically by giving users a folder to ingest research along with scripts to process that research and generate an adversarial review including the Chicago Style references of the provided research, along with alignment, divergences, gaps, scope differences, and so on with page references between the documents. As an example, follow this [adversarial review](./research-library/reviews/community-stabilization-violence-research-review.md) of a policy proposal, along with an [independent grading receipt](./research-library/reviews/validation/community-stabilization-violence-research-review-grading.md) using LLM-as-judge methods, and a [revised brief](./samples/Policy_Domains/Housing_and_Public_Infrastructure/community-stabilization-framework.md) that resulted from the review.
-4. **Scientific Method - for Public Policy:** To see how causal evaluation frameworks can be written into the structure of a policy itself [regional wage pilot](./samples/Policy_Domains/labor-and-economic-security/regional-wage-modernization-pilot.md) with econometric evaluation and pre-written scale, or sunset criteria to mitigate the common flaw of promising pilots not scaling, or poorly-performing policies sticking around long after they've been disproven. 
-5. **The System Applied: How to Map Regulations to the Operations they Produce:** Browse the [rendered GovOps brief](./samples/Operating-System/GovOps-RMC-tech-layer.pdf) for how the YAML metadata linkage above can be applied to regulatory environments with a dual-schema to enable efficiency comparisson between states, optimization, and regulatory sandbox design.
+Each capability above has its own narrative walkthrough describing how it works in detail; see the [walkthroughs index](./walkthroughs/README.md).
 
-Each capability above has it's own narrative walkthrough that describes how it works in detail. For more information, click [walkthroughs](./walkthroughs/README.md). 
+## Why Do We Need Machine-Readable Policy Systems?
 
-## Why This Exists
+Hyperscale organizations routinely run production platforms that serve billions of people, span hundreds of millions of lines of code, and are maintained by thousands of engineers working simultaneously around the world. These platforms sit on top of hundreds of billions of dollars' worth of infrastructure, and they must continuously improve their operations, models, and systems while staying live for billions of users every minute of every day.
 
-Hyperscale organizations routinely manage production platforms that host billions of people, comprise hundreds of millions of lines of code, and are managed by thousands of engineers working simultaneously across the world. These platforms sit on top of hundreds of billions of dollars' worth of infrastructure and must continuously improve their operations, production models, and other systems while remaining in production for billions of users every minute of every day.
+The methods these organizations use to pull this off are virtually identical across Amazon, Microsoft, Google, Meta, and their peers: version control, structured review, dependency management, staged deployment, observability, controlled experimentation, and continuous revision. When I became interested in government reform, however, I was struck by how absent these disciplines were from government.
 
-The methodologies that these hyperscalers use to do this are virtually identical across Amazon, Microsoft, Google, Meta, and other hyperscale organizations: version control, structured review, dependency management, staged deployment, observability, controlled experimentation, and continuous revision. When I became interested in government reform, however, I was struck by how absent these systems were in government. 
+In many ways, public policy (laws, regulations, procedures, and so on) functions as civilizational software. If you want to build a house, you follow a sequence of building instructions specified by law; if you want to start a business, you follow a different procedure, specified by statute. Unlike the companies above, though, government has no real tooling to manage this complexity.
 
-Government policy -- be that laws, regulations, procedures, and so on -- functions like civilizational software. If you want to build a house, you follow a sequential set of building instructions specified via law. If you want to start a business, you follow a different procedure, according to statute. But unlike the software companies specified earlier, the government does not have the tools to manage this complexity.
+Instead, policies are drafted, debated, and enacted as one-off documents, with no dependency graphs, no staged rollouts, no observability, and no structured mechanism for revision once the evidence comes in. A great policy can succeed in Dallas without any mechanism to notice that success and scale it elsewhere. Likewise, a bad policy can be implemented without any structured way to test it, or to roll it back when it fails to meet its stated goals.
 
-Policies get drafted, debated, and enacted as one-off documents with no dependency graphs, no staged rollouts, no observability, and no structured mechanism for revising it once evidence comes in. Great policies get implemented in Dallas, but there is no automatic notification or scaling mechanism for rolling them out in other areas once they prove successful. Likewise, bad policies get implemented without a structured method for testing and rolling them back if they are unsuccessful at meeting their stated goals. 
+In other words:
 
-This project asks a bounded question:
+> How can the technocratic execution of the private sector be adapted to public policy while preserving the democratic safeguards we have come to expect from our institutions: due process, democratic authorization, legal accountability, and so on?
 
-> Which of those disciplines can be adapted to public policy while preserving due process, democratic authorization, legal accountability, and human judgment?
+This project investigates whether the tools developed to manage that kind of complexity (version control, dependency management, peer review, and experimentation among them) can be adapted into a continuously learning system for public policy. To be clear, it does **not** argue that government should operate like a technology company. These systems are useful only if they increase a government's ability to deliver on its own promises without sacrificing democratic accountability.
 
-This project therefore explores whether methodologies that emerged in hyperscale engineering organizations to manage complexity — version control, dependency management, peer review, staged deployment, experimentation, and observability — can be adapted into a continuously learning system for public policy. Note: It does **not** argue that government should operate like a technology company. The analogy is useful only where it improves legibility, learning, and accountability without displacing public values or lawful authority.
+## Demonstrations
 
-## What the Four Examples Demonstrate
+### 1. How to Implement a Machine-Readable Platform Architecture
 
-### 1. A Machine-Readable Platform Architecture
+> How can hundreds of text-based policies (or laws, or regulations) be maintained as a single coherent, queryable, and auditable system, rather than as a collection of disconnected papers?
 
-> How can hundreds of text-based policies (or laws, regulations, etc.) be maintained as a single coherent, queryable, and auditable system rather than a collection of disconnected papers? 
+The architecture section walks through how YAML front matter, adapted from Docusaurus documentation standards, can be applied to public policy. That one structural choice enables gap and dependency analysis, adversarial research review, and maturity tracking through phase gates.
 
-The architecture section demonstrates this capability -- walking through how YAML front matter adapted from Docusaurus documentation standards can be applied to public policy to enable gap and dependency analysis, adversarial research review, project and development maturity tracking (through phase-gating), and so on. 
+- [Architecture reference](./ARCHITECTURE.md): how the machine-readable system is applied to policy briefs, and how a platform's architecture enables the analysis described above.
+- [Project status](./PROJECT_STATUS.md): an example of the status report the platform generates once the architecture is in place, including sample maturity matrices, gap analysis, and cross-domain status.
+- [YAML front-matter guide](./AI_Integrations/YAML_FRONTMATTER_GUIDE.md): how to use the machine-readable schema to add and track metadata across a policy platform.
+- [Housing domain overview](./samples/Policy_Domains/Housing_and_Public_Infrastructure/overview-housing-and-urban-architecture.md): a worked example of the system in practice within a single policy domain.
+- [Housing maturity tracker](./samples/Policy_Domains/Housing_and_Public_Infrastructure/_MATURITY_TRACKER.md): how the system integrates multiple housing briefs to answer questions like "What gaps exist in our housing policies? Which documents still need research validation? How mature is this domain within the policy stack?" Trackers like this one then roll up across domains (e.g., healthcare, housing, fiscal policy) into the project-wide status document above.
 
-- [Architecture reference](./ARCHITECTURE.md) — Documents how this machine-readable system is applied to policy briefs and how the architecture of a policy platform can enable the analysis described earlier. 
-- [Project status](./PROJECT_STATUS.md) — This document shows an example output from a policy platform when the architecture is applied and the resulting system is used to generate a status report. It contains sample maturity matrices, gap analysis, and cross-domain status.
-- [YAML front-matter guide](./AI_Integrations/YAML_FRONTMATTER_GUIDE.md) — An example of how to use the YAML machine-readable schema to track and add metadata to a policy platform. 
-- [Housing domain overview](./samples/Policy_Domains/Housing_and_Public_Infrastructure/overview-housing-and-urban-architecture.md) — This document serves as a worked example of how this system is used in practice within a sample policy domain. 
-- [Housing maturity tracker](./samples/Policy_Domains/Housing_and_Public_Infrastructure/_MATURITY_TRACKER.md) — This document serves as an example of how the system described earlier can integrate multiple housing policy briefs to answer questions like: "What gaps exist in our housing policies? Which documents still need to be validated with research? How mature is this domain within our policy stack?" The results of this tracker are then used to integrate multiple policy domains (e.g., Healthcare, Housing, Fiscal Policy) into a project-wide status document detailed earlier. 
+**Note:** The IDs at the top of each document function as foreign keys to other briefs; in this way, each document declares its own gaps, dependencies, and related instruments. "Audience" tags support voter breakdowns, so the platform's stated goals can be queried quickly for any segment of the population (as those questions inevitably come up). Phase-gating logic tracks where each domain sits in its sequence (healthcare may be in expert review, for example, while criminal justice is in another stage altogether), and the maturity tracker documents record the gaps, gates, and sequencing of the larger system.
 
-**Note:** The IDs at the top of each document function as foreign keys to other policy briefs. In this way, each document declares its own gaps, dependencies, and related instruments. Additionally, ‘audience’ tags support voter breakdowns, letting us quickly query the platform’s stated goals for segments of the population (as questions inevitably come up). Finally, phase gating logic allows us to track the sequencing of each domain (i.e. healthcare may be in expert review, while criminal justice might be in another stage altogether), and maturity_tracker documents track the gaps, phase gating, and sequencing of the larger system. 
+### 2. Research Integration and Adversarial Review
 
-### 2. Research integration and Adversarial Review
+> How can we use modern technology to stress-test policy proposals against research from think tanks, universities, and policy organizations before the platform goes public?
 
-> How do we use modern technology to stress-test our policy proposals against research from think tanks, policy organizations, universities, and other organizations before the platform goes public? 
+Every policy platform in recent memory has met skepticism from at least one organization or national stakeholder. This demonstration shows how research can be ingested ahead of time to separate genuine critiques, which call for changes to the underlying policy architecture, from critiques that can be rebutted.
 
-The idea here is that every policy platform in recent memory is met with skepticism from at least one organization or nationwide stakeholder. This demonstration shows how research can be ingested ahead of time to distinguish what is a genuine critique that necessitates a change to the underlying policy architecture, and what can be rebutted. 
+To do this, the platform provides a folder into which an organization can drop PDFs of studies, case studies, meta-analyses, and other research. When prompted, the platform extracts the text from those documents and uses it to run an adversarial review against one or more briefs in the platform.
 
-This section therefore contains a folder into which an organization can drop PDF files for studies, research, case studies, meta-analyses, and so on. From there (when prompted), the platform strips out the text from those documents for analysis and uses that text for an adversarial review against one or more documents in the platform itself. 
+The resulting review first documents the difference in scope between the policies under review and the research being used to test them. It then identifies alignment, gaps, divergences, and open questions, each with page numbers.
 
-This adversarial review generates a file that documents the differences in scope between the policies being reviewed and the research being used to stress-test them. From there, it distinguishes alignment, gaps, divergences, and open questions (with page numbers) that can be used in the adversarial review. 
+Next, the review, the source research, and the underlying platform documents are passed to a different model, from a different provider, which produces an independent grading receipt. That receipt states whether the review passes or fails; a failing review goes back for a second pass with updated instructions.
 
-From there, the review, the adversarial research, and the underlying policy-platform documents are used to generate an independent grading receipt (from a different model, from a different provider) indicating whether the adversarial review passes or fails (and subsequently needs a second pass with updated instructions). 
+When the process is complete, it leaves behind a documented step-by-step analysis, the adversarial review itself, and a decision log recording which critiques were rebutted and why, along with which changes to the underlying policy they forced.
 
-When complete, the process ends with a documented step-by-step analysis, the adversarial review of the policy corpus, and a decision log from the user documenting which critiques are rebutted and why, along with which changes to the underlying infrastructure were necessitated.
+**An example:**
 
-**The included documents demonstrate an evidence chain:**
+1. [Ingested 17A source record](./research-library/sources/17a-reducing-violent-crime-2026.md): a sample case study from a leading government consulting and technology firm, used to adversarially review a community stabilization framework from the Housing and Urban Infrastructure domain.
+2. [Adversarial research review](./research-library/reviews/community-stabilization-violence-research-review.md): the review generated by the process, including the decision log that came out of the analysis and the final grade from the independent grading receipt.
+3. [Independent grading receipt](./research-library/reviews/validation/community-stabilization-violence-research-review-grading.md): the grading receipt generated from the review.
+4. [Revised community-stabilization brief](./samples/Policy_Domains/Housing_and_Public_Infrastructure/community-stabilization-framework.md): the final policy document incorporating the review's recommendations. Because the platform is version-controlled with Git, the revision carries a line-by-line diff of the before and after, along with metadata on who made each change and when.
 
-1. [Ingested 17A source record](./research-library/sources/17a-reducing-violent-crime-2026.md) - A sample case study ingested from a leading government consulting and technology firm. The case study is used for an adversarial review of a community stabilization framework from the 'Housing and Urban Infrastructure' domain. 
-2. [Adversarial research review](./research-library/reviews/community-stabilization-violence-research-review.md) - The adversarial research review generated by the process, including a documented decision log that resulted from the analysis and the final grade from the independent grading receipt. 
-3. [Independent grading receipt](./research-library/reviews/validation/community-stabilization-violence-research-review-grading.md) - The independent grading receipt generated from the review. 
-4. [Revised community-stabilization brief](./samples/Policy_Domains/Housing_and_Public_Infrastructure/community-stabilization-framework.md) - The final policy document that incorporates the advice from the adversarial review. Because Git - Version Control technology is used, this is incorporated with a diff showing a line-by-line before and after of the review, with metadata including the user who made the changes and timestamps. 
+Under the hood, the initial review uses retrieval-augmented generation to pre-process the research: chunking it, vectorizing it, and comparing it to the relevant targets in the policy platform. A second model from a different provider then acts as a judge, grading the first model's report against (1) the vectorized research, (2) the policy platform documents, and (3) the adversarial report itself, using a standardized rubric. Finally, a human in the loop validates every page reference, the grading report, and the adversarial review, and decides whether the platform needs to change.
 
-The initial review is generated by using Retrieval Augmented Generation to pre-process the research: chunk it, vectorize it, and then compare it to relevant targets in the policy platform. A second model from a different provider is then used as a judge to grade how the first model generated the report using: 1) the vectorized research documents 2) the policy platform documents 3) the adversarial report using a standardized rubric. A human-in-the-loop then validates all page references, the grading report, and the adversarial review—and determines whether changes to the policy platform are necessary. 
+Importantly, this process is an early pre-validation step, meant to establish directional validity before formal expert review. At this stage, the chain of custody is the most important thing it produces. Later reviewers can see which sources were used to validate which pieces of the platform, along with the page references, notes, scope, gaps, alignment, and divergences; ***just as importantly, they can see how the platform's authors responded to that information.***
 
-Importantly, this process is treated as an early pre-validation step, and is used to determine directional validity before expert review later on. For this early pre-validation step, the chain of custody is the most important artifact that this should produce. Later on, reviewers can see which sources were used to validate which pieces of the platform, and then review the page sources, notes, scope, gaps, alignment, divergences, etc. ***Along with how the platform authors responded to the information***.   
+In brief, the chain of custody takes the following form:
 
-Briefly this chain of custody will take the following form:
-
-> Source Research (pre-digested) + Initial Policy Brief → First-model adversarial review → Cross-provider rubric audit → Human in the loop review and decision record → Brief revision
+> Source research (pre-digested) + initial policy brief → first-model adversarial review → cross-provider rubric audit → human-in-the-loop review and decision record → brief revision
 
 
-### 3. Embedding Causal Analysis into Policy Design
+### 3. Causal Analysis Embedded into Policy Design
 
-The [regional wage pilot](./samples/Policy_Domains/labor-and-economic-security/regional-wage-modernization-pilot.md) is meant to demonstrate how a policy proposal can be structured in order to generate the data needed for its scale or sunset. As an example, the proposal includes a bounded intervention (rolled out to pre-designated jurisdictions first), statistically approximated treatment and control groups (which are used to determine where it takes place in the first place), independent research review (to prevent the government from grading its own work), and pre-specified paths detailing when to scale, revise, pause, or stop the intervention. 
+The [regional wage pilot](./samples/Policy_Domains/labor-and-economic-security/regional-wage-modernization-pilot.md) demonstrates how a policy proposal can be structured to generate the very data needed to decide whether it should scale or sunset. The proposal includes a bounded intervention (rolled out to pre-designated jurisdictions first), statistically matched treatment and control groups (which determine where the pilot takes place in the first place), independent research review (so the government is not grading its own work), and pre-specified paths for when to scale, revise, pause, or stop.
 
-While the wage policy is used as an example, the reusable idea is to bake the scientific method into policy design from the get-go in order to make the government more efficient at evaluating whether its proposals actually work. As a disclaimer, this system would still need a non-partial measurement authority, viable jurisdiction, ethical safeguards, etc. 
+Although the wage policy is only an example, the reusable idea is to build the scientific method into policy design from the start, so that government gets better at learning whether its proposals actually work. This system would, of course, still need an impartial measurement authority, viable jurisdictions, and ethical safeguards.
 
-### 4. GovOps and process-legible law
+### 4. The Same Process Applied to Law and Regulation
 
-**Question demonstrated:** Can law and regulation be represented in terms of both legal authority and the administrative processes they create?
+**Question demonstrated:** Can law and regulation be represented in terms of both their legal authority and the administrative processes they create?
 
-This demonstration takes the same concepts introduced above -- whether version control, causal analysis, experimental design, legibility, etc. -- and applies them to government regulatory architecture. It documents how legal text documents can be tied digitally to the processes they create, how the regulatory landscape can be compared across jurisdictions in the country, and how this legal text can be optimized to produce a maximally efficient regulatory landscape in terms of both protective outcomes and permitting throughput. 
+This demonstration takes the concepts introduced above (version control, causal analysis, experimental design, and legibility) and applies them to the architecture of regulation itself. It documents how legal text can be tied digitally to the processes it creates, how regulatory landscapes can be compared across jurisdictions, and how that text can be optimized for both protective outcomes and permitting throughput.
 
-**Start with the [GovOps technical brief](./samples/Operating-System/govops-rmc-tech-layer.md)
+**Start with the [GovOps technical brief](./samples/Operating-System/govops-rmc-tech-layer.md).**
 
-**What to notice:** The dual-schema design explicitly maps the legal text of a regulation with the permitting workflows that it generates. The proposal then shows how this structure can be used to compare regulatory regimes across states / jurisdictions, map how changes to text might effect timelines, and how sandbox designs could be utilized to test new regulatory changes before broader roll out. 
+**What to notice:** The dual-schema design explicitly maps a regulation's legal text to the permitting workflows it generates. The brief then shows how that structure can be used to compare regulatory regimes across states and jurisdictions, to model how changes to the text might affect timelines, and to design sandboxes that test new regulatory changes before a broader rollout.
 
 
-## What Is Included—and What Is Not
+## What Is Included, and What Is Not
 
 This public extract contains enough material to:
 
-- inspect the machine-readable schema and dependency model;
-- examine sample maturity and gap-analysis outputs;
-- trace one research-to-revision cycle;
-- review one causally designed pilot; and
+- inspect the machine-readable schema and dependency model
+- examine sample maturity and gap-analysis outputs
+- trace one research-to-revision cycle
+- review one causally designed pilot
 - inspect one GovOps implementation concept.
 
-It intentionally does not reproduce entire substantive policy domains. Doing so would shift attention from the development methodology toward agreement or disagreement with particular political policies.
+It intentionally does not reproduce entire policy domains, since doing so would shift attention away from the development methodology and toward agreement or disagreement with particular political positions.
 
 Because the architecture was developed against a considerably larger private corpus:
 
-- some dependency IDs point to briefs that are not public;
-- some trackers summarize areas whose underlying files are absent;
-- the research index retains context for sources not included here; and
-- repository-wide scans require the private directory tree.
+- some dependency IDs point to briefs that are not public
+- some trackers summarize areas whose underlying files are absent
+- the research index retains context for sources not included here
+- repository-wide scans require the private directory tree
 
-Those seams are documented rather than concealed because the preserved relationships demonstrate that the examples came from a larger operating structure.
+These seams are documented rather than concealed; the relationships they preserve are evidence that the examples came from a larger operating structure.
 
 ## Levels of Evidence in This Repository
 
@@ -133,7 +131,7 @@ To keep the distinction explicit:
 
 | Level | Meaning |
 |---|---|
-| **Illustrative question** | A plain-language example of what the architecture is intended to help a team answer |
+| **Illustrative question** | A plain-language example of what the architecture is meant to help a team answer |
 | **Enabled capability** | An operation supported by the schemas, workflows, and tooling |
 | **Included demonstration** | An artifact or end-to-end example readers can inspect in this public repository |
 | **Operational scale** | The larger private corpus against which the methods were developed and exercised |
@@ -153,13 +151,13 @@ scripts/                   Ingestion, validation, tracking, and PDF tooling
 
 ## Core Commitments
 
-- **Structured Documentation** - Utilize machine-readable schemas to make relationships and designs both transparent and inspectable. 
-- **Adversarial Review** - Stress test each proposal's design against the available evidence instead of citing things that corroborate a viewpoint. 
-- **Phase Discipline** - Run each proposal through a structured phase-gated cycle that incorporates architectural coherence checks as well as adversarial and expert review. Phase 'maturity' is tied to explicit gate conditions. 
-- **Causal Specificity** - Tie individual policies to independent causal analysis. 
-- **Human Authority** - Use automation to lower coordination costs. Human authority is reserved for policy design decisions. 
+- **Structured documentation:** use machine-readable schemas so that relationships and design choices are transparent and inspectable.
+- **Adversarial review:** stress-test each proposal against the available evidence, rather than citing only what corroborates a viewpoint.
+- **Phase discipline:** run each proposal through a phase-gated cycle that includes architectural coherence checks along with adversarial and expert review; a proposal's "maturity" is tied to explicit gate conditions.
+- **Causal specificity:** tie individual policies to independent causal analysis.
+- **Human authority:** use automation to lower coordination costs, while reserving policy design decisions for people.
 
 
 ## Status
 
-This is a demonstration repository built from extracts of a larger work in progress. As such, the walktrhoughs and policy briefs are intended for critique and analysis. See [PROJECT_STATUS.md](./PROJECT_STATUS.md) for an example report, and the [ARCHITECTURE.md](./ARCHITECTURE.md) for a more detailed description into the system. 
+This is a demonstration repository built from extracts of a larger work in progress; the walkthroughs and policy briefs are offered for critique and analysis. See [PROJECT_STATUS.md](./PROJECT_STATUS.md) for an example status report, and [ARCHITECTURE.md](./ARCHITECTURE.md) for a more detailed description of the system.
