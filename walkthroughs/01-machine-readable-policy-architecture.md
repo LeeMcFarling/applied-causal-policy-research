@@ -6,7 +6,7 @@ title: "Walkthrough 1: Machine-Readable Policy Architecture"
 
 ## The idea in one sentence
 
-A policy platform can be maintained more like a complex engineered system: each proposal has a stable identity, declares its relationships to other proposals, advances through explicit maturity gates, and contributes to a continuously updated picture of the whole.
+Database and software engineering principles can be applied to a policy document corpus. This allows 
 
 > **What this is:** A demonstration of the proposed repository structure applied to a policy-development workflow.
 
@@ -34,22 +34,21 @@ Every policy object begins with YAML front matter. The prose explains the propos
 
 ```yaml
 ---
-id: regional-wage-modernization-pilot
-title: Regional Wage Modernization Pilot
-domain: Labor_and_Economic_Security
-subdomain: Wage_Modernization
-phase: 1
+id: community-stabilization-framework
+title: Community Stabilization — Neighborhood Conditions Framework
+subdomain: Prevention_Layer
+phase: 1  # capped by hard dependency crisis-response-infrastructure (P1); gate-met phase without cap: 3
 layer: 4
 audiences:
-  - rural-america
-  - veterans
-  - working-class
+  - local-government
+  - community-organizations
 dependencies:
-  - doda-regional-wage-heatmap
-  - benefits-gradient-modernization
+  - crisis-response-infrastructure
+  - special-transit-zones
+  - housing-supply-stabilization-overlay
 tags:
-  - regional-pilot
-  - evidence-gated
+  - community-safety
+  - prevention
 ---
 ```
 
@@ -71,13 +70,13 @@ That permits automated questions such as:
 
 Each brief is assigned a maturity phase. Early phases define the problem and architecture, while later phases require research integration, pilot design, implementation planning, external review, and revision. The critical feature here is not the number of phases we define. It is that advancement is tied to observable conditions. A brief cannot become “implementation ready” merely because its prose is polished. Its dependencies, evidence, legal vehicle, evaluation plan, and unresolved risks must mature with it. 
 
-The result of this is a public facing policy platform that has expert review, evaluation planning, risk mitigation, validation against existing research, and other types of scoring built-in to the platform itself. A communication layer might explain to a voter what policies are explicitly designed to address their needs. An institutional layer gets the budget scoring and other receipt mechanisms to prove that the policy is serious.  
+The result of this is a public facing policy platform that has expert review, evaluation planning, risk mitigation, validation against existing research, and other types of scoring built-in to the platform itself. A communication layer might explain to residents which policies are designed to address their needs. An institutional layer gets the budget scoring and other receipt mechanisms to prove that the policy is serious.  
 
 ### Audience and cross-domain analysis
 
-Audience tags make it possible to generate views of the platform for different affected groups without maintaining separate, drifting copies of the same policy. Domain and subdomain fields support aggregation. If institutional actors are concerned about how the policy platform plans to address the concerns of one community in particular (e.g. rural-voters, farmers, black-community), these tags can be used to pull the relevant information without creating a stale copy of the larger document corpus (that may be updated within days or weeks), and replaces it with an updated dashboard that is directly tied to the most recent editions of policy documents and can be updated automatically as changes to the underlying corpus are published. 
+Audience tags make it possible to generate views of the platform for different affected groups without maintaining separate, drifting copies of the same policy. Domain and subdomain fields support aggregation. If institutional actors are concerned about how the policy platform plans to address the concerns of one community in particular (e.g. local governments, farmers, rural communities), these tags can be used to pull the relevant information without creating a stale copy of the larger document corpus (that may be updated within days or weeks), and replaces it with an updated dashboard that is directly tied to the most recent editions of policy documents and can be updated automatically as changes to the underlying corpus are published. 
 
-This also allows us to map dependencies that would otherwise have been obscured. For example, policies affecting rural voters might be a combination of healthcare, financing, right-to-repair, agricultural coordination, housing, and so on. Policies affecting the black community in a particular state might look different on the surface, but depend on similar financing mechanisms, or institutional constraints. The cross-domain analysis offered by this platform allows those dependencies to be explicitly mapped, mitigated, and pulled into meaningful information for lawmakers that says: "These voters are affected if this obscure institutional reform fails". 
+This also allows us to map dependencies that would otherwise have been obscured. For example, policies affecting rural communities might be a combination of healthcare, financing, right-to-repair, agricultural coordination, housing, and so on. Policies affecting small cities might look different on the surface, but depend on similar financing mechanisms or institutional constraints. The cross-domain analysis offered by this platform allows those dependencies to be explicitly mapped, mitigated, and pulled into meaningful information for lawmakers that says: "These communities are affected if this obscure institutional reform fails". 
 
 ### Gap analysis
 
@@ -129,7 +128,6 @@ The policies used as an example in this platform are not the primary object, rat
 
 ## Underlying evidence
 
-- [Architecture reference](../ARCHITECTURE.md)
-- [Project status and sample gap analysis](../PROJECT_STATUS.md)
+- [Integrity checks: `tracker_check.py`](../scripts/tracker_check.py)
 - [YAML front-matter guide](../AI_Integrations/YAML_FRONTMATTER_GUIDE.md)
 - [Housing maturity tracker](../samples/Policy_Domains/Housing_and_Public_Infrastructure/_MATURITY_TRACKER.md)

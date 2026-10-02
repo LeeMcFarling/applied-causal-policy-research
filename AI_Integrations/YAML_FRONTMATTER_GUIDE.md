@@ -25,8 +25,8 @@ tags:
   - subject-tag
   - another-tag
 audiences:
-  - working-class
-  - economic-populist
+  - state-agencies
+  - workers
 dependencies:
   - brief-slug-one
   - brief-slug-two
@@ -47,7 +47,7 @@ id: superannuation-employer-contribution-portability
 ```
 
 ### `title` (required)
-Full human-readable title. Used as the document heading and in PDF export.
+Full human-readable title. Used as the document heading.
 
 ### `sidebar_label` (optional)
 Shorter label for Docusaurus sidebar navigation. Use when the full title is too long.
@@ -116,41 +116,17 @@ Architectural layer. Set automatically based on directory location — verify it
 Semantic version. Increment minor (0.x) for content updates, major (x.0) for full rewrites.
 
 ### `audiences` (required for Phase 2+)
-Cross-cutting political and constituency audiences. Used by campaigns to pull all briefs relevant to a specific room or stakeholder group. List only audiences where this brief has a genuine argument — do not tag aspirationally.
+The stakeholder groups a brief is written for: the people who implement it, fund it, or are most directly affected by it. Because every brief carries this field, the corpus can be queried by audience, producing an up-to-date view of every brief relevant to one group without maintaining a separate, drifting copy of the material. Tag only audiences the brief genuinely addresses; do not tag aspirationally.
 
-**Domestic constituencies:**
-| Tag | Briefing context |
-|-----|-----------------|
-| `working-class` | Union halls, manufacturing towns, wage/benefits conversations |
-| `black-community` | NAACP, Urban League, CBC, Black church networks |
-| `latino-community` | UnidosUS, LULAC, agricultural worker events |
-| `rural-america` | Farm Bureau, rural hospitals, broadband, ag committees |
-| `young-workers` | College campuses, first-job voters, superannuation/401k stakes |
-| `seniors` | AARP, Social Security solvency, long-term care |
-| `veterans` | VFW, DAV, procurement reform |
-| `small-business` | Chamber events, right to repair, regulatory burden |
-| `women` | Maternal health, pay equity, childcare, caregiver policy |
-| `immigrants` | Legal pathway, labor contribution, enforcement reform |
-| `native-communities` | Tribal sovereignty, land and water rights, treaty |
+Each team defines its own controlled vocabulary for this field. For example:
 
-**Ideological audiences:**
-| Tag | Who it targets |
-|-----|---------------|
-| `conservative-crossover` | Right-leaning independents — market design, individual ownership, fiscal discipline |
-| `progressive-base` | Left base activation — inequality, universal coverage, criminal justice |
-| `economic-populist` | Cross-ideological working class — anti-monopoly, anti-Wall Street, trade fairness |
-| `fiscal-hawk` | Deficit hawks, independent voters, moderate Democrats — fiscal seriousness |
-
-**International audiences:**
-| Tag | Who it targets |
-|-----|---------------|
-| `allied-democracies` | NATO, G7, Five Eyes, democratic defense partners |
-| `indo-pacific` | Japan, South Korea, Australia, Taiwan, ASEAN partners |
-| `gulf-partners` | Gulf states, GDIC participants, Middle East regional partners |
-| `global-south` | African Union, ASEAN developing states, Latin America, non-aligned |
-| `multilateral-institutions` | UN, IMF, WTO, WHO reform constituencies |
-
-**Dual-tagging signal:** A brief tagged both `conservative-crossover` and `progressive-base` has genuine crossover potential — it can lead in almost any room.
+| Tag | Meaning |
+|-----|---------|
+| `state-agencies` | Agencies responsible for implementation |
+| `local-government` | City and county officials |
+| `employers` | Businesses affected by or participating in the program |
+| `workers` | People whose jobs, wages, or benefits the brief changes |
+| `researchers` | Evaluators and domain experts reviewing the evidence |
 
 ### `tags` (optional)
 Subject-matter tags for search and filtering. Lowercase kebab-case. These describe what the brief is about, not who it's for.
@@ -199,7 +175,7 @@ day-one-action: "Issue executive guidance directing HHS to prioritize coverage c
 ```
 
 ### `description` (required for Phase 2+)
-One to two sentences summarizing what the brief proposes and why it matters. Appears as the shaded abstract block in PDF export and as the Docusaurus card subtitle.
+One to two sentences summarizing what the brief proposes and why it matters.
 
 ---
 
@@ -212,8 +188,6 @@ Store in an `assets/` subfolder next to the brief or at the domain level:
 Policy_Domains/Healthcare/
   assets/
     sec-market-architecture.svg    ← reference as ./assets/name.svg
-    revenue-model-interactive.html ← web-only (needs .png companion for PDF)
-    revenue-model-interactive.png  ← PDF fallback
 ```
 
 Reference in markdown:
@@ -234,26 +208,6 @@ Generating properly formatted Chicago footnotes from a reference list is a trivi
 
 ---
 
-## PDF Export
-
-```bash
-# Single brief
-python3 scripts/export-brief.py path/to/brief.md
-
-# All Phase 5+ briefs in a domain (publication-track)
-python3 scripts/export-domain.py Healthcare --phase 5
-
-# All Phase 4+ briefs (pilot-designated and above)
-python3 scripts/export-domain.py Healthcare --phase 4
-
-# All domains
-python3 scripts/export-domain.py --all --phase 2 -o exports/
-```
-
-See `AI_Integrations/AUTOMATION_README.md` for full export documentation.
-
----
-
 ## Minimal Valid Example
 
 ```yaml
@@ -269,9 +223,8 @@ version: 0.3
 status: Draft
 last_updated: 2026-03-01
 audiences:
-  - working-class
-  - conservative-crossover
-  - progressive-base
+  - state-agencies
+  - researchers
 description: >
   Designs a three-tier healthcare market separating routine care,
   severe event coverage, and emergency services by economic structure.

@@ -241,9 +241,9 @@ platform has a separate framework for this (the homelessness prevention automati
 
 ---
 
-### Decision 4: LLM pattern detection for homelessness EC activation, rather than calendar flag on first DoDA combined-signal flag
+### Decision 4: ML pattern detection for homelessness EC activation, rather than calendar flag on first DoDA combined-signal flag
 
-**Decision made:** The Homelessness EC Connector is activated by LLM pattern detection across multiple consecutive meeting transcripts — not by a first-cycle DoDA flag.
+**Decision made:** The Homelessness EC Connector is activated by ML pattern detection across multiple consecutive meeting transcripts — not by a first-cycle DoDA flag.
 
 **Source position:** 17A does not address multi-system coordination between crime reduction and homelessness response. This is platform's own design judgment with no direct source to confirm or challenge it.
 

@@ -11,6 +11,7 @@ module exists to make impossible.
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -30,9 +31,31 @@ VECTOR_STORE_DIR = REPO_ROOT / "research-library" / "vector-store"
 # Versioning / model defaults
 # ---------------------------------------------------------------------------
 
-CURRENT_CHUNKER_VERSION = 2
+# v3: extraction now uses EXTRACT_X_TOLERANCE (v2 used pdfplumber's default of 3,
+# which fused words together on tightly kerned PDFs).
+CURRENT_CHUNKER_VERSION = 3
 DEFAULT_MAX_CHARS = 4000
 DEFAULT_OVERLAP_CHARS = 500
+
+# pdfplumber infers spaces from the horizontal gap between characters and only
+# inserts one when the gap exceeds x_tolerance (default 3). On tightly kerned
+# PDFs that default fuses most words together ("Violentcrimedevastatesindividuals"),
+# which degrades embeddings and makes exact quotes unsearchable.
+EXTRACT_X_TOLERANCE = 1
+
+# Extraction-quality check: a run of this many letters with no space is almost
+# always fused words, not a real word. Pages above the ratio are flagged at ingest.
+FUSED_TOKEN_MIN_LETTERS = 18
+FUSED_TOKEN_WARN_RATIO = 0.05
+
+
+def fused_token_ratio(text: str) -> float:
+    """Share of whitespace-delimited tokens containing a fused run of letters."""
+    tokens = text.split()
+    if not tokens:
+        return 0.0
+    fused = re.compile(rf"[A-Za-z]{{{FUSED_TOKEN_MIN_LETTERS},}}")
+    return sum(1 for t in tokens if fused.search(t)) / len(tokens)
 
 DEFAULT_EMBEDDING_MODEL = "BAAI/bge-large-en-v1.5"
 CURRENT_EMBEDDING_VERSION = 1

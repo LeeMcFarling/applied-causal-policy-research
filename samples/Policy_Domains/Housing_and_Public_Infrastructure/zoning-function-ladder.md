@@ -11,11 +11,8 @@ status: Draft
 phase: 1
 layer: 4
 audiences:
-  - working-class
-  - women
-  - black-community
-  - rural-america
-  - conservative-crossover
+  - local-government
+  - residents
 version: 0.5
 dependencies:
   - neighborhood-civic-overlay

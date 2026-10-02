@@ -25,7 +25,10 @@ from typing import Dict, List, Optional
 
 # ─── Configuration ────────────────────────────────────────────────────────────
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DOMAINS_DIR = REPO_ROOT / "guiding-principles" / "Policy_Domains"
+GP_DIR = REPO_ROOT / "guiding-principles"
+DOMAINS_DIR = GP_DIR / "Policy_Domains"
+# Layers 1–3 are tracked like domains, alongside every Policy_Domains/* folder (layer 4)
+LAYER_DIRS = [GP_DIR / "Foundations", GP_DIR / "Operating-System", GP_DIR / "Infrastructure"]
 TRACKER_FILENAME = "_MATURITY_TRACKER.md"
 PROJECT_STATUS_FILE = REPO_ROOT / "PROJECT_STATUS.md"
 
@@ -199,6 +202,12 @@ def scan_domain(domain_path: Path) -> Dict:
     }
 
 
+def domain_dirs() -> List[Path]:
+    """Every tracked unit: Foundations, Operating-System, Infrastructure, then each policy domain."""
+    policy = sorted(d for d in DOMAINS_DIR.iterdir() if d.is_dir() and not d.name.startswith("."))
+    return [d for d in LAYER_DIRS if d.is_dir()] + policy
+
+
 def calculate_domain_phase(domain_data: Dict) -> int:
     """Domain phase = minimum phase across all files (conservative)."""
     phases = [f["phase"] for f in domain_data["files_data"]]
@@ -340,16 +349,15 @@ _Auto-generated — add manual notes below this line:_
 
 def cmd_scan():
     """Scan all domains, update maturity trackers, regenerate PROJECT_STATUS.md."""
-    print(f"\nScanning domains in {DOMAINS_DIR.relative_to(REPO_ROOT)}...\n")
+    print(f"\nScanning domains in {GP_DIR.relative_to(REPO_ROOT)}...\n")
 
     if not DOMAINS_DIR.exists():
         print(f"Error: domains directory not found at {DOMAINS_DIR}")
         sys.exit(1)
 
-    domain_dirs = [d for d in DOMAINS_DIR.iterdir() if d.is_dir() and not d.name.startswith(".")]
     all_domains = []
 
-    for d in sorted(domain_dirs):
+    for d in domain_dirs():
         domain_data = scan_domain(d)
         all_domains.append(domain_data)
         update_maturity_tracker(domain_data)
@@ -362,13 +370,12 @@ def cmd_scan():
 
 def cmd_gaps():
     """Report gaps by tier across all domains."""
-    print(f"\nGap analysis — {DOMAINS_DIR.relative_to(REPO_ROOT)}\n")
+    print(f"\nGap analysis — {GP_DIR.relative_to(REPO_ROOT)}\n")
 
-    domain_dirs = [d for d in DOMAINS_DIR.iterdir() if d.is_dir() and not d.name.startswith(".")]
 
     tier1, tier2, tier3 = [], [], []
 
-    for d in sorted(domain_dirs):
+    for d in domain_dirs():
         dd = scan_domain(d)
         fc, wc = dd["file_count"], dd["total_words"]
         phase = calculate_domain_phase(dd)
@@ -398,12 +405,11 @@ def cmd_gaps():
 
 def cmd_validate():
     """Check all files for phase gate violations."""
-    print(f"\nValidating phase gates — {DOMAINS_DIR.relative_to(REPO_ROOT)}\n")
+    print(f"\nValidating phase gates — {GP_DIR.relative_to(REPO_ROOT)} (all four layers)\n")
 
-    domain_dirs = [d for d in DOMAINS_DIR.iterdir() if d.is_dir() and not d.name.startswith(".")]
     all_violations = []
 
-    for d in sorted(domain_dirs):
+    for d in domain_dirs():
         dd = scan_domain(d)
         for fd in dd["files_data"]:
             violations = validate_file(fd)
@@ -490,6 +496,12 @@ if __name__ == "__main__":
     command = sys.argv[1]
 
     if command in ("scan", "report"):
+        if "--force" not in sys.argv:
+            print("`scan` overwrites every _MATURITY_TRACKER.md with a generated stub, discarding the\n"
+                  "hand-maintained sections (gaps, dependency map, planned briefs, activity log).\n"
+                  "Use `python3 scripts/tracker_check.py` to verify trackers instead.\n"
+                  "Re-run with --force only if you really mean to regenerate them.")
+            sys.exit(1)
         cmd_scan()
     elif command == "gaps":
         cmd_gaps()

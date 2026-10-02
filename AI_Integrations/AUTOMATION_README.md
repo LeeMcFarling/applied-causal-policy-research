@@ -185,68 +185,6 @@ PROJECT_STATUS_FILE = REPO_ROOT / "PROJECT_STATUS.md"
 
 ---
 
-## PDF Export
-
-Policy briefs can be exported directly to print-quality PDFs using the scripts in `scripts/`.
-
-### Export a single brief
-
-```bash
-python3 scripts/export-brief.py guiding-principles/Policy_Domains/Healthcare/care-delivery-market-design.md
-```
-
-Output defaults to the same location as the source file (`brief-name.pdf`). Override with `-o`:
-
-```bash
-python3 scripts/export-brief.py path/to/brief.md -o exports/brief.pdf --open
-```
-
-### Batch export a domain
-
-```bash
-python3 scripts/export-domain.py Healthcare
-python3 scripts/export-domain.py Budget_and_Fiscal_Policy --phase 4 -o exports/
-python3 scripts/export-domain.py --all --phase 2
-```
-
-`--phase N` filters to briefs at phase N or above. Output lands in `exports/<domain>/` by default.
-
-### How it works
-
-- **YAML**: Docusaurus-specific fields (`slug`, `sidebar_*`, `id`) are stripped before pandoc sees the file. `last_updated` maps to `date`. `description` renders as a shaded abstract block on the cover page.
-- **SVG figures**: Converted to PNG via Chrome headless at export time. Original SVG is untouched.
-- **HTML figures**: The script looks for a companion `.png` next to the `.html` file and swaps it in for print. If no PNG exists, it inserts a bracketed note pointing to the interactive version.
-- **Chicago citations**: Use markdown footnote syntax — `[^1]` inline, `[^1]: Author, *Title*, etc.` at the bottom of the file. Pandoc renders these as proper footnotes; no separate bibliography file needed.
-
-### Figure conventions
-
-```
-Policy_Domains/
-  Healthcare/
-    assets/
-      sec-market-architecture.svg     ← reference as ./assets/sec-market-architecture.svg
-      revenue-flow-interactive.html   ← web-only interactive figure
-      revenue-flow-interactive.png    ← companion for PDF export
-```
-
-### Unlock full typographic template
-
-The template degrades gracefully on a basic TeX Live install. For headers, section rules, and Chicago-style footnote formatting, install the full package set:
-
-```bash
-sudo tlmgr install titlesec mdframed footmisc booktabs caption setspace fancyhdr enumitem microtype
-```
-
-No other changes needed — the template auto-detects and enables the packages.
-
-### Requirements
-
-- pandoc (`brew install pandoc` if missing)
-- xelatex (included with MacTeX — `brew install --cask mactex-no-gui` for full package support)
-- Google Chrome (already installed; used for SVG and HTML figure rendering)
-
----
-
 ## Phase 3: Research Integration
 
 Phase 3 is the process of reviewing existing literature against platform briefs. The output is two things:
@@ -376,7 +314,7 @@ grading-date: YYYY-MM-DD
 [1-paragraph overall judgment]
 ```
 
-Update the review document's `grading_status:` YAML field to `complete` once the report is filed. If a grading pass is deliberately waived (e.g., the source is supplementary and low-stakes), set `grading_status: waived-with-rationale` and add a one-sentence explanation in the review's YAML.
+Update the review document's `grading_status:` YAML field to `llm-graded` once the report is filed. Do not set `grading_status: complete` until the human verification step (Phase 3.6) is also finished. If a grading pass is deliberately waived (e.g., the source is supplementary and low-stakes), set `grading_status: waived-with-rationale` and add a one-sentence explanation in the review's YAML.
 
 ### Why a different LLM family?
 
@@ -394,6 +332,71 @@ Disagreement between model families is treated as a useful signal for human revi
 Accordingly, the grading pass should be understood as an **independent fidelity and balance audit**, not as a validation of the underlying policy proposal.
 
 The grading report is advisory rather than authoritative. Its purpose is to surface potential misrepresentations, omissions, or framing issues for human consideration. Final editorial judgment remains with the project author, who may accept, reject, or partially incorporate the recommendations with documented rationale.
+
+---
+
+## Phase 3.6: Human Page-Reference Verification and Sign-Off
+
+Once the graded review is accepted (Phase 3.5), it undergoes a mandatory human verification pass before `grading_status` is set to `complete`: a human checks every page reference against the original source and then reads through the full review. This step exists because LLM judges can evaluate argumentative structure and framing balance, but they cannot physically verify that a specific page in a physical source actually says what the review claims it says.
+
+### What the human reviewer does
+
+**For every page-referenced claim in the review** — in Aligned Findings, Divergences, Open Questions, and Design Decisions — the reviewer opens the original source PDF and confirms:
+
+1. **The page exists and contains the cited passage.** If the review cites "pp. 538–540," the reviewer opens those pages and confirms the cited content is there.
+2. **The claim accurately represents what the passage says.** Not a paraphrase that changes the meaning, not a compression that drops a crucial qualifier, not an attribution of an argument the author is actually refuting.
+3. **The quote or close paraphrase (if any) is accurate.** Exact quotations must be checked character-by-character. Paraphrases must preserve the original's direction of argument.
+
+This is not a speed-read. It is a page-by-page spot-check of every specific citation in the document.
+
+Once every page reference is checked, the reviewer reads through the full review end to end, looking for problems a claim-by-claim check can miss: framing that drifts from the source, conclusions stronger than the evidence supports, or sections that no longer agree with one another after corrections.
+
+### Sign-off procedure
+
+After completing the verification pass, the human reviewer appends the following block to the grading report in `research-library/reviews/validation/`:
+
+```markdown
+---
+
+## Human Verification Sign-Off
+
+**Reviewer:** [Name]
+**Date:** YYYY-MM-DD
+**Source PDF used:** [filename or path]
+
+### Page Reference Log
+
+| Review location | Cited pages | Verified? | Notes |
+|---|---|---|---|
+| Finding 1 — [brief description] | pp. X–Y | ✅ / ❌ / ⚠️ | |
+| Finding 2 — [brief description] | pp. X–Y | ✅ / ❌ / ⚠️ | |
+| Divergence 1 — [brief description] | pp. X–Y | ✅ / ❌ / ⚠️ | |
+| ... | | | |
+
+Legend: ✅ Verified accurate · ❌ Inaccurate — correction required · ⚠️ Partially accurate or ambiguous — note required
+
+### Verification Outcome
+
+- [ ] Full review read through end to end
+- [ ] All page references verified — no corrections required → set `grading_status: complete`
+- [ ] Corrections required (see ❌ and ⚠️ rows above) → review must be revised before `grading_status: complete`
+- [ ] Sign-off granted with minor caveats (all ⚠️ noted, no ❌) → set `grading_status: complete-with-caveats`
+
+**Sign-off:** _________________________________ Date: _____________
+```
+
+### Correction workflow
+
+If the verification pass surfaces inaccurate page references (❌):
+
+1. The human reviewer notes the correct passage or correct characterization in the log.
+2. The review document is updated to correct the finding, divergence, or decision record.
+3. The human reviewer re-verifies the corrected entry and marks it ✅.
+4. `grading_status` is set to `complete` only after all ❌ entries are resolved.
+
+### Why this step cannot be delegated to the LLM judge
+
+The LLM grading pass evaluates argumentative structure, framing balance, and selective emphasis — all of which are evaluable from the text of the review alone. It cannot open a PDF and read page 538. It cannot tell whether a specific passage exists on a specific page, or whether a paraphrase preserves the original's qualifier. Citation accuracy is a physical verification task that requires a human with access to the original source.
 
 ---
 

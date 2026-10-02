@@ -8,14 +8,13 @@ domain: Housing_and_Public_Infrastructure
 subdomain: Prevention_Layer
 policy_type: Environmental Safety Framework
 status: Draft
-phase: 4
+phase: 1  # capped by hard dependency crisis-response-infrastructure (P1); gate-met phase without cap: 3
 layer: 4
 eo-pilot-target: true
 day-one-action: "5-city Crime Reduction Council pilot via DoDA deployment authority and Execution Corps field deployment; existing executive authority over federal coordination programs."
 audiences:
-  - progressive-base
-  - moderate-dem
-  - small-city
+  - local-government
+  - community-organizations
 version: 0.2
 last_updated: 2026-08-04
 dependencies:
@@ -26,9 +25,8 @@ dependencies:
   - neighborhood-civic-overlay
   - neighborhood-infrastructure-solvency-test
   - department-of-data-and-accountability
-  - execution-corps
+  - execution-corps-spec
   - homelessness-prevention-automatic-stabilizer
-  - doda-hsewi
   - immutable-government-ledger
 related_initiatives:
   - violence-interruption-youth-off-ramps
@@ -46,6 +44,10 @@ tags:
   - neighborhood-investment
   - prevention
   - collective-efficacy
+description: >
+  Funds rapid, visible neighborhood-condition improvements (lighting, vacant-lot
+  remediation, staffed third spaces, commercial anchors) and a weekly cross-agency Crime
+  Reduction Council to reduce violence without expanding enforcement or surveillance.
 ---
 
 > **Illustrative sample:** This draft demonstrates how external research can adversarially test and revise a policy proposal. It is an example for adaptation and critique, not a recommended implementation package. A responsible team would determine the policy objective, affected communities, safeguards, institutions, and final design.
@@ -208,7 +210,7 @@ The weekly cadence is the core mechanism of this model — not the technology, n
 
 - Facilitated meeting with agency leads: status of each active site; completed interventions confirmed; stalled cases identified; assignments for the coming week set
 - Stalled cases (3+ consecutive cycles without intervention) elevated to RMC for regulatory or resource resolution
-- Meeting auto-transcribed; transcript processed by LLM integration to extract action items, assignments, and site status updates (see Technology Stack below)
+- Meeting auto-transcribed; transcript processed by ML integration to extract action items, assignments, and site status updates (see Technology Stack below)
 - Weekly progress report auto-generated against DoDA performance benchmarks; distributed to agency leads and posted to DoDA dashboard
 
 **Wednesday–Friday — Field Deployment**
@@ -223,7 +225,7 @@ The CRC's administrative infrastructure is designed to minimize the coordination
 
 **1. Meeting platform with auto-transcription.** Any enterprise meeting platform with automatic transcription capability is sufficient (Teams, Zoom, Google Meet, or equivalent). Requirements: auto-transcription of every meeting; transcripts stored in a shared record accessible to the CRC Coordinator and all agency leads; calendar integration so meeting invites auto-generate the shared agenda template with the standard site-review format.
 
-**2. LLM integration for action-item extraction, tracking, and pattern detection.** Meeting transcripts are processed by an LLM integration that extracts: action items with assigned owner and target date; site status updates (new, active, stalled, resolved); blocker flags for RMC escalation; cadence deviations (missed meetings, absent agency leads). Output is auto-populated to a shared case management record in DoDA and contributes to the weekly progress report. This eliminates manual agenda-preparation and follow-up tracking — the two administrative burdens most likely to cause coordination programs to degrade over time.
+**2. ML integration for action-item extraction, tracking, and pattern detection.** Meeting transcripts are processed by an ML integration that extracts: action items with assigned owner and target date; site status updates (new, active, stalled, resolved); blocker flags for RMC escalation; cadence deviations (missed meetings, absent agency leads). Output is auto-populated to a shared case management record in DoDA and contributes to the weekly progress report. This eliminates manual agenda-preparation and follow-up tracking — the two administrative burdens most likely to cause coordination programs to degrade over time.
 
 The LLM layer also runs a **pattern-detection pass** across the rolling transcript archive. When a site appears in consecutive meeting records as unresolved and the transcript language co-occurs with indicators of housing instability (encampment references, 311 activity, acute shelter need), the pattern-detection layer flags the site as a candidate combined-signal site and — after the pattern is confirmed across multiple meeting cycles — auto-generates a calendar invite for the Homelessness EC Connector for the next Tuesday meeting. This is a pull mechanism, not a push: the connector enters the meeting only when a recurring, confirmed pattern warrants it. (See Combined-Signal Sites below for full protocol.)
 
@@ -241,13 +243,13 @@ A CRC unit exits a city when three conditions are met simultaneously:
 2. DoDA priority site count for the city falls below the activation threshold on 4 of the prior 6 monthly assessments
 3. The city has formally committed to sustaining the CRC Coordinator position and DoDA data infrastructure after EC departure
 
-At sunset, the CRC Coordinator role is expected to convert to a city-funded position. The technology stack (meeting platform, LLM integration, DoDA access) transitions to a city maintenance contract.
+At sunset, the CRC Coordinator role is expected to convert to a city-funded position. The technology stack (meeting platform, ML integration, DoDA access) transitions to a city maintenance contract.
 
 ---
 
 ## Pilot Design — 5-City Launch
 
-The CRC operational model is pilotable immediately using DoDA's pilot team and, in eligible cities, 17A's existing analytical infrastructure. The pilot tests three things: (a) whether the coordination model can be stood up in 90 days using existing city staff; (b) whether visible corridor improvement is achievable within 180 days; and (c) whether the meeting-software/LLM integration sustains the weekly cadence without requiring a dedicated CPAL-scale analytical organization.
+The CRC operational model is pilotable immediately using DoDA's pilot team and, in eligible cities, 17A's existing analytical infrastructure. The pilot tests three things: (a) whether the coordination model can be stood up in 90 days using existing city staff; (b) whether visible corridor improvement is achievable within 180 days; and (c) whether the meeting-software/ML integration sustains the weekly cadence without requiring a dedicated CPAL-scale analytical organization.
 
 ### City Selection Criteria
 
@@ -272,7 +274,7 @@ Pilot cities are expected to represent geographic diversity and include at least
 - Site-level crime rate trends in targeted corridors (DoDA weekly tracking, pre/post comparison)
 - Time from program activation to first visible corridor improvement (target: 90 days)
 - Weekly cadence maintenance rate (number of weeks the Monday/Tuesday rhythm held)
-- Administrative burden reduction (coordinator time on agenda-prep and tracking, pre/post LLM integration)
+- Administrative burden reduction (coordinator time on agenda-prep and tracking, pre/post ML integration)
 - Homelessness handoff protocol: number of combined-signal sites identified; time to dual-deployment activation; housing placement rate for individuals at combined-signal sites
 
 ---
@@ -289,7 +291,7 @@ DoDA automatically flags combined-signal sites during the Monday targeting pull.
 
 ### Activation
 
-The Homelessness EC Connector is activated by **LLM pattern detection**, not by a first-cycle flag or a standing calendar assignment. The LLM integration processing the Tuesday meeting transcripts runs a rolling pattern-detection pass: when a site appears in the transcript record as unresolved across multiple consecutive meeting cycles, and the meeting language co-occurs with housing instability indicators (encampment references, 311 encampment activity, HSEWI flag), the LLM flags the site as a confirmed combined-signal candidate and auto-generates a calendar invite for the Homelessness EC Connector for the following Tuesday meeting.
+The Homelessness EC Connector is activated by **ML pattern detection**, not by a first-cycle flag or a standing calendar assignment. The ML integration processing the Tuesday meeting transcripts runs a rolling pattern-detection pass: when a site appears in the transcript record as unresolved across multiple consecutive meeting cycles, and the meeting language co-occurs with housing instability indicators (encampment references, 311 encampment activity, HSEWI flag), the LLM flags the site as a confirmed combined-signal candidate and auto-generates a calendar invite for the Homelessness EC Connector for the following Tuesday meeting.
 
 The threshold for activation is a confirmed recurring pattern — typically 2–3 consecutive meeting cycles where the site is discussed as unresolved with housing instability language present — not a single DoDA flag. This design keeps the Homelessness EC Connector out of meetings where it isn't warranted and avoids the coordination overhead of adding stakeholders on first contact with a problem that may resolve through environmental intervention alone.
 

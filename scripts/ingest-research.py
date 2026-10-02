@@ -5,6 +5,7 @@ Ingest a research document (PDF) into the platform research library.
 Usage:
     python3 scripts/ingest-research.py path/to/report.pdf
     python3 scripts/ingest-research.py path/to/report.pdf --key rand-superannuation-2019
+    python3 scripts/ingest-research.py --reingest rand-superannuation-2019
 
 Workflow:
   1. Extracts text per page from the PDF using pdfplumber
@@ -18,6 +19,12 @@ Workflow:
        research-library/rag/<key>.jsonl       (canonical chunk records)
        research-library/sources/<key>.md      (human-readable extraction)
   5. Adds/updates the source's entry in research-library/index.yaml
+
+--reingest <key> re-extracts an already-ingested source from its stored
+original (research-library/originals/<key>.pdf) using the current extraction
+settings, reusing the citation metadata already in index.yaml instead of
+prompting for it. Use it after changing extraction or chunking; then re-embed
+with `embed-research.py --key <key>`.
 
 Does NOT touch research-library/index.md -- that file is hand-curated prose
 for this sample repository, not a generated view. Run
@@ -47,12 +54,16 @@ from research_lib import (
     CURRENT_CHUNKER_VERSION,
     DEFAULT_MAX_CHARS,
     DEFAULT_OVERLAP_CHARS,
+    EXTRACT_X_TOLERANCE,
+    FUSED_TOKEN_MIN_LETTERS,
+    FUSED_TOKEN_WARN_RATIO,
     INDEX_YAML,
     ORIGINALS_DIR,
     RAG_DIR,
     SOURCES_DIR,
     load_index,
     save_index,
+    fused_token_ratio,
     write_rag_records,
 )
 
@@ -72,13 +83,29 @@ def extract_pages(pdf_path: Path) -> list[tuple[int, str]]:
         total = len(pdf.pages)
         print(f"  Extracting {total} pages...", end="", flush=True)
         for i, page in enumerate(pdf.pages):
-            text = page.extract_text()
+            text = page.extract_text(x_tolerance=EXTRACT_X_TOLERANCE)
             if text and text.strip():
                 pages.append((i + 1, text.strip()))
             if (i + 1) % 10 == 0:
                 print(f" {i + 1}...", end="", flush=True)
     print(" done.")
     return pages
+
+
+def check_extraction(pages: list[tuple[int, str]]) -> list[int]:
+    """
+    Flags pages whose text looks like fused words (long runs of letters with
+    no spaces), which usually means the PDF's spacing defeated the extractor.
+    Returns the flagged page numbers so they can be recorded in index.yaml.
+    """
+    flagged = [n for n, text in pages if fused_token_ratio(text) > FUSED_TOKEN_WARN_RATIO]
+    if flagged:
+        print(f"  WARNING: {len(flagged)} page(s) have more than {FUSED_TOKEN_WARN_RATIO:.0%} of tokens "
+              f"with fused runs of {FUSED_TOKEN_MIN_LETTERS}+ letters: {flagged}")
+        print("  Check these pages in the source record before embedding.")
+    else:
+        print("  Extraction check: no pages with fused-word runs above threshold.")
+    return flagged
 
 
 def chunk_by_page(
@@ -151,6 +178,23 @@ def slugify(text: str) -> str:
     return text.strip("-")
 
 
+def parse_authors(authors: str) -> list[str]:
+    """
+    Splits a Chicago-style author string into one entry per author:
+    "Aneja, Abhay, and Guo Xu" -> ["Aneja, Abhay", "Guo Xu"]. The first author
+    is inverted ("Last, First"), so its comma must not be treated as a separator;
+    later authors are separated by commas and/or a final "and".
+    """
+    authors = authors.strip()
+    if not authors:
+        return []
+    groups = re.split(r",?\s+and\s+", authors)
+    head = [part.strip() for part in groups[0].split(",") if part.strip()]
+    names = [f"{head[0]}, {head[1]}"] + head[2:] if len(head) >= 2 else head
+    names += [g.strip() for g in groups[1:] if g.strip()]
+    return names
+
+
 def build_chicago(authors: str, title: str, institution: str, city: str, year: str, url: str) -> str:
     chicago = f"{authors}. *{title}*. {city}: {institution}, {year}."
     if url:
@@ -174,13 +218,14 @@ def upsert_index_entry(
     sha256: str,
     pages: int,
     chunks: int,
+    flagged_pages: list[int],
 ) -> None:
     index = load_index(INDEX_YAML)
     sources = index["sources"]
     existing = sources.get(key, {})
     sources[key] = {
         "title": title,
-        "authors": [a.strip() for a in authors.split(",")] if authors else [],
+        "authors": parse_authors(authors),
         "institution": institution,
         "publication_place": city,
         "publication_date": year,
@@ -205,6 +250,8 @@ def upsert_index_entry(
             "pages": pages,
             "chunks": chunks,
             "chunker_version": CURRENT_CHUNKER_VERSION,
+            "x_tolerance": EXTRACT_X_TOLERANCE,
+            "flagged_pages": flagged_pages,
         },
         "status": {
             "phase_3_review": existing.get("status", {}).get("phase_3_review", "pending"),
@@ -215,11 +262,69 @@ def upsert_index_entry(
     save_index(index, INDEX_YAML)
 
 
+def reingest(key: str) -> None:
+    """Re-extract an existing source from its stored original, keeping its metadata."""
+    index = load_index(INDEX_YAML)
+    entry = index["sources"].get(key)
+    if entry is None:
+        print(f"No source with key {key!r} in {INDEX_YAML.name}.")
+        sys.exit(1)
+    pdf = ORIGINALS_DIR / f"{key}.pdf"
+    if not pdf.exists():
+        print(f"Stored original not found: {pdf}")
+        sys.exit(1)
+
+    print(f"\nRe-ingesting: {key}")
+    print("─" * 50)
+    pages = extract_pages(pdf)
+    if not pages:
+        print("  No extractable text found in this PDF.")
+        sys.exit(1)
+    flagged = check_extraction(pages)
+
+    records = chunk_by_page(key, pages)
+    print(f"  {len(pages)} pages -> {len(records)} chunks (page-bounded, max {DEFAULT_MAX_CHARS} chars/chunk)")
+    write_rag_records(key, records, RAG_DIR)
+    print(f"  Written: research-library/rag/{key}.jsonl")
+
+    md_path = SOURCES_DIR / f"{key}.md"
+    md_path.write_text(
+        build_source_md(key, entry["chicago"], entry.get("url") or "", str(entry.get("accessed", "")), pages),
+        encoding="utf-8",
+    )
+    print(f"  Written: research-library/sources/{md_path.name}")
+
+    # Update only what extraction determines; citation metadata, briefs,
+    # reviews, and claims are left exactly as they were.
+    entry["source"]["sha256"] = sha256_of(pdf)
+    ingestion = entry["ingestion"]
+    ingestion["extractor_version"] = pdfplumber.__version__
+    ingestion["extracted_at"] = date.today().isoformat()
+    ingestion["x_tolerance"] = EXTRACT_X_TOLERANCE
+    ingestion["pages"] = len(pages)
+    ingestion["chunks"] = len(records)
+    ingestion["chunker_version"] = CURRENT_CHUNKER_VERSION
+    ingestion["flagged_pages"] = flagged
+    entry["status"]["extraction"] = "complete"
+    entry["status"]["embedding"] = "pending"
+    save_index(index, INDEX_YAML)
+    print(f"  Updated: research-library/index.yaml ({key}); embedding marked pending")
+    print(f"\nNext: python3 scripts/embed-research.py --key {key}\n")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Ingest a PDF into the platform research library")
-    parser.add_argument("input", help="Path to PDF")
+    parser.add_argument("input", nargs="?", help="Path to PDF")
     parser.add_argument("--key", help="Citation key slug (auto-generated if omitted)")
+    parser.add_argument("--reingest", metavar="KEY",
+                        help="Re-extract an existing source from its stored original, keeping its metadata")
     args = parser.parse_args()
+
+    if args.reingest:
+        reingest(args.reingest)
+        return
+    if not args.input:
+        parser.error("a PDF path is required unless --reingest is given")
 
     src = Path(args.input).resolve()
     if not src.exists():
@@ -261,6 +366,7 @@ def main():
     if not pages:
         print("  No extractable text found in this PDF (scanned image with no OCR layer?).")
         sys.exit(1)
+    flagged = check_extraction(pages)
 
     records = chunk_by_page(key, pages)
     print(f"  {len(pages)} pages -> {len(records)} chunks (page-bounded, max {DEFAULT_MAX_CHARS} chars/chunk)")
@@ -292,6 +398,7 @@ def main():
         sha256=sha256,
         pages=len(pages),
         chunks=len(records),
+        flagged_pages=flagged,
     )
     print(f"  Updated: research-library/index.yaml ({key})")
 

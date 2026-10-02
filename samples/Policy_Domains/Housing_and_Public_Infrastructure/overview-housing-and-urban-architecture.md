@@ -11,13 +11,8 @@ status: Draft
 phase: 1
 layer: 4
 audiences:
-  - working-class
-  - women
-  - black-community
-  - rural-america
-  - conservative-crossover
-  - fiscal-hawk
-  - economic-populist
+  - local-government
+  - residents
 version: 0.3
 dependencies:
   - housing-infrastructure-instrumentation-manifest
