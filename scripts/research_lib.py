@@ -33,9 +33,15 @@ VECTOR_STORE_DIR = REPO_ROOT / "research-library" / "vector-store"
 
 # v3: extraction now uses EXTRACT_X_TOLERANCE (v2 used pdfplumber's default of 3,
 # which fused words together on tightly kerned PDFs).
-CURRENT_CHUNKER_VERSION = 3
-DEFAULT_MAX_CHARS = 4000
-DEFAULT_OVERLAP_CHARS = 500
+# v4: chunks are sized in embedding-model tokens rather than characters. v3 capped
+# chunks at 4,000 characters (~800-1,000 tokens), so 31% of 17A's page chunks
+# exceeded bge-large's 512-token input limit and their tails were silently
+# truncated during embedding; whole-page chunks also diluted single-sentence facts.
+CURRENT_CHUNKER_VERSION = 4
+DEFAULT_MAX_TOKENS = 256
+DEFAULT_OVERLAP_TOKENS = 64
+# Hard ceiling from the embedding model (512 including the [CLS] and [SEP] tokens).
+EMBEDDING_MAX_TOKENS = 512
 
 # pdfplumber infers spaces from the horizontal gap between characters and only
 # inserts one when the gap exceeds x_tolerance (default 3). On tightly kerned
@@ -253,6 +259,27 @@ def collection_name_for(model_name: str) -> str:
     """One Chroma collection per model name, so switching embedding models
     can't silently mix incompatible vector spaces together."""
     return "chunks__" + model_name.replace("/", "__")
+
+
+def get_token_counter(model_name: str = DEFAULT_EMBEDDING_MODEL):
+    """
+    Returns a function mapping a list of strings to their token counts under the
+    embedding model's own tokenizer, so chunk budgets are measured in the same
+    units the model truncates at. Loads only the tokenizer, not the model weights.
+    """
+    try:
+        from transformers import AutoTokenizer
+    except ImportError:
+        print("Error: transformers not installed. Run: pip3 install sentence-transformers --break-system-packages")
+        sys.exit(1)
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+    def count(texts: list[str]) -> list[int]:
+        if not texts:
+            return []
+        return [len(ids) for ids in tokenizer(texts, add_special_tokens=False)["input_ids"]]
+
+    return count
 
 
 def get_model(model_name: str):

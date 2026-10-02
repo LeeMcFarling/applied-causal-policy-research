@@ -12,6 +12,13 @@ Commands:
     report          Generate overall project status report
     gaps            Analyze and report gaps across all domains
     validate        Check for phase violations and missing required fields
+
+Options:
+    --root DIR      directory to scan, relative to the repo root (default: guiding-principles)
+                    e.g. `python3 scripts/maturity_scan.py validate --root samples`
+
+Fails closed: if no briefs are found under --root, it exits 1 rather than
+reporting an empty corpus as clean.
 """
 
 import os
@@ -349,7 +356,7 @@ _Auto-generated — add manual notes below this line:_
 
 def cmd_scan():
     """Scan all domains, update maturity trackers, regenerate PROJECT_STATUS.md."""
-    print(f"\nScanning domains in {GP_DIR.relative_to(REPO_ROOT)}...\n")
+    print(f"\nScanning domains in {GP_DIR.relative_to(REPO_ROOT) if GP_DIR.is_relative_to(REPO_ROOT) else GP_DIR}...\n")
 
     if not DOMAINS_DIR.exists():
         print(f"Error: domains directory not found at {DOMAINS_DIR}")
@@ -370,7 +377,7 @@ def cmd_scan():
 
 def cmd_gaps():
     """Report gaps by tier across all domains."""
-    print(f"\nGap analysis — {GP_DIR.relative_to(REPO_ROOT)}\n")
+    print(f"\nGap analysis — {GP_DIR.relative_to(REPO_ROOT) if GP_DIR.is_relative_to(REPO_ROOT) else GP_DIR}\n")
 
 
     tier1, tier2, tier3 = [], [], []
@@ -405,7 +412,7 @@ def cmd_gaps():
 
 def cmd_validate():
     """Check all files for phase gate violations."""
-    print(f"\nValidating phase gates — {GP_DIR.relative_to(REPO_ROOT)} (all four layers)\n")
+    print(f"\nValidating phase gates — {GP_DIR.relative_to(REPO_ROOT) if GP_DIR.is_relative_to(REPO_ROOT) else GP_DIR} (all four layers)\n")
 
     all_violations = []
 
@@ -488,12 +495,38 @@ def _write_project_status(all_domains: List[Dict]):
 
 # ─── Entry point ──────────────────────────────────────────────────────────────
 
+def set_root(root: str) -> None:
+    """Point every path constant at a different corpus directory."""
+    global GP_DIR, DOMAINS_DIR, LAYER_DIRS
+    GP_DIR = (REPO_ROOT / root).resolve()
+    DOMAINS_DIR = GP_DIR / "Policy_Domains"
+    LAYER_DIRS = [GP_DIR / "Foundations", GP_DIR / "Operating-System", GP_DIR / "Infrastructure"]
+
+
+def require_briefs() -> None:
+    """Exit 1 if there is nothing to scan, instead of reporting an empty corpus as clean."""
+    found = DOMAINS_DIR.is_dir() and any(
+        is_policy_file(f) for d in domain_dirs() for f in d.rglob("*.md")
+    )
+    if not found:
+        print(f"No briefs found under {GP_DIR}. An empty scan is a failure, not a pass.\n"
+              "For the public sample, run with: --root samples")
+        sys.exit(1)
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print(__doc__)
         sys.exit(1)
 
     command = sys.argv[1]
+    if "--root" in sys.argv:
+        i = sys.argv.index("--root")
+        if i + 1 >= len(sys.argv):
+            print("--root requires a directory")
+            sys.exit(1)
+        set_root(sys.argv[i + 1])
+    require_briefs()
 
     if command in ("scan", "report"):
         if "--force" not in sys.argv:

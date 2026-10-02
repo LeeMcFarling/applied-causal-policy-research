@@ -81,6 +81,9 @@ def embed_source(key: str, entry: dict, model, collection, embedding_model_name:
     # (see QUERY_INSTRUCTION in research_lib.py / query-research.py).
     vectors = model.encode(texts, batch_size=batch_size, normalize_embeddings=True, show_progress_bar=False)
 
+    # Replace, don't merge: if re-chunking produced fewer chunks than before, an
+    # upsert alone would leave stale vectors whose ids now point at different text.
+    collection.delete(where={"citation_key": key})
     collection.upsert(ids=ids, embeddings=vectors.tolist(), metadatas=metadatas)
 
     mark_embedding_complete(

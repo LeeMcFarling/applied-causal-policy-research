@@ -1,0 +1,11 @@
+# Pinned to the versions the pipeline and retrieval evaluation were run with.
+pdfplumber==0.11.10
+sentence-transformers==6.0.0
+chromadb==1.5.9
+ruamel.yaml==0.19.1
+PyYAML==6.0.3
+
+# Only for scripts/review-loop.py live runs (not needed for ingest, embed, query, or eval).
+# Not yet pinned: pin these to the versions of the first successful live run.
+anthropic
+openai

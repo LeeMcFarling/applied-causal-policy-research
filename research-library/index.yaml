@@ -30,13 +30,15 @@ sources:
       extractor_version: 0.11.10
       extracted_at: '2026-10-02'
       pages: 42
-      chunks: 42
-      chunker_version: 3
+      chunks: 97
+      chunker_version: 4
       embedding_model: BAAI/bge-large-en-v1.5
       embedding_version: 1
       x_tolerance: 1
       flagged_pages:
       - 1
+      max_tokens: 256
+      overlap_tokens: 64
     status:
       phase_3_review: pending
       extraction: complete

@@ -10,10 +10,11 @@ Usage:
 Workflow:
   1. Extracts text per page from the PDF using pdfplumber
   2. Prompts for citation metadata (authors, title, institution, city, year, URL, tags)
-  3. Chunks the extraction by page (splitting oversized pages, never merging
-     across a page boundary) so every RAG record carries an exact page
-     reference -- this is what lets a review cite a page and have it be
-     checkable, instead of inferred from a table of contents
+  3. Chunks each page into overlapping pieces sized in embedding-model tokens
+     (never crossing a page boundary) so every RAG record fits the model's
+     input window and carries an exact page reference -- this is what lets a
+     review cite a page and have it be checkable, instead of inferred from a
+     table of contents
   4. Writes:
        research-library/originals/<key>.pdf   (byte-for-byte copy of the input)
        research-library/rag/<key>.jsonl       (canonical chunk records)
@@ -52,8 +53,9 @@ import pdfplumber
 
 from research_lib import (
     CURRENT_CHUNKER_VERSION,
-    DEFAULT_MAX_CHARS,
-    DEFAULT_OVERLAP_CHARS,
+    DEFAULT_MAX_TOKENS,
+    DEFAULT_OVERLAP_TOKENS,
+    EMBEDDING_MAX_TOKENS,
     EXTRACT_X_TOLERANCE,
     FUSED_TOKEN_MIN_LETTERS,
     FUSED_TOKEN_WARN_RATIO,
@@ -64,6 +66,7 @@ from research_lib import (
     load_index,
     save_index,
     fused_token_ratio,
+    get_token_counter,
     write_rag_records,
 )
 
@@ -111,31 +114,56 @@ def check_extraction(pages: list[tuple[int, str]]) -> list[int]:
 def chunk_by_page(
     key: str,
     pages: list[tuple[int, str]],
-    max_chars: int = DEFAULT_MAX_CHARS,
-    overlap_chars: int = DEFAULT_OVERLAP_CHARS,
+    count_tokens=None,
+    max_tokens: int = DEFAULT_MAX_TOKENS,
+    overlap_tokens: int = DEFAULT_OVERLAP_TOKENS,
 ) -> list[dict]:
     """
-    One chunk per page by default. A page longer than max_chars is split into
-    multiple overlapping chunks, but a chunk never spans two pages -- every
-    record's page_start == page_end, so a citation to a chunk is a citation
-    to one specific, checkable page, not a range inferred from context.
+    Splits each page into overlapping chunks of at most max_tokens, measured with
+    the embedding model's own tokenizer, so no chunk is silently truncated at
+    embedding time. Chunks break on whitespace, so no word is cut in half, and a
+    chunk never spans two pages: every record's page_start == page_end, so a
+    citation to a chunk is a citation to one specific, checkable page.
+
+    count_tokens maps a list of strings to their token counts; it defaults to the
+    embedding model's tokenizer and can be swapped out in tests.
     """
+    if count_tokens is None:
+        count_tokens = get_token_counter()
     records: list[dict] = []
     for page_num, text in pages:
-        if len(text) <= max_chars:
-            records.append({"page_start": page_num, "page_end": page_num, "text": text})
+        spans = [(m.start(), m.end()) for m in re.finditer(r"\S+", text)]
+        if not spans:
             continue
+        counts = count_tokens([text[a:b] for a, b in spans])
         start = 0
-        while start < len(text):
-            end = min(start + max_chars, len(text))
-            piece = text[start:end].strip()
-            if piece:
-                records.append({"page_start": page_num, "page_end": page_num, "text": piece})
-            if end == len(text):
+        while start < len(spans):
+            end, used = start, 0
+            # Always take at least one word, then add words while they fit the budget.
+            while end < len(spans) and (end == start or used + counts[end] <= max_tokens):
+                used += counts[end]
+                end += 1
+            records.append({
+                "page_start": page_num,
+                "page_end": page_num,
+                "text": text[spans[start][0]:spans[end - 1][1]],
+            })
+            if end == len(spans):
                 break
-            start = end - overlap_chars
+            # Step back so the next chunk repeats roughly overlap_tokens of context,
+            # while always moving forward by at least one word.
+            back, overlap = end, 0
+            while back - 1 > start and overlap + counts[back - 1] <= overlap_tokens:
+                back -= 1
+                overlap += counts[back]
+            start = back
 
-    for i, record in enumerate(records):
+    token_counts = count_tokens([r["text"] for r in records])
+    for i, (record, n_tokens) in enumerate(zip(records, token_counts)):
+        if n_tokens > EMBEDDING_MAX_TOKENS - 2:  # room for [CLS] and [SEP]
+            raise ValueError(f"Chunk {i} (page {record['page_start']}) has {n_tokens} tokens, "
+                             f"over the embedding model's {EMBEDDING_MAX_TOKENS}-token limit")
+        record["token_count"] = n_tokens
         record["chunk_index"] = i
         record["citation_key"] = key
         record["id"] = f"{key}__{i:04d}"
@@ -250,6 +278,8 @@ def upsert_index_entry(
             "pages": pages,
             "chunks": chunks,
             "chunker_version": CURRENT_CHUNKER_VERSION,
+            "max_tokens": DEFAULT_MAX_TOKENS,
+            "overlap_tokens": DEFAULT_OVERLAP_TOKENS,
             "x_tolerance": EXTRACT_X_TOLERANCE,
             "flagged_pages": flagged_pages,
         },
@@ -283,7 +313,8 @@ def reingest(key: str) -> None:
     flagged = check_extraction(pages)
 
     records = chunk_by_page(key, pages)
-    print(f"  {len(pages)} pages -> {len(records)} chunks (page-bounded, max {DEFAULT_MAX_CHARS} chars/chunk)")
+    print(f"  {len(pages)} pages -> {len(records)} chunks (page-bounded, max {DEFAULT_MAX_TOKENS} tokens/chunk, "
+          f"{DEFAULT_OVERLAP_TOKENS}-token overlap)")
     write_rag_records(key, records, RAG_DIR)
     print(f"  Written: research-library/rag/{key}.jsonl")
 
@@ -304,6 +335,8 @@ def reingest(key: str) -> None:
     ingestion["pages"] = len(pages)
     ingestion["chunks"] = len(records)
     ingestion["chunker_version"] = CURRENT_CHUNKER_VERSION
+    ingestion["max_tokens"] = DEFAULT_MAX_TOKENS
+    ingestion["overlap_tokens"] = DEFAULT_OVERLAP_TOKENS
     ingestion["flagged_pages"] = flagged
     entry["status"]["extraction"] = "complete"
     entry["status"]["embedding"] = "pending"
@@ -369,7 +402,8 @@ def main():
     flagged = check_extraction(pages)
 
     records = chunk_by_page(key, pages)
-    print(f"  {len(pages)} pages -> {len(records)} chunks (page-bounded, max {DEFAULT_MAX_CHARS} chars/chunk)")
+    print(f"  {len(pages)} pages -> {len(records)} chunks (page-bounded, max {DEFAULT_MAX_TOKENS} tokens/chunk, "
+          f"{DEFAULT_OVERLAP_TOKENS}-token overlap)")
 
     ORIGINALS_DIR.mkdir(parents=True, exist_ok=True)
     dest_pdf = ORIGINALS_DIR / f"{key}.pdf"

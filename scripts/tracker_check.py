@@ -28,7 +28,19 @@ Usage:
   python3 scripts/tracker_check.py               check only (exit 1 on any problem)
   python3 scripts/tracker_check.py --write-deps  regenerate each tracker's
                                                  Dependency Map block, then check
+  python3 scripts/tracker_check.py --root samples --extract
+                                                 check a partial extract of the corpus
+
+--root DIR   directory to scan (default: guiding-principles/)
+--extract    the directory is a partial extract: references to briefs outside it
+             are counted as external rather than reported as unresolved, and a
+             phase cap attributed to an external dependency is accepted (it cannot
+             be verified here). Every check on the briefs that are present still runs.
+
+Fails closed: if no briefs or trackers are found under --root, it exits 1 rather
+than reporting a clean pass over nothing.
 """
+import argparse
 import collections
 import glob
 import os
@@ -38,7 +50,7 @@ import sys
 import yaml
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-GP = os.path.join(ROOT, 'guiding-principles')
+GP = os.path.join(ROOT, 'guiding-principles')  # overridden by --root
 REF_FIELDS = ('dependencies', 'related_initiatives', 'accelerants', 'linked_policies')
 GEN_BEGIN = '<!-- BEGIN GENERATED: scripts/tracker_check.py --write-deps — do not edit by hand -->'
 GEN_END = '<!-- END GENERATED -->'
@@ -202,11 +214,25 @@ def sync_dependency_block(tracker, block, write, probs):
 
 
 def main():
-    write = '--write-deps' in sys.argv
+    global GP
+    ap = argparse.ArgumentParser(description='Consistency check for the maturity trackers.')
+    ap.add_argument('--root', default='guiding-principles', help='directory to scan, relative to the repo root')
+    ap.add_argument('--write-deps', action='store_true', help="regenerate each tracker's Dependency Map block")
+    ap.add_argument('--extract', action='store_true', help='treat --root as a partial extract of the corpus')
+    args = ap.parse_args()
+    GP = os.path.join(ROOT, args.root)
+    write, extract = args.write_deps, args.extract
+
     trackers = sorted(glob.glob(GP + '/**/_MATURITY_TRACKER.md', recursive=True))
     tdirs = [os.path.dirname(t) for t in trackers]
-    briefs = load_briefs(tdirs)
+    briefs = load_briefs(tdirs) if os.path.isdir(GP) else []
+    if not briefs or not trackers:
+        print(f'✗ found {len(briefs)} briefs and {len(trackers)} trackers under {rel(GP)}/ — nothing to check.')
+        print('  This script verifies a corpus; an empty run is a failure, not a pass. '
+              'For the public sample, run: python3 scripts/tracker_check.py --root samples --extract')
+        sys.exit(1)
     probs = []
+    external = set()
 
     ids = collections.defaultdict(list)
     for b in briefs:
@@ -225,6 +251,10 @@ def main():
     for b in by_id.values():
         live = [by_id[d].phase for d in b.deps if d in by_id]
         want = min([b.gate_met] + live)
+        # In an extract, a cap below `want` may come from a dependency that is not
+        # present; only a phase *above* what the visible dependencies allow is an error.
+        if extract and b.phase < want:
+            continue
         if b.phase != want:
             probs.append(f'{rel(b.path)}: phase {b.phase} but gate-met {b.gate_met} capped by '
                          f'dependencies gives {want}')
@@ -247,6 +277,9 @@ def main():
                 cited[str(v)][f].append(b.path)
     for v, fields in sorted(cited.items()):
         if v not in ids and v not in planned:
+            if extract:
+                external.add(v)
+                continue
             where = sorted({rel(p) for ps in fields.values() for p in ps})
             probs.append(f'unresolved reference {v!r} (not live, not planned) in: ' + ', '.join(where))
 
@@ -283,6 +316,8 @@ def main():
     print(f'{len(briefs)} briefs, {len(trackers)} trackers, {len(planned)} planned briefs '
           f'({todo} to write, {len(planned) - todo} parked), {len(issues)} consistency issues '
           f'({n_open} open)')
+    if extract:
+        print(f'{len(external)} referenced briefs are outside this extract (not checked)')
     for x in probs:
         print('✗', x)
     print('✓ no problems' if not probs else f'\n{len(probs)} problem(s)')

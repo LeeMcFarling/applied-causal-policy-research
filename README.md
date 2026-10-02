@@ -82,6 +82,8 @@ The full evidence chain:
 
 For a narrative walkthrough of the same example, see [Research Integration and Adversarial Revision](./walkthroughs/02-research-integration-and-adversarial-revision.md).
 
+>**As a heavy note:** As stated in part one, briefs are designed to work together, in this case, a single community stabilization is reviewed, but the policy platform it was pulled from contains homelessness stabilization domains, a criminal justice domain, and a broader housing and urban development domain, and redesigned federal government instututions (EC and DoDa, etc.). The review rightfully flags that the community stabilization brief connects to these documents but this repo doesn't contain them. A true grading pass would target and pull in additional reasearch to validate these additional pieces as well, by design. **In order to avoid dumping 50+ pages of extra policy material that is secondary to the RAG pipeline demonstration, they are not included here.**
+
 ## Quick Start
 
 ```bash

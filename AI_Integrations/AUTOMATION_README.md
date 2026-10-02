@@ -212,7 +212,25 @@ To specify a citation key explicitly:
 python3 scripts/ingest-research.py research-library/incoming/report.pdf --key rand-superannuation-2023
 ```
 
-### Run a Phase 3 review pass
+### Run the review and grading as an automated loop
+
+`scripts/review-loop.py` runs the review (Phase 3) and the cross-provider grading (Phase 3.5) together, round after round, until the review passes:
+
+```bash
+python3 scripts/review-loop.py \
+  --source 17a-reducing-violent-crime-2026 \
+  --brief samples/Policy_Domains/Housing_and_Public_Infrastructure/community-stabilization-framework.md
+```
+
+- **Reviewer:** Claude (`claude-opus-5-5` by default) writes the review from `_REVIEW_TEMPLATE.md`, gathering evidence through a `search_source` tool backed by the local vector store, so every page it cites comes from a retrieved chunk.
+- **Grader:** an OpenAI model (`gpt-5` by default, set with `--grader-model`) grades the review against the full source text, the brief, and `_GRADING_TEMPLATE.md`, returning a letter grade and pass/fail for each of the six dimensions plus a list of required fixes.
+- **Loop:** the review passes only when the overall verdict is "Pass" and all six dimensions pass. Otherwise the grader's report goes back to the reviewer, up to `--max-rounds` (default 3).
+- **Output:** every round's review and grading, plus `run-summary.json`, go to `research-library/reviews/runs/<brief>/<timestamp>/`. Nothing is written over an existing review.
+- **Human step:** a passing review still goes through Phase 3.6 (human page-level verification) before `grading_status` is set to `complete`.
+
+Requires `ANTHROPIC_API_KEY` (or an `ant auth login` profile) and `OPENAI_API_KEY`. Use `--dry-run` to exercise the loop offline with stand-in models and no API calls.
+
+### Run a Phase 3 review pass by hand
 
 After ingesting, give Claude the source file and the relevant platform brief(s) and ask for a review using the standard template:
 

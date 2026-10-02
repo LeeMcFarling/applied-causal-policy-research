@@ -1,0 +1,51 @@
+# Retrieval evaluation set for 17a-reducing-violent-crime-2026.
+# Each question's relevant_pages were identified by locating the answering
+# passage in the source text (the evidence field quotes it), not by looking
+# at what retrieval returned.
+citation_key: 17a-reducing-violent-crime-2026
+questions:
+  - question: What share of city geography accounts for 20% of violent crime?
+    relevant_pages: [3, 8]
+    evidence: "roughly 3–5% of city geography accounts for 20% of all violent crime"
+  - question: How much does improved street lighting reduce outdoor nighttime crime?
+    relevant_pages: [4, 11]
+    evidence: "improved street lighting led to a 39% reduction in outdoor nighttime crimes"
+  - question: What did the randomized trial find about cleaning and greening vacant lots?
+    relevant_pages: [4, 11]
+    evidence: "cleaning and greening vacant lots reduced nearby gun violence by 29%"
+  - question: How does the paper define violent crime?
+    relevant_pages: [23]
+    evidence: "Violent crime in this paper refers to homicide, robbery, and non-family aggravated assault"
+  - question: What happened with the homeless encampment property on Peavy Road in Far East Dallas?
+    relevant_pages: [15]
+    evidence: "The property's out-of-state owner had let it become a camp for people experiencing homelessness"
+  - question: Which cities saw their chronic hotspots get worse?
+    relevant_pages: [8]
+    evidence: "Denver's chronic hotspots worsened even as the city overall improved. Atlanta's worsened"
+  - question: What should city leaders do during weeks 5 to 8 of the roadmap?
+    relevant_pages: [20]
+    evidence: "Weeks 5-8: Assess and deploy. Conduct field assessments of priority locations"
+  - question: Why is percent change misleading for small crime counts in grid cells?
+    relevant_pages: [32]
+    evidence: "Crime counts at the micro-geographic level are small numbers"
+  - question: How much did violent crime decline in middle-tier intervention areas compared with similar areas?
+    relevant_pages: [16]
+    evidence: "intervention areas declined 8% while comparable non-intervention areas were flat"
+  - question: What do the incidence rate ratio tests show by concentration tier?
+    relevant_pages: [34]
+    evidence: "Table F.3: Incidence Rate Ratio Tests by Concentration Tier"
+  - question: What kind of firm does the author work for?
+    relevant_pages: [22]
+    evidence: "17A, a management consulting firm that works exclusively with state and local government"
+  - question: What was the national violent crime rate at its 1991 peak?
+    relevant_pages: [24]
+    evidence: "1991 758.2 9.8 Historic high (violent crime)"
+  - question: How much do the highest-crime areas change from one year to the next?
+    relevant_pages: [3, 9]
+    evidence: "a third to half of the highest-crime micro-areas are different from one year to the next"
+  - question: What is the risk of confusing activity with impact?
+    relevant_pages: [21]
+    evidence: "the measure of success isn't how many work orders you've completed; it's whether violence is declining"
+  - question: Which organization did Dallas partner with to run the coordinated approach?
+    relevant_pages: [13]
+    evidence: "in close partnership with Child Poverty Action Lab"
