@@ -66,73 +66,66 @@ As briefly mentioned earlier, the `id` field of one document can be used in the 
 
 - Dependencies are the first one, these allow us to do damage control and actively surface what breaks when one particular policy doesn't work out. For example, in our EV examples, if policies streamlining energy hookups are delayed, we could quickly surface what downstream policies like EV manufacturing, housing policy delays, etc. are effected. Additionally, if 50 different proposals in a corpus are routed through a single government agency, we necessarily understand that that agency needs the staffing and procedural throughput in order to implement the agenda. 
 
-
-- Which proposals depend on the same institution?
-- What steps need to occur, in order, for this policy domain (e.g. Healthcare, Public Housing) to be implemented? 
-- If this policy proposal is abandoned, what are the ramifications for the rest of the platform? 
-- Is a supposedly standalone proposal actually downstream of several unfinished reforms?
+- Related policies might also be tracked and rolled up into larger structures. For example, the expansion of EV manufacturing might include: measures to roll back tariffs on EV manufacturing inputs from friendly countries, efforts to procure and refine critical minerals at scale, efforts to standardize battery connections within vehicles to make them easier to scale, subsidies for manufacturers that drawdown as supply chain inputs mature, development bank style capital for re-tooling factories, and regulatory modernization efforts, efforts for managing competition as our domestic industries mature, and so on. Even though these might be disparate policies in different domains (from trade, to manufacturing, to regulatory modernization, to fiscal and tax policy), a foreign key relationship makes their purpose clear, even as these documents sit in different folders and compared with similar measures. This setup allows us both to easily track what changes need to occur at the IRS, on free-trade, etc. in order to achieve our policy positions, *and* pull out specific relationships, like what combination of tools are needed to help our nation succeed in EV manufacturing. 
 
 ### 'Phase' completion discipline
 
+As mentioned earlier, each individual policy objective might depend on a collection of different measures that need to be executed by different government agencies. Each policy needs its own implementation details hammered out, with pilot design measurement, research integration (have similar things been tried in other places, and what made them succeed or fail?), and so on. 
+
+The foreign key relationships talked about earlier, with phase completion discipline allow us to track both within domain and across domains, what policy instruments are holding us back. For example, the integrated EV manufacturing policy might be extremely mature across all aspects, but still be held back from a further level of completion if it's IRS tax subsidies policies are stuck in early phases. This mirrors the same implementation bottle necks that will arise in real life, and surfaces these relationships early so that we may handle any bottlenecks now, and maximize our chances of success when the day comes. 
+
+
 Each brief is assigned a maturity phase. Early phases define the problem and architecture, while later phases require research integration, pilot design, implementation planning, external review, and revision. The critical feature here is not the number of phases we define. It is that advancement is tied to observable conditions. A brief cannot become “implementation ready” merely because its prose is polished. Its dependencies, evidence, legal vehicle, evaluation plan, and unresolved risks must mature with it. 
 
-The result of this is a public facing policy platform that has expert review, evaluation planning, risk mitigation, validation against existing research, and other types of scoring built-in to the platform itself. A communication layer might explain to residents which policies are designed to address their needs. An institutional layer gets the budget scoring and other receipt mechanisms to prove that the policy is serious.  
+As an example, the following 'phases' might be used for a policy corpus: 
+
+## Phase Model Reference
+
+| Phase | Name | What it means |
+|-------|------|---------------|
+| **1** | Problem Framing & Strategic Constraints | The problem is fully scoped, and the constraints are laid bare.  |
+| **2** | Policy Remediations Drafted | We've surveyed all available options, and have come up with a policy strategy |
+| **3** | Broader Architecture Complete | We've mapped our strategy to a series of policy proposals spanning one or more domains. For example, the EV strategy is complete when each proposal is viable, and slots in with its peers to contribute to the broader strategy. |
+| **4** | Research Integration, Pre-Validation & and Red-Team Testing | Existing literature and case studies are hoovered up and compared against our strategy with the explicit purpose of finding: what's supported, what's explicitly not supported, what the scope differences are, if there are any gaps left in our strategy (that are neither supported or unsupported by the existing literature), and what questions remain. Ideally, this step continues until each piece of our broader strategy is mechanistically supported by the existing literature. (This is supported by a RAG pipeline, a structured analysis, an LLM-as-judge framework, and is detailed extensively in Walkthrough 2).  |
+| **5** | Pilot Targeting & Implementations Mapped. | Once each broader strategy has been pre-validated, it is broadly broken apart and explicitly planned via phases. The purpose of this step is to break each strategy and domain into a concrete schedule of actionable steps -- including what needs to be implemented, in what order, by whom. This is then rolled up with the rest of the platform into a diverse mix of actions i.e. on day one, EO's for these five domains need to be drafted and ready to go. | 
+| **6** | Agency Optimization | Once the execution sequence has been set and pilot districts have been designated, we can map cost estimates, agency requirements, legislative vehicles, and other details on top of the broader math from phase 3 where we estimated what it will cost. |
+| **7** | Publication Ready | This is a cosmetic step. Broadly, citations are complete, the prose is clean, and a publishable version is ready for review. |
+| **8** | Expert Review | The policy strategy is handed to domain level experts for any feedback they may have.  |
+| **9** | Revision & Incorporation | Any feedback from part 8 is explicitly incorporated into the design. |
+| **10** | Public Messaging | Framing, rebuttal prep, media strategy, etc. |
+
+While this is illustrative and steps can differ according to a team's needs, the result is that a policy corpus at phase 10 maturity has undergone extensive review, risk mitigation, has been financially scored, and all of the implementation details have been mapped.   
 
 ### Audience and cross-domain analysis
 
-Audience tags make it possible to generate views of the platform for different affected groups without maintaining separate, drifting copies of the same policy. Domain and subdomain fields support aggregation. If institutional actors are concerned about how the policy platform plans to address the concerns of one community in particular (e.g. local governments, farmers, rural communities), these tags can be used to pull the relevant information without creating a stale copy of the larger document corpus (that may be updated within days or weeks), and replaces it with an updated dashboard that is directly tied to the most recent editions of policy documents and can be updated automatically as changes to the underlying corpus are published. 
+Audience tags allow us to generate views of the platform for different teams without having to maintain separate, drifting copies of the same policy. Additionally, if policy drafters are concerned about how the policy platform plans to address the concerns of one community in particular (e.g. farmers, local governments, rural communities), tags can be used to pull the necessary information without having to leave them to hunt through the entire corpus for a cluster of disparate policies. For example, policies affecting rural communities might be a combination of healthcare, financing, right-to-repair, agricultural coordination, housing, and so on. 
 
-This also allows us to map dependencies that would otherwise have been obscured. For example, policies affecting rural communities might be a combination of healthcare, financing, right-to-repair, agricultural coordination, housing, and so on. Policies affecting small cities might look different on the surface, but depend on similar financing mechanisms or institutional constraints. The cross-domain analysis offered by this platform allows those dependencies to be explicitly mapped, mitigated, and pulled into meaningful information for lawmakers that says: "These communities are affected if this obscure institutional reform fails". 
+Conversely, policies affecting small cities might look different, but face similar implementation concerns based on similar agencies, and financial constraints. This allows policymakers to pull these dependencies together into a quick and coherent picture of what communities are affected if some obscure institutional reform fails. 
 
 ### Gap analysis
 
-Maturity trackers summarize what exists, what is missing, which dependencies are blocking progress, and what work should happen next. In a complete repository, these records support platform-level gap analysis rather than relying on institutional memory. For example, an agricultural domain that is still lacking finance depth (which may depend on reforms in other domains like fiscal policy), is clearly surfaced in this system when that would otherwise depend on a manual detection and handoff between two different people usually. 
+Finally, maturity trackers are utilized with the phase gating system to summarize what exists, what is missing, and what is needed for a reform to advance to the next stage. For example, a Healthcare domain might be held back by pharmaceutical reform, etc. While the phase gating enables this process, the scripts behind this platform allow 'Maturity Trackers' located in each domain folder to track this progress, and how it develops over time, whereas traditional systems would depend on a handoff between two different people. 
 
-## Worked example: housing as a connected domain
+## A Worked Example of the Framework in Action
 
-The included housing extracts show multiple levels of the architecture:
+The included documents are generated examples of how this policy architecture could work in action, with a maturity tracker included: 
 
-1. The [housing system overview](../samples/Policy_Domains/Housing_and_Public_Infrastructure/overview-housing-and-urban-architecture.md) describes how individual instruments fit together.
-2. The [zoning function ladder](../samples/Policy_Domains/Housing_and_Public_Infrastructure/zoning-function-ladder.md) demonstrates a single instrument with declared dependencies and related initiatives.
-3. The [community-stabilization framework](../samples/Policy_Domains/Housing_and_Public_Infrastructure/community-stabilization-framework.md) shows a more mature brief that has passed through research integration.
-4. The [housing maturity tracker](../samples/Policy_Domains/Housing_and_Public_Infrastructure/_MATURITY_TRACKER.md) summarizes domain status and gaps.
+1. The [housing system overview](../samples/Policy_Domains/Housing_and_Public_Infrastructure/overview-housing-and-urban-architecture.md) is an example of an overview document that would sit inside a broader domain. It's job is to take multiple different policy documents and describe how they fit together.
+3. The [zoning function ladder](../samples/Policy_Domains/Housing_and_Public_Infrastructure/zoning-function-ladder.md) is an example of what a single policy document would look like. The YAML front-matter connects it to other documents as well. 
+4. The [community-stabilization framework](../samples/Policy_Domains/Housing_and_Public_Infrastructure/community-stabilization-framework.md) shows another policy brief -- this one is used as an example for the phase 4 adversarial review detailed earlier (in walkthrough 2). 
+5. The [housing maturity tracker](../samples/Policy_Domains/Housing_and_Public_Infrastructure/_MATURITY_TRACKER.md) is a script output that takes the documents in a domain and summarizes the gap and dependency analysis that this framework enables. 
 
-NOTE: The references to policies not included in this public extract are intentionally preserved. They show that the visible briefs were removed from a larger relational system rather than written as isolated portfolio pieces.
+NOTE: These documents are a demonstration. They include references to to policies and frameworks not included in this repo by design, in order to display how these documents would connect to a much larger corpus (without writing a 300 document policy platform to demonstrate the concept). 
 
 ![Figure 1](./figures/machine-readable-dependency-walkthrough-example.png)
 
-> **Figure 1: Dependencies in the Housing Domain are preserved** This figure shows a visual representation of how relevant information and dependencies may connect a document to others, and yet ignore documents that are not implicated. 
+> **Figure 1: Dependencies within the Housing Domain** This figure shows how documents within a domain can connect to each other and to policies in other domains. 
 
-## What this demonstration establishes
+## Conclusion
 
-The extracts establish that policy documents can be represented in a form that supports both substantive reading and computational maintenance. They demonstrate a plausible mechanism for:
+This is meant to demonstrated how this repository structure could work, and what it could unlock for a policy team. A future team would decide what their policy corpus would contain, and the policy document examples contained within this corpus are not meant to advocate for one policy position or another. 
 
-- dependency validation;
-- phase-aware sequencing;
-- audience-specific views;
-- cross-domain gap detection;
-- shared metadata standards; and
-- portfolio-level status reporting.
-
-## What it does not establish
-
-The demonstration does not prove that the particular schema is complete, that every dependency has been correctly identified, or that structured metadata can resolve substantive political disagreement. A graph can expose a dependency; it cannot decide whether the underlying policy is wise.
-
-
-## What a future team owns
-
-A future team would decide:
-
-- its policy priorities and substantive positions;
-- the metadata fields appropriate to its workflow;
-- the meaning and gate conditions of each maturity phase;
-- who may create, review, approve, or retire policy objects;
-- how disagreements and exceptions are recorded; and
-- which automated checks should block publication or implementation.
-
-The policies used as an example in this platform are not the primary object, rather it is the method for organizing those policies -- using machine-readable documentation to make a large body of policy work coherent, inspectable, and maintainable.
-
-## Underlying evidence
+## Scripts and Guides
 
 - [Integrity checks: `tracker_check.py`](../scripts/tracker_check.py)
 - [YAML front-matter guide](../AI_Integrations/YAML_FRONTMATTER_GUIDE.md)
