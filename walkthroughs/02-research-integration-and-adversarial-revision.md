@@ -4,11 +4,29 @@ title: "Walkthrough 2: Research Integration and Adversarial Revision"
 
 # Research Integration and Adversarial Revision
 
-## The idea in one sentence
+## Executive Overview
 
-What if we utilize the machine-readable nature of the policy platform we've built, automatically pull in relevant research and case studies for each proposal, and use them to adversarially review the platform's assumptions before it ever goes public?
+This framework allows cutting edge machine learning methods to provide an automated, adversarial red-team analysis of policy proposals. It utilizes Retrieval-Augmented Generation (RAG) and an iterative LLM-as-judge framework to enable policy teams to stress test their assumptions against hundreds of pages of case studies, think tank research, and international precedents in under an hour. 
 
-> **This is:** An example of an automated review process including an LLM-as-judge, and a human-in-the-loop. We're documenting a single source moving through ingestion, adversarial review, independent grading, and policy revision. **This is not** a claim that one paper validates an entire community-safety strategy by itself. 
+The output is a comprehensive review that scores your team's policy draft against available materials on five dimensions: 
+
+- **Alignment:** Where the materials explicitly support your policy's claims.
+- **Divergences:** Where the materials challenge the underlying assumptions or mechanics of your policy.
+- **Scope Differences:** Where research only supports *part* of your policy proposal, supports it only in specific circumstances, or up to a certain scale (i.e. policies that worked in a small city do not automatically scale nationally).
+- **Gaps:** Assumptions in your policy that were neither supported not unsupported in the current batch of literature.
+- **Open Questions:** What policy assumptions or mechanisms still need to be validated?
+
+To ensure accuracy, each claim is cited with a specific page number and Chicago style citation pointing back to the original PDFs of the research you provided. A second, independent model then cross-references every claim and page-citation, checks the validity of every critique against a custom rubric, and issues a structured grade. If the grade is too low, the second model routes the entire package back to the first model with feedback, and this framework is looped until a passing grade is achieved.  
+
+Upon completion, all intermediate materials --including intermediate grading passes -- are available for your team's review. 
+
+
+## Introduction
+
+You've gone and done it. You've researched the housing crisis, and you've drafted a coherent strategy for how to fix it in the United States, huzzah!...
+Unfortunately, policy isn't that easy. If it was we would have all been living in a Utopia for the last few hundred years. 
+
+
 
 ## The problem
 
