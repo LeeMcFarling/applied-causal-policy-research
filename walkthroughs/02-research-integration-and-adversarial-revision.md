@@ -1,5 +1,5 @@
 ---
-title: "Walkthrough 2: Research Integration and Adversarial Revision"
+title: "Walkthrough 2: Research Integration and Retrieval Augmented Genderation (RAG) Red-Team Testing"
 ---
 
 # Research Integration and Adversarial Revision
