@@ -29,42 +29,44 @@ dependencies:
 ---
 ```
 
-- **Stable IDs as primary keys.** Each `id` is unique across the corpus, and the `dependencies` field refers to other briefs by ID, so relationships between proposals behave like foreign keys in a database.
+- **'Primary Key' Logic.** Across the corpus, each document is given a 'primary key' like ID field, and this is used both as a unique identifier, and as a foreign key like connection to this document in other briefs. This enables us to connect multiple related policies together the way related fields are tied in a database. 
 
 - **Phase Gating Maturity.** The machine readable nature of this setup allows us to set phase gates (has the healthcare domain been reviewed against case studies and research, have we worked out the logistics of how to implement this from day 1 - day 100, etc.).
 
 When this is applied in concert with the document IDs and database dynamics stored above, we can map dependencies across the entire corpus (As a hypothetical example, 11 out of 16 healthcare domain documents are blocked until we validate a piece of technology they rely on in another domain).
 
-- **Automated Checks.** These relationships can be tracked and enforced with python scripts. For example, [`tracker_check.py`](./scripts/tracker_check.py) verifies that every document ID is unique, every reference resolves to another document in the corpus (or a logged planned one), every phase respects its dependency caps, and every domain tracker agrees with the briefs it summarizes. [`maturity_scan.py`](./scripts/maturity_scan.py) rolls the metadata up by domain.
+- **Automated Checks.** These relationships can be enforced with python scripts and used to track the documents over time. For example, [`tracker_check.py`](./scripts/tracker_check.py) verifies that every document ID is unique, and that every connection between documents is correct. From there, these connections are used identify dependencies between documents, and this is rolled up into portfolio level mechanics for the entire corpus (i.e. "How is our healthcare domain doing?" through the, [`maturity_scan.py`](./scripts/maturity_scan.py) function. 
 
 To go deeper on how this architecture works and how it can enable teams to work on their projects, visit [walkthrough](./walkthroughs/01-machine-readable-policy-architecture.md),  [YAML schema guide](./AI_Integrations/YAML_FRONTMATTER_GUIDE.md), and [sample domain tracker](./samples/Policy_Domains/Housing_and_Public_Infrastructure/_MATURITY_TRACKER.md) to get the specifics. 
 
 
 ## Part 2: RAG Pipeline with Cross-Provider Validation
 
-When a solution to a problem is proposed, we need a structured way to evaluate whether it will fix the problem or not. While an independent expert review is the gold standard (and the phase gating of this platform prevents any document from maturing until such a review is reached), early drafts still need a structured method for evaluating whether a proposal is consistent with reaseach and existing case studies, or whether proposed policies contradict established facts. Large language models are good at processing a large amount of textual information at once (the kind of capability we'd need in this exercise) but they are also plagued by hallucinations, and innaccuracies. Worse, a model asked to check a proposal against the evidence can produce a review that *sounds* fluent and plausible, but contains innaccuracies that: cite made-up sources, incorrectly assume a source supports a claim when it does not, or contains information that is just plain wrong. 
+When a solution to a problem is proposed, we need a structured way to evaluate whether it will fix the problem or not. While an independent expert review is the gold standard (and the phase gating of this platform prevents any document from maturing until such a review is reached), early drafts still need a structured method for evaluating whether a proposal is consistent with research and existing case studies, or whether proposed policies contradict established facts. Large language models are good at processing a large amount of textual information at once (the kind of capability we'd need in this exercise) but they are also plagued by hallucinations, and inaccuracies. Specific pitfalls that we need to avoid are: citing made-up sources, incorrectly stating that a source supports a claim when it actually doesn't, or citing 'facts' that are just plain incorrect. 
 
-For this pipeline, a Retrieval Augmented Generation (RAG) layer is made. A user sources articles, research, case studies, or similar policies that have been implemented in other countries and ingests this research into a structured pipeline. The text is extracted, chunked by page, and embedded in a vector store. This supplies a language model with a pre-processed library to reference any existing policies against, and when it's combined with strict rubrics, llm-as-judge checks, and human-in-the-loop confirmation we end up with a structured review of how each ingested research article compares to the policy proposal (where research aligns, where it diverges, and differences in scope between the two documents), with each claim tied back to a specific page in the source material. 
+Therefore, in order to ensure accuracy, we retrofitted a Retrieval Augmented Generation (RAG) pipeline into a red-team analysis. This works by feeding a collection of research, case studies and precedents into a folder. From there, the text is extracted, chunked and embedded into a vector store where it acts as a library for a model to cross-reference. 
 
-To ensure accuracy, a second model double checks everything in the review against a rubric that includes six categories (source material fidelity, policy brief fidelity, template compliance, citation accuracy, coverage, and adversarial rigor), and the process continues until a passing grade on all six categories is achieved.
+We then tell that model to conduct a red-team analysis of our policies using Chicago style citations and page numbers for each claim, and use an LLM-as-judge framework to grade the outcome and iterate until a passing grade is received. 
+
+The outcome is a list of everywhere where your policy aligns with established research, where it diverges (where the research does not support your claims), where the gaps are (does the research support our diagnosis, but not our prescription, for example?), scope differences (has research only supported this mechanism in a city-sized-scale while we are proposing to roll it up nationwide?), and remaining open questions (i.e. Do we need to find more research before this step is complete?).
 
 ### How Each Step Works
 
+The pipeline broadly follows this pathway: 
+
 > Source PDF → page-bounded chunks → local embeddings → retrieval with page context → adversarial review (model A) → independent grading (model B, different provider) → human page-level verification → revised brief
 
-1. **Ingest** ([`ingest-research.py`](./scripts/ingest-research.py)): extracts text from a PDF page by page with `pdfplumber`, collects citation metadata, and writes three artifacts: a byte-for-byte copy of the original, a human-readable extraction, and a JSONL file of chunk records. Each source is registered in [`index.yaml`](./research-library/index.yaml).
-2. **Embed** ([`embed-research.py`](./scripts/embed-research.py)): embeds every chunk with a local `sentence-transformers` model (`BAAI/bge-large-en-v1.5` by default) and upserts it into a persistent Chroma vector store.
-3. **Retrieve** ([`query-research.py`](./scripts/query-research.py)): embeds a query, finds the most relevant chunks, and expands each hit with its neighboring chunks, joined against `index.yaml` for full citation details.
-4. **Review:** a model writes an adversarial review of the proposal using a fixed [review template](./research-library/reviews/_REVIEW_TEMPLATE.md). The review first defines what the source sets out to establish, then records aligned findings, gaps, divergences, and open questions, each tied to a page.
-5. **Grade:** a model from a different provider audits the review against the source, the review, and the revised brief using a fixed [grading rubric](./research-library/reviews/validation/_GRADING_TEMPLATE.md): source fidelity, selective emphasis, framing neutrality, brief accuracy, and missing challenges. A failing review goes back for another pass.
-6. **Verify:** a human opens the original PDF and checks every page-referenced claim before the review is marked complete. 
-
-The output of this process is a review a human can trust for a pre-validation step, and policy revision with citations, page numbers, and a clear headed picture of where current literature supports the direction, where it's silent, and where review is needed. 
+1. **Ingest:** The first step, ([`ingest-research.py`](./scripts/ingest-research.py)), extracts the original text from a PDF page by page with `pdfplumber`, collects citation metadata, and writes three documents: a byte-for-byte copy of the original, a human-readable extraction, and a JSONL file of chunk records. Each of these sources is registered in [`index.yaml`](./research-library/index.yaml).
+2. **Embed:** From there, ([`embed-research.py`](./scripts/embed-research.py)) embeds every chunk with a local `sentence-transformers` model, and store in a Chroma vector model. We used (`BAAI/bge-large-en-v1.5`) here by default because it's a small model that we can deploy locally, uses fewer tokens, so we don't have to deal with any API costs.  
+3. **Retrieve:** Then we build out a query engine with ([`query-research.py`](./scripts/query-research.py)) to navigate the library, find the relevant 'chunks', and use our index for a full citation details.
+4. **Review:** From there, a model writes an adversarial review of the proposal a pre-coordinated [review template](./research-library/reviews/_REVIEW_TEMPLATE.md), which sets up our grading process for the LLM-as-judge framework. 
+5. **LLM-as-Judge:** Next, a model from a different provider audits the review against it's sources (research and the drafted policy proposal), and the review template, using a set  [grading rubric](./research-library/reviews/validation/_GRADING_TEMPLATE.md). The review is graded for fidelity and other metrics, and a failing review is fed back into the system for another pass.
+6. **Verify:** Once the process is complete, it generates an output review where every claim has a page level citation. Here we can look up and verify each citation is accurate, and then ready through the review and the grading passes, and re-appraoch our policy accordingly.  
 
 
 ### A live Example: 
 
-An example of a housing and urban development policy proposal is included, with a RAG adversarial review. The policy is reviewed against a 42-page guide to reducing violent crime including case studies in Dallas ([source record](./research-library/sources/17a-reducing-violent-crime-2026.md). That source was pre-processed and chunked according to page (with the records stored here: [chunked records](./research-library/rag/17a-reducing-violent-crime-2026.jsonl)). And the pre-validation process is conducted from start to finish against a community-stabilization policy  in three review passes:
+As a live example of this process in action, a housing and urban development policy proposal is included, with a RAG adversarial review. The policy is reviewed against a 42-page guide to reducing violent crime including case studies in Dallas ([source record](./research-library/sources/17a-reducing-violent-crime-2026.md). That source was pre-processed and chunked according to page (with the records stored here: [chunked records](./research-library/rag/17a-reducing-violent-crime-2026.jsonl)). And the pre-validation process is conducted from start to finish against a community-stabilization policy  in three review passes:
 
 | Pass | What happened | Grade |
 |---|---|---|
@@ -83,6 +85,7 @@ The full evidence chain:
 For a narrative walkthrough of the same example, see [Research Integration and Adversarial Revision](./walkthroughs/02-research-integration-and-adversarial-revision.md).
 
 >**As a heavy note:** As stated in part one, briefs are designed to work together, in this case, a single community stabilization is reviewed, but the policy platform it was pulled from contains homelessness stabilization domains, a criminal justice domain, and a broader housing and urban development domain, and redesigned federal government instututions (EC and DoDa, etc.). The review rightfully flags that the community stabilization brief connects to these documents but this repo doesn't contain them. A true grading pass would target and pull in additional reasearch to validate these additional pieces as well, by design. **In order to avoid dumping 50+ pages of extra policy material that is secondary to the RAG pipeline demonstration, they are not included here.**
+
 
 ## Quick Start
 
